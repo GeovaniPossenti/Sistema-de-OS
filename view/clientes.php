@@ -69,11 +69,11 @@
                     </thead>
                     <tbody>
                         <?php  
-                            foreach($clientes as $array){ ?>
+                            foreach($clientes as $row){ ?>
                         <tr>
-                            <td><?php echo $array['id_usuario']; ?></td>
-                            <td><?php echo $array['nome_usuario']; ?></td>
-                            <td><?php echo $array['email_usuario']; ?></td>
+                            <td><?php echo $row['id_usuario']; ?></td>
+                            <td><?php echo $row['nome_usuario']; ?></td>
+                            <td><?php echo $row['email_usuario']; ?></td>
                             <td class="text-center">
                                     <input type="button" class="btn btn-outline-primary" value="Alterar">
                                     <input type="button" class="btn btn-outline-danger" value="Excluir">

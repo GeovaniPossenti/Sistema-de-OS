@@ -74,14 +74,14 @@
                     </thead>
                     <tbody>
                         <?php   
-                            foreach($clientes as $array){ ?>
+                            foreach($clientes as $row){ ?>
                         <tr>
-                            <td><?php echo $array['id_evento']; ?></td>
-                            <td><?php echo $array['id_usuario']; ?></td>
-                            <td><?php echo $array['nome_evento']; ?></td>
-                            <td><?php echo $array['desc_evento']; ?></td>
-                            <td><?php echo $array['color']; ?></td>
-                            <td><?php echo $array['inicio_evento']; ?></td>
+                            <td><?php echo $row['id_evento']; ?></td>
+                            <td><?php echo $row['id_usuario']; ?></td>
+                            <td><?php echo $row['nome_evento']; ?></td>
+                            <td><?php echo $row['desc_evento']; ?></td>
+                            <td><?php echo $row['color']; ?></td>
+                            <td><?php echo $row['inicio_evento']; ?></td>
                             <td class="text-center">
                                 <input type="button" class="btn btn-outline-primary" value="Alterar">
                                 <input type="button" class="btn btn-outline-danger" value="Excluir">
