@@ -1,7 +1,6 @@
 <?php 
     session_start();
     $login = $_SESSION['logged_in'];
-    $user_id = $_SESSION['user_id']; 
 
     include_once '../model/conexao.php';
     $conn = new Conexao;
@@ -12,7 +11,7 @@
         header('Location: ../index.php');
     }
     
-    $selectCliente = "SELECT `id_usuario`, `nome_usuario`, `email_usuario` FROM `usuario`";
+    $selectCliente = "SELECT `id_evento`, `id_usuario`, `nome_evento`, `desc_evento`, `color`, `inicio_evento`, `final_evento` FROM `eventos`";
 	$stmt = $con->prepare($selectCliente);
 	$stmt->execute();
 	$clientes = $stmt->fetchAll();
@@ -50,8 +49,8 @@
                 </a>
 
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="view/os.php" class="nav-link px-2 text-white">Ordens de Serviços</a></li>
-                    <li><a href="view/cliente.php" class="nav-link px-2 text-white">Clientes</a></li>
+                    <li><a href="os.php" class="nav-link px-2 text-white">Ordens de Serviços</a></li>
+                    <li><a href="clientes.php" class="nav-link px-2 text-white">Clientes</a></li>
                 </ul>
 
                 <div class="col-md-3 text-middle">
@@ -60,52 +59,38 @@
             </div>
         </header>
         <section>
-            <div class="container">
+            <div class="container text-start">
                 <table id="table_os" class="display">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Nome</th>
-                            <th>Email</th>
-                            <th>Funcões</th>
+                            <th>id_evento</th>
+                            <th>id_usuario</th>
+                            <th>nome_evento</th>
+                            <th>desc_evento</th>
+                            <th>color</th>
+                            <th>inicio_evento</th>
+                            <th>funcoes</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php   
                             foreach($clientes as $array){ ?>
                         <tr>
+                            <td><?php echo $array['id_evento']; ?></td>
                             <td><?php echo $array['id_usuario']; ?></td>
-                            <td><?php echo $array['nome_usuario']; ?></td>
-                            <td><?php echo $array['email_usuario']; ?></td>
-                            <td>
-                                <input type="button" class="btn btn-danger" value="Excluir">
-                                <input type="button" class="btn btn-primary" value="Alterar">
+                            <td><?php echo $array['nome_evento']; ?></td>
+                            <td><?php echo $array['desc_evento']; ?></td>
+                            <td><?php echo $array['color']; ?></td>
+                            <td><?php echo $array['inicio_evento']; ?></td>
+                            <td class="text-center">
+                                <input type="button" class="btn btn-outline-primary" value="Alterar">
+                                <input type="button" class="btn btn-outline-danger" value="Excluir">
                             </td>
                         </tr>
                         <?php } ?>
                     </tbody>
                 </table>
             </div>
-            <div class="container">
-                <table id="table_os" class="display">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php   
-                            foreach($clientes as $array){ ?>
-                        <tr>
-                            <td><?php echo $array['nome_usuario']; ?></td>
-                            <td><?php echo $array['email_usuario']; ?></td>
-                        </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </div>
-
         </section>
 
         <footer>

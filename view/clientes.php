@@ -1,7 +1,6 @@
 <?php 
     session_start();
     $login = $_SESSION['logged_in'];
-    $user_id = $_SESSION['user_id']; 
 
     include_once '../model/conexao.php';
     $conn = new Conexao;
@@ -48,12 +47,10 @@
                 <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                     <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
                 </a>
-
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="view/os.php" class="nav-link px-2 text-white">Ordens de Serviços</a></li>
-                    <li><a href="view/cliente.php" class="nav-link px-2 text-white">Clientes</a></li>
+                    <li><a href="os.php" class="nav-link px-2 text-white">Ordens de Serviços</a></li>
+                    <li><a href="clientes.php" class="nav-link px-2 text-white">Clientes</a></li>
                 </ul>
-
                 <div class="col-md-3 text-middle">
                     <a href="../control/logout.php"><button type="button" class="btn btn-danger">Sair</button></a>
                 </div>
@@ -64,16 +61,23 @@
                 <table id="table_os" class="display">
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Email</th>
+                            <th>id_usuario</th>
+                            <th>nome_usuario</th>
+                            <th>email_usuario</th>
+                            <th>Funcoes</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php   
+                        <?php  
                             foreach($clientes as $array){ ?>
                         <tr>
+                            <td><?php echo $array['id_usuario']; ?></td>
                             <td><?php echo $array['nome_usuario']; ?></td>
                             <td><?php echo $array['email_usuario']; ?></td>
+                            <td class="text-center">
+                                    <input type="button" class="btn btn-outline-primary" value="Alterar">
+                                    <input type="button" class="btn btn-outline-danger" value="Excluir">
+                            </td>
                         </tr>
                         <?php } ?>
                     </tbody>
