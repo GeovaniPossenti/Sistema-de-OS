@@ -11,8 +11,7 @@
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
     }
-
-
+    
     $selectCliente = "SELECT `id_usuario`, `nome_usuario`, `email_usuario` FROM `usuario`";
 	$stmt = $con->prepare($selectCliente);
 	$stmt->execute();
