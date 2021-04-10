@@ -23,25 +23,25 @@
 <body class="fundo">
     <form class="box_form" method="post" action="control/controle_usuario.php?id=log">
         <h1>Login</h1>
-        <input type="text" id="" name="emailUsuarioLog" size="" value="" placeholder="E-mail" required autofocus>
-        <input type="password" id="" name="senhaUsuarioLog" class="" placeholder="Password" required>
+        <input type="text" id="" name="emailUsuarioLog" size="" value="" placeholder="Usuário" required autofocus>
+        <input type="password" id="" name="senhaUsuarioLog" class="" placeholder="Senha" required>
         <input type="submit" name="submit" value="Login">
     </form>
 </body>
 </html>
 <?php
+    //Include da .php onde ficam as funcões de alertas, precisa ser incluido no final da página. 
     include_once ('view/alerts.php');
 
+    //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in.
     if(@$_SESSION['alerts'] == 'forcedEntry'){
        echo '<script> alertify.error("Acesso negado!") </script>';
         $_SESSION['alerts'] == ' ';
         @session_destroy();
     }
     
-   //Para acabar com as variaveis globais de usuario. 
+   //Aqui eu verifico se a SESSION alert = logout, se sim eu destruo a sessão assim que for redirecionado para está página. 
     if(@$alert == 'logout'){
         @session_destroy();
     }
-
-
 ?>

@@ -6,6 +6,7 @@
     $conn = new Conexao;
     $con = $conn->conectar();
 
+    //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in.
     if($login != true){
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
@@ -69,22 +70,41 @@
                             <th>desc_evento</th>
                             <th>color</th>
                             <th>inicio_evento</th>
-                            <th>funcoes</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php   
+                        //Foreach para mostrar a lista com base no Array criado a partir dos dados do banco. 
                             foreach($clientes as $row){ ?>
                         <tr>
                             <td><?php echo $row['id_evento']; ?></td>
                             <td><?php echo $row['id_usuario']; ?></td>
-                            <td><?php echo $row['nome_evento']; ?></td>
+                            <td>
+                            <?php 
+                                //If para verificar o tamanho da string e restringir a sua exibição. 
+                                if(strlen($row['nome_evento']) > 5){
+                                    //$textArray = $row['nome_evento'];
+                                    $textCut = substr($row['nome_evento'], 0, 10);
+                                    echo "$textCut...";
+                                }else{
+                                    echo $row['nome_evento'];
+                                }
+                            ?>
+                            </td>
                             <td><?php echo $row['desc_evento']; ?></td>
                             <td><?php echo $row['color']; ?></td>
                             <td><?php echo $row['inicio_evento']; ?></td>
                             <td class="text-center">
+                                <input type="button" class="btn btn-outline-info" value="Detalhes">
                                 <input type="button" class="btn btn-outline-primary" value="Alterar">
-                                <input type="button" class="btn btn-outline-danger" value="Excluir">
+                            </td>
+                            <td>
+                                <form action="../control/controle_os.php?op=del" method="POST">
+                                    <input type="hidden" name="id_servico" value="<?php echo $row['id_evento']; ?>" id="bt1">
+                                    <input type="submit" class="btn btn-outline-danger" value="Deletar">                                   
+                                </form>
                             </td>
                         </tr>
                         <?php } ?>
@@ -96,9 +116,14 @@
         <footer>
         
         </footer>
+        <script>
+            document.getElementById("bt1").style.display = "none";
+        
+        </script>
     </body>
 </html>
 
 <?php
+    //Include da .php onde ficam as funcões de alertas, precisa ser incluido no final da página. 
     include_once ('../view/alerts.php');
 ?>

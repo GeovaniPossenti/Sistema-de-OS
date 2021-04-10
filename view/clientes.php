@@ -6,11 +6,13 @@
     $conn = new Conexao;
     $con = $conn->conectar();
 
+    //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in.
     if($login != true){
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
     }
     
+    //Select random só pra pegar dados e popular a tabela dinamica.
     $selectCliente = "SELECT `id_usuario`, `nome_usuario`, `email_usuario` FROM `usuario`";
 	$stmt = $con->prepare($selectCliente);
 	$stmt->execute();
@@ -92,5 +94,6 @@
     </body>
 </html>
 <?php
+    //Include da .php onde ficam as funcões de alertas, precisa ser incluido no final da página. 
     include_once ('../view/alerts.php');
 ?>
