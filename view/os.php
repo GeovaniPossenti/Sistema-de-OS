@@ -67,6 +67,12 @@
                 if(@$tela == "os" OR empty(@$tela)){
                     echo "Sera mostrada a tela da lista de OS";
             ?>
+
+
+
+
+
+            
             <div class="container">
                 <table id="table_os" class="display">
                     <thead>
