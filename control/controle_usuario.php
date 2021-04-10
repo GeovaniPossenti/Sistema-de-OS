@@ -40,5 +40,4 @@
             $_SESSION['alerts'] = 'logOk';
         }
     }
-
 ?>
