@@ -6,19 +6,20 @@
     $con = $conn->conectar();
 
     //Var passada pelo url.
-    @$op = $_GET['id'];
+    @$op = $_GET['op'];
 
     //Login de usuario.
     if ($op == 'log'){
-        $email = isset($_POST['emailUsuarioLog']) ? $_POST['emailUsuarioLog'] : '';
+        $login = isset($_POST['emailUsuarioLog']) ? $_POST['emailUsuarioLog'] : '';
         $password = isset($_POST['senhaUsuarioLog']) ? $_POST['senhaUsuarioLog'] : '';
 
-        $passwordHash = make_hash($password);
+        //Aqui ele faz a senha em formato md5
+        //$passwordHash = make_hash($password);
 
-        $sql = "SELECT id_usuario, nome_usuario FROM `usuario` WHERE BINARY email_usuario = ? AND BINARY senha_usuario = ?";
+        $sql = "SELECT `nome_usuario`, `email_usuario` FROM `usuario` WHERE BINARY email_usuario = ? AND BINARY senha_usuario = ?";
         $stmt = $con->prepare($sql);
-        $stmt->bindParam(1, $email);
-        $stmt->bindParam(2, $passwordHash);
+        $stmt->bindParam(1, $login);
+        $stmt->bindParam(2, $password);
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

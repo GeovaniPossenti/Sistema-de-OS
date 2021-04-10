@@ -6,10 +6,19 @@
     $con = $conn->conectar();
 
     //Var passada pelo url.
-    @$op = $_GET['id'];
+    @$op = $_GET['op'];   
+        
+    if($op == 'del'){
+        $id = isset($_POST['id_servico']) ? $_POST['id_servico'] : '';
 
-    $id = isset($_POST['id_servico']) ? $_POST['id_servico'] : '';
+		$sql = ("DELETE FROM `eventos` WHERE id_evento = '$id'");
+		$stmt = $con->prepare($sql);
+		$stmt->execute();
 
-    echo $id;
+        //Session com os dados e variaveis necessárias.
+        $_SESSION['alerts'] = 'delOk';
+
+        header("location: ../view/os.php");
+    }
 
 ?>

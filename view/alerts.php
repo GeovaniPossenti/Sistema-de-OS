@@ -9,6 +9,9 @@
     function alert3(){
         alertify.message('Deslogado com Sucesso!');
     }
+    function alert4(){
+        alertify.success('Ordem de serviço deletada!');
+    }
 </script>
 <?php
 
@@ -25,5 +28,8 @@
         case 'logout': echo '<script> alert3(); </script>'; 
             $_SESSION['alerts'] = ' ';
         break;
+        case 'delOk': echo '<script> alert4(); </script>'; 
+        $_SESSION['alerts'] = ' ';
+    break;
     }
 ?>

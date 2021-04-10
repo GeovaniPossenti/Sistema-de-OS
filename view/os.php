@@ -21,8 +21,8 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <!--Bootstrap.-->
         <script src="../tools/lib/bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../tools/lib/bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
@@ -48,12 +48,10 @@
                 <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                     <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
                 </a>
-
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="os.php" class="nav-link px-2 text-white">Ordens de Serviços</a></li>
                     <li><a href="clientes.php" class="nav-link px-2 text-white">Clientes</a></li>
                 </ul>
-
                 <div class="col-md-3 text-middle">
                     <a href="../control/logout.php"><button type="button" class="btn btn-danger">Sair</button></a>
                 </div>
@@ -102,7 +100,7 @@
                             </td>
                             <td>
                                 <form action="../control/controle_os.php?op=del" method="POST">
-                                    <input type="hidden" name="id_servico" value="<?php echo $row['id_evento']; ?>" id="bt1">
+                                    <input type="hidden" name="id_servico" value="<?php echo $row['id_evento']; ?>" id="bthiddenid">
                                     <input type="submit" class="btn btn-outline-danger" value="Deletar">                                   
                                 </form>
                             </td>
@@ -117,8 +115,8 @@
         
         </footer>
         <script>
-            document.getElementById("bt1").style.display = "none";
-        
+            //document.getElementById("bthiddenid").style.display = "none";
+            
         </script>
     </body>
 </html>
