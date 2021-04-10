@@ -50,8 +50,8 @@
                 </a>
 
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="../view/os.php?view=os" class="nav-link px-2 text-white">Ordens de Serviços</a></li>
-                    <li><a href="../view/os.php?view=c" class="nav-link px-2 text-white">Clientes</a></li>
+                    <li><a href="view/os.php" class="nav-link px-2 text-white">Ordens de Serviços</a></li>
+                    <li><a href="view/cliente.php" class="nav-link px-2 text-white">Clientes</a></li>
                 </ul>
 
                 <div class="col-md-3 text-middle">
@@ -60,12 +60,6 @@
             </div>
         </header>
         <section>
-            <?php
-                @$tela = $_GET['view'];
-
-                if(@$tela == "os" OR empty(@$tela)){
-                    echo "Sera mostrada a tela da lista de OS";
-            ?>
             <div class="container">
                 <table id="table_os" class="display">
                     <thead>
@@ -92,11 +86,6 @@
                     </tbody>
                 </table>
             </div>
-                
-            <?php
-                }elseif(@$tela == "c"){ 
-                echo "Sera mostrada a tela da lista de Clientes";
-            ?>
             <div class="container">
                 <table id="table_os" class="display">
                     <thead>
@@ -116,12 +105,7 @@
                     </tbody>
                 </table>
             </div>
-            
-            <?php
-            
-            }
 
-            ?>
         </section>
 
         <footer>
