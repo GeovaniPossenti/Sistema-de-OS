@@ -39,7 +39,10 @@
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
         <script>
             $(document).ready( function () {
-                $('#table_os').DataTable();
+                $('#table_os').DataTable({
+                    "lengthMenu": [25, 50, 75, 100],
+                    
+                });
             } );
         </script>
         <title>Matrix</title>
@@ -60,6 +63,9 @@
             </div>
         </header>
         <section>
+            <div class="container" style="margin-bottom: 20px;">
+                <input type="button" class="btn btn-primary btnCadastro" value="Cadastrar OS">
+            </div>
             <div class="container text-start container-lista" >
                 <table id="table_os" class="display">
                     <thead>
@@ -68,8 +74,7 @@
                             <th>id_usuario</th>
                             <th>nome_evento</th>
                             <th>desc_evento</th>
-                            <th></th>
-                            <th></th>
+                            <th>Funcoes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -77,8 +82,8 @@
                         //Foreach para mostrar a lista com base no Array criado a partir dos dados do banco. 
                             foreach($clientes as $row){ ?>
                         <tr>
-                            <td><?php echo $row['id_evento']; ?></td>
-                            <td><?php echo $row['id_usuario']; ?></td>
+                            <td class="btnEdit"><?php echo $row['id_evento']; ?></td>
+                            <td class="btnEdit"><?php echo $row['id_usuario']; ?></td>
                             <!-- Para verificar o tamanho do texto. 
                             <td>                   
                                 //If para verificar o tamanho da string e restringir a sua exibição. 
@@ -91,14 +96,12 @@
                                 }
                             </td> -->
 
-                            <td><?php echo $row['nome_evento']; ?></td>
-                            <td><?php echo $row['desc_evento']; ?></td>
+                            <td class="btnEdit"><?php echo $row['nome_evento']; ?></td>
+                            <td class="btnEdit"><?php echo $row['desc_evento']; ?></td>
                             <td class="text-center">
-                                <input type="button" class="btn btn-outline-info" value="Detalhes">
-                                <input type="button" class="btn btn-outline-primary btnEdit" value="Alterar" onclick="">
-                            </td>
-                            <td>
+                                <!--Formulario para deletar uma linha no banco-->
                                 <form action="../control/controle_os.php?op=del" method="POST">
+                                    <input type="button" class="btn btn-outline-primary btnEdit" value="Alterar" onclick="">
                                     <input type="hidden" name="id_servico" value="<?php echo $row['id_evento']; ?>">
                                     <input type="submit" class="btn btn-outline-danger" value="Deletar">                          
                                 </form>
@@ -109,16 +112,52 @@
                 </table>
             </div>
 
+            <!--Modal de cadastro de OS--> 
+            <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cadastro de OS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Nome:
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </label>
+                                <label for="recipient-name" class="col-form-label">CPF:
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Nome:
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </label>
+                                <label for="recipient-name" class="col-form-label">CPF:
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
             <!--Modal de edição de OS--> 
             <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Alterar OS</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <input type="text" name="" id="update_id">
+                        <input type="hidden" name="" id="update_id">
                         <input type="text" name="" id="id_usuario">
                         <input type="text" name="" id="nome_evento">
                         <input type="text" name="" id="desc_evento">
@@ -133,8 +172,17 @@
             </div>
 
         </section>
-        <footer>
-    
+        <footer class="bd-footer bg-dark p-3 p-md-5 mt-5 bg-light text-center text-sm-start">
+            <div class="container">
+                <ul class="bd-footer-links ps-0 mb-3">
+                    <li class="d-inline-block"><a href="https://github.com/twbs"></a></li>
+                    <li class="d-inline-block ms-3"><a href="https://twitter.com/getbootstrap"></a></li>
+                    <li class="d-inline-block ms-3"><a href="/docs/5.0/examples/"></a></li>
+                    <li class="d-inline-block ms-3"><a href="/docs/5.0/about/overview/"></a></li>
+                </ul>
+                <p class="mb-0"><a href="/docs/5.0/about/team/"></a><a href="https://github.com/twbs/bootstrap/graphs/contributors"></a></p>
+                <p class="mb-0"><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener"></a><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"></a></p>
+            </div>
         </footer>
 
         <script>
@@ -155,6 +203,9 @@
                     $('#nome_evento').val(data[2]);
                     $('#desc_evento').val(data[3]);
                 });
+                    $('.btnCadastro').on('click', function(){
+                        $('#modalCadastro').modal('show');
+                    });
             });
         </script>
 
