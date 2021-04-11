@@ -52,14 +52,30 @@
     }elseif(@$op == 'del'){
         $id_cliente = isset($_POST['id_cliente']) ? $_POST['id_cliente'] : '';
 
-		$sql = ("DELETE FROM `clientes` WHERE `id_cliente` = '$id_cliente'");
+        //Aqui eu primeiro verifico se aquele cliente possue algum serviço vinculado. 
+        $sql = ("SELECT id_cliente FROM `os_pendente` WHERE `id_cliente` = '$id_cliente'");
 		$stmt = $con->prepare($sql);
 		$stmt->execute();
+        $arrayId_usuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        //Session com os dados e variaveis necessárias.
-        $_SESSION['alerts'] = 'delOk';
+        //Se não possuem eu executo o delete do cliente, se ele possuem algum serviço vinculado, eu exibo mensagem de erro e retorno para a página de clientes.
+        if (count($arrayId_usuario) <= 0){
 
-        header("location: ../view/clientes.php");
+            $sql = ("DELETE FROM `clientes` WHERE `id_cliente` = '$id_cliente'");
+            $stmt = $con->prepare($sql);
+            $stmt->execute();
+    
+            //Session com os dados e variaveis necessárias.
+            $_SESSION['alerts'] = 'delOk';
+    
+            header("location: ../view/clientes.php");
+
+        }elseif(count($arrayId_usuario) > 0){
+
+            header("location: ../view/clientes.php");
+            $_SESSION['alerts'] = 'deleteClienteFail';
+        
+        }
     }
 
 ?>

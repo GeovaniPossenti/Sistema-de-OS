@@ -8,10 +8,15 @@
     //Var passada pelo url.
     @$op = $_GET['op'];   
         
-    if($op == 'del'){
-        $id = isset($_POST['id_servico']) ? $_POST['id_servico'] : '';
+    if($op == 'cad'){
 
-		$sql = ("DELETE FROM `eventos` WHERE id_evento = '$id'");
+
+
+    }
+    elseif($op == 'del'){
+        $id_os_pendente = isset($_POST['id_os_pendente']) ? $_POST['id_os_pendente'] : '';
+
+		$sql = ("DELETE FROM `os_pendente` WHERE id_os_pendente = '$id_os_pendente'");
 		$stmt = $con->prepare($sql);
 		$stmt->execute();
 

@@ -18,6 +18,9 @@
     function alert6(){
         alertify.success('Alterado com sucesso!');
     }
+    function alert7(){
+        alertify.error('Não é possível deletar clientes que possuem serviços vinculados!');
+    }
 </script>
 <?php
 
@@ -41,6 +44,9 @@
         $_SESSION['alerts'] = ' ';
         break;
         case 'altOk': echo '<script> alert6(); </script>'; 
+        $_SESSION['alerts'] = ' ';
+        break;
+        case 'deleteClienteFail': echo '<script> alert7(); </script>'; 
         $_SESSION['alerts'] = ' ';
         break;
     }

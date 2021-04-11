@@ -11,11 +11,18 @@
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
     }
-    
-    $selectCliente = "SELECT `id_evento`, `id_usuario`, `nome_evento`, `desc_evento`, `color`, `inicio_evento`, `final_evento` FROM `eventos`";
-	$stmt = $con->prepare($selectCliente);
+
+    //Select que pega os dados pra preencher a tabela de OS.
+    $selectOSPendente = "SELECT `p`.`id_os_pendente`, `p`.`nome_equipamento`, `p`.`descricao_defeito`, `p`.`descricao_reparo`, `p`.`status` ,`p`.`data_recebimento`, `p`.`data_entrega_cliente`, `p`.`valor_reparo`, `p`.`link_webZap`, `u`.`nome_cliente` FROM `os_pendente` `P` join `clientes` `U` on (`P`.`id_cliente` = `U`.`id_cliente`)";
+	$stmt = $con->prepare($selectOSPendente);
 	$stmt->execute();
-	$banco_os = $stmt->fetchAll();
+	$arrayBancoOs = $stmt->fetchAll();
+
+    //Select que pega os dados pra preencher a tabela de OS.
+    $selectClientes = "SELECT `nome_cliente` FROM `clientes`";
+    $stmt = $con->prepare($selectClientes);
+    $stmt->execute();
+    $arrayClientes = $stmt->fetchAll();
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -70,20 +77,49 @@
                 <table id="table_os" class="display">
                     <thead>
                         <tr>
-                            <th>id_evento</th>
-                            <th>id_usuario</th>
-                            <th>nome_evento</th>
-                            <th>desc_evento</th>
+                            <th>ID Ordem de Serviço</th>
+                            <th>Nome do Cliente</th>
+                            <th>Nome Equipamento</th>
+                            <th class="hide">descricao_defeito</th>
+                            <th class="hide">descricao_reparo</th>
+                            <th>Status</th>
+                            <th>Data Recebimento</th>
+                            <th class="hide">data_entrega_cliente</th>
+                            <th class="">valor_reparo</th>
+                            <th class="hide">link_webZap</th>
                             <th>Funcoes</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php   
                         //Foreach para mostrar a lista com base no Array criado a partir dos dados do banco. 
-                            foreach($banco_os as $row){ ?>
-                        <tr>
-                            <td class="btnEdit"><?php echo $row['id_evento']; ?></td>
-                            <td class="btnEdit"><?php echo $row['id_usuario']; ?></td>
+                            foreach($arrayBancoOs as $row){ ?>
+                        <tr>  
+                            <td class="btnDetailsOs"><?php echo $row['id_os_pendente']; ?></td>
+                            <!--Aqui eu mostro o nome do cliente ao inves do id, usando um inner join no topo da página-->
+                            <td class="btnDetailsOs"><?php echo $row['nome_cliente']; ?></td>
+                            <!--------------------------------------------------------->
+                            <td class="btnDetailsOs"><?php echo $row['nome_equipamento']; ?></td>
+                            <td class="btnDetailsOs hide"><?php echo $row['descricao_defeito']; ?></td>
+                            <td class="btnDetailsOs hide"><?php echo $row['descricao_reparo']; ?></td>
+                            <td class="btnDetailsOs"><?php echo $row['status']; ?></td>
+                            <td class="btnDetailsOs"><?php echo $row['data_recebimento']; ?></td>
+                            <td class="btnDetailsOs hide"><?php echo $row['data_entrega_cliente']; ?></td>
+                            <td class="btnDetailsOs"><?php echo $row['valor_reparo']; ?></td>
+                            <td class="btnDetailsOs hide"><?php echo $row['link_webZap']; ?></td>
+                            <td class="text-center">
+                                <!--Formulario para deletar uma linha no banco-->
+                                <form action="../control/controle_os.php?op=del" method="POST">
+                                    <input type="button" class="btn btn-outline-primary btnEdit" value="Alterar" onclick="">
+                                    <input type="hidden" name="id_os_pendente" value="<?php echo $row['id_os_pendente']; ?>">
+                                    <input type="submit" class="btn btn-outline-danger" value="Deletar">                          
+                                </form>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
                             <!-- Para verificar o tamanho do texto. 
                             <td>                   
                                 //If para verificar o tamanho da string e restringir a sua exibição. 
@@ -96,54 +132,65 @@
                                 }
                             </td> -->
 
-                            <td class="btnEdit"><?php echo $row['nome_evento']; ?></td>
-                            <td class="btnEdit"><?php echo $row['desc_evento']; ?></td>
-                            <td class="text-center">
-                                <!--Formulario para deletar uma linha no banco-->
-                                <form action="../control/controle_os.php?op=del" method="POST">
-                                    <input type="button" class="btn btn-outline-primary btnEdit" value="Alterar" onclick="">
-                                    <input type="hidden" name="id_servico" value="<?php echo $row['id_evento']; ?>">
-                                    <input type="submit" class="btn btn-outline-danger" value="Deletar">                          
-                                </form>
-                            </td>
-                        </tr>
-                        <?php } ?>
-                    </tbody>
-                </table>
-            </div>
-
             <!--Modal de cadastro de OS--> 
             <div class="modal fade" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Cadastro de OS</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="">
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Nome:
-                                    <input type="text" class="form-control" id="recipient-name" required autofocus>
-                                </label>
-                                <label for="recipient-name" class="col-form-label">CPF:
-                                    <input type="text" class="form-control" id="recipient-name" required>
-                                </label>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Cadastro de OS</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-control">
+                                <form action="../control/controle_os.php?op=cad" method="POST" class="">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Cliente:
+                                            <select class="form-control" required>
+                                                <option value="">Selecione um Cliente</option>
+                                                <?php foreach($arrayClientes as $rowCliente){ ?>
+                                                    <option value=""><?php echo $rowCliente['nome_cliente']; ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </label>
+                                        <label for="" class="col-form-label">Nome Equipamento:
+                                            <input type="text" class="form-control" id="" required>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-form-label">Descrição do Defeito:
+                                            <textarea class="form-control" id="" required></textarea>
+                                        </label>
+                                        <label for="" class="col-form-label">Descrição do Reparo:
+                                            <textarea class="form-control" id="" required></textarea>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-form-label">Status
+                                            <select class="form-control" name="" id="">
+                                                <option value="">Orçamento</option>
+                                                <option value="">Aguardando</option>
+                                                <option value="">Em processo</option>
+                                                <option value="">Finalizado</option>
+                                                <option value="">Entregue</option>
+                                            </select>
+                                        </label>
+                                        <label for="" class="col-form-label">Data de Entrega:
+                                            <input type="date" class="form-control" id="" required>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-form-label">Valor:
+                                            <input type="text" class="form-control" id="" required>
+                                        </label>
+                                    </div>
+                                
                             </div>
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Nome:
-                                    <input type="text" class="form-control" id="recipient-name" required>
-                                </label>
-                                <label for="recipient-name" class="col-form-label">CPF:
-                                    <input type="text" class="form-control" id="recipient-name" required>
-                                </label>
-                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Salvar</button>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -158,11 +205,15 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <input type="hidden" name="" id="update_id" required autofocus>
-                        <input type="text" name="" id="id_usuario" required>
-                        <input type="text" name="" id="nome_evento" required>
-                        <input type="text" name="" id="desc_evento" required>
-
+                        <input type="hidden" name="" id="id_os_pendente" required autofocus>
+                        <input type="hidden" name="" id="nome_cliente" required>
+                        <input type="text" name="" id="nome_equipamento" required>
+                        <input type="text" name="" id="descricao_defeito" required>
+                        <input type="text" name="" id="descricao_reparo" required>
+                        <input type="text" name="" id="status" required>
+                        <input type="text" name="" id="data_recebimento" required>
+                        <input type="text" name="" id="data_entrega_cliente" required>
+                        <input type="text" name="" id="valor_reparo" required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -173,8 +224,27 @@
             </div>
             <!----------------------------> 
 
-        </section>
+            <!--Modal de detalhes de OS--> 
+            <div class="modal fade" id="modalDetailsOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Detalhes OS</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body form-control">
+                            <dl class="dl-horizontal form-control">
+								<dt>Descrição do defeito:</dt><textarea class="form-control" id="descricao_defeitoDet" rows="4" cols="64" readonly></textarea>                        
+                                <dt style="margin-top: 20px;">Descrição do reparo:</dt><textarea class="form-control" id="descricao_reparoDet" rows="4" cols="64" readonly></textarea>  
+                                <dt style="margin-top: 20px;">Data de entrega ao cliente: </dt><input type="text" class="form-control" name="" id="data_entrega_clienteDet" required readonly>
+                                <dt style="margin-top: 20px;">Link para mandar mensagem para o cliente: <input type="button" class="form-control" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);"></dt>
+							</dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </section>
         <!--<footer class="bd-footer bg-dark p-3 p-md-5 mt-5 bg-light text-center text-sm-start">
             <div class="container">
                 <ul class="bd-footer-links ps-0 mb-3">
@@ -201,14 +271,42 @@
                     
                     console.log(data);
 
-                    $('#update_id').val(data[0]);
-                    $('#id_usuario').val(data[1]);
-                    $('#nome_evento').val(data[2]);
-                    $('#desc_evento').val(data[3]);
+                    $('#id_os_pendente').val(data[0]);
+                    $('#nome_cliente').val(data[1]);
+                    $('#nome_equipamento').val(data[2]);
+                    $('#descricao_defeito').val(data[3]);
+                    $('#descricao_reparo').val(data[4]);
+                    $('#status').val(data[5]);
+                    $('#data_recebimento').val(data[6]);
+                    $('#data_entrega_cliente').val(data[7]);
+                    $('#valor_reparo').val(data[8]);
+                    $('#link_webZap').val(data[9]);
                 });
-                    $('.btnCadastro').on('click', function(){
-                        $('#modalCadastroOs').modal('show');
-                    });
+                $('.btnDetailsOs').on('click', function(){
+                    $('#modalDetailsOs').modal('show');
+
+                    $tr = $(this).closest('tr');
+
+                    var data = $tr.children("td").map(function(){
+                        return $(this).text();
+                    }).get();
+                    
+                    console.log(data);
+
+                    $('#id_os_pendenteDet').val(data[0]);
+                    $('#nome_clienteDet').val(data[1]);
+                    $('#nome_equipamentoDet').val(data[2]);
+                    $('#descricao_defeitoDet').val(data[3]);
+                    $('#descricao_reparoDet').val(data[4]);
+                    $('#statusDet').val(data[5]);
+                    $('#data_recebimentoDet').val(data[6]);
+                    $('#data_entrega_clienteDet').val(data[7]);
+                    $('#valor_reparoDet').val(data[8]);
+                    $('#link_webZapDet').val(data[9]);
+                });
+                $('.btnCadastro').on('click', function(){
+                    $('#modalCadastroOs').modal('show');
+                });
             });
         </script>
     </body>

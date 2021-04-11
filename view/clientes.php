@@ -84,8 +84,8 @@
                         //Foreach para mostrar a lista com base no Array criado a partir dos dados do banco. 
                             foreach($clientes as $row){ ?>
                         <tr>
-                            <td class="btnEdit"><?php echo $row['id_cliente']; ?></td>
-                            <td class="btnEdit"><?php echo $row['nome_cliente']; ?></td>
+                            <td class=""><?php echo $row['id_cliente']; ?></td>
+                            <td class=""><?php echo $row['nome_cliente']; ?></td>
                             <!-- Para verificar o tamanho do texto. 
                             <td>                   
                                 //If para verificar o tamanho da string e restringir a sua exibição. 
@@ -98,9 +98,9 @@
                                 }
                             </td> -->
 
-                            <td class="btnEdit"><?php echo $row['cpf_cliente']; ?></td>
-                            <td class="btnEdit"><?php echo $row['celular_cliente']; ?></td>
-                            <td class="btnEdit"><?php echo $row['telefone_cliente']; ?></td>
+                            <td class=""><?php echo $row['cpf_cliente']; ?></td>
+                            <td class=""><?php echo $row['celular_cliente']; ?></td>
+                            <td class=""><?php echo $row['telefone_cliente']; ?></td>
                             <td class="text-center">
                                 <!--Formulario para deletar uma linha no banco-->
                                 <form action="../control/controle_cliente.php?op=del" method="POST">
@@ -135,10 +135,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Celular:
-                                            <input type="text" name="CelularClienteCad" class="form-control" id="recipient-name" required>
+                                            <input type="text" name="CelularClienteCad" class="form-control" id="" required>
                                         </label>
                                         <label for="recipient-name" class="col-form-label">Telefone:
-                                            <input type="text" name="TelefoneClienteCad" class="form-control" id="recipient-name" required>
+                                            <input type="text" name="TelefoneClienteCad" class="form-control" id="" required>
                                         </label>
                                     </div>                    
                                     <div class="modal-footer">
@@ -163,20 +163,22 @@
                     </div>
                     <form action="../control/controle_cliente.php?op=alt" method="POST">
                         <div class="modal-body">
-                            <div class="form-group">
-                                <input type="hidden" name="id_cliente" id="id_cliente">
-                                <label for="recipient-name" class="col-form-label">Nome:
-                                    <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" required autofocus>
-                                </label>
-                                <label for="recipient-name" class="col-form-label">CPF:
-                                    <input type="text" name="cpfClienteAlt" class="form-control" id="cpf_cliente" required>
-                                </label>
-                                <label for="recipient-name" class="col-form-label">Celular:
-                                    <input type="text" name="celularClienteAlt" class="form-control" id="celular_cliente" required>
-                                </label>
-                                <label for="recipient-name" class="col-form-label">Telefone:
-                                    <input type="text" name="telefoneClienteAlt" class="form-control" id="telefone_cliente" required>
-                                </label>
+                            <div class="container">
+                                <div class="form-control">
+                                    <input type="hidden" name="id_cliente" id="id_cliente">
+                                    <label for="form-control" class="col-form-label">Nome:
+                                        <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" required autofocus>
+                                    </label>
+                                    <label for="form-control" class="col-form-label">CPF:
+                                        <input type="text" name="cpfClienteAlt" class="form-control" id="cpf_cliente" required>
+                                    </label>
+                                    <label for="form-control" class="col-form-label">Celular:
+                                        <input type="text" name="celularClienteAlt" class="form-control" id="celular_cliente" required>
+                                    </label>
+                                    <label for="form-control" class="col-form-label">Telefone:
+                                        <input type="text" name="telefoneClienteAlt" class="form-control" id="telefone_cliente" required>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -222,9 +224,9 @@
                     $('#celular_cliente').val(data[3]);
                     $('#telefone_cliente').val(data[4]);
                 });
-                    $('.btnCadastro').on('click', function(){
-                        $('#modalCadastroClientes').modal('show');
-                    });
+                $('.btnCadastro').on('click', function(){
+                    $('#modalCadastroClientes').modal('show');
+                });
             });
         </script>
     </body>

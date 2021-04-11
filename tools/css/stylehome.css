@@ -22,3 +22,8 @@
 body {
 	font-family: 'OpenSans';
 }
+
+.hide{
+	display: none;
+}
+	
