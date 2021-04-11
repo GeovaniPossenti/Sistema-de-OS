@@ -7,10 +7,10 @@
         alertify.error('Dados Incorretos!');
     }
     function alert3(){
-        alertify.message('Deslogado com Sucesso!');
+        alertify.warning('Deslogado com Sucesso!');
     }
     function alert4(){
-        alertify.success('Ordem de serviço deletada!');
+        alertify.warning('Ordem de serviço deletada!');
     }
 </script>
 <?php
