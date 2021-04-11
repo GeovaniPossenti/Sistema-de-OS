@@ -7,7 +7,6 @@ usuario
 Cliente
 -id
 -nome
--endereço 
 -cpf
 -telefone1
 -telefone

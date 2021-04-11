@@ -10,7 +10,13 @@
         alertify.warning('Deslogado com Sucesso!');
     }
     function alert4(){
-        alertify.warning('Ordem de serviço deletada!');
+        alertify.success('Deletado com sucesso!');
+    }
+    function alert5(){
+        alertify.success('Cadastrado com sucesso!');
+    }
+    function alert6(){
+        alertify.success('Alterado com sucesso!');
     }
 </script>
 <?php
@@ -30,6 +36,12 @@
         break;
         case 'delOk': echo '<script> alert4(); </script>'; 
         $_SESSION['alerts'] = ' ';
-    break;
+        break;
+        case 'cadOk': echo '<script> alert5(); </script>'; 
+        $_SESSION['alerts'] = ' ';
+        break;
+        case 'altOk': echo '<script> alert6(); </script>'; 
+        $_SESSION['alerts'] = ' ';
+        break;
     }
 ?>

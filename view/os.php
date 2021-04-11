@@ -15,7 +15,7 @@
     $selectCliente = "SELECT `id_evento`, `id_usuario`, `nome_evento`, `desc_evento`, `color`, `inicio_evento`, `final_evento` FROM `eventos`";
 	$stmt = $con->prepare($selectCliente);
 	$stmt->execute();
-	$clientes = $stmt->fetchAll();
+	$banco_os = $stmt->fetchAll();
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -47,24 +47,24 @@
         </script>
         <title>Matrix</title>
     </head>
-    <body class="fundo-os">
-        <header class="bg-dark text-white">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom "> 
-                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32"></svg>
-                </a>
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="os.php" class="nav-link px-2 text-white">Ordens de Serviços</a></li>
-                    <li><a href="clientes.php" class="nav-link px-2 text-white">Clientes</a></li>
+    <body>
+        <header class="p-3 bg-dark text-white">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="os.php" class="nav-link px-2 text-white">OS Pendentes</a></li>
+                    <li><a href="clientes.php" class="nav-link px-2 text-white">Lista de Clientes</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">OS Finalizadas</a></li>
                 </ul>
-                <div class="col-md-3 text-middle">
+                <div class="text-end">
                     <a href="../control/logout.php"><button type="button" class="btn btn-danger">Sair</button></a>
+                </div>
                 </div>
             </div>
         </header>
-        <section>
+        <section style="margin-top: 20px;">
             <div class="container" style="margin-bottom: 20px;">
-                <input type="button" class="btn btn-primary btnCadastro" value="Cadastrar OS">
+                <input type="button" class="btn btn-info btnCadastro" value="Cadastrar Ordem de Serviços">
             </div>
             <div class="container text-start container-lista" >
                 <table id="table_os" class="display">
@@ -80,7 +80,7 @@
                     <tbody>
                         <?php   
                         //Foreach para mostrar a lista com base no Array criado a partir dos dados do banco. 
-                            foreach($clientes as $row){ ?>
+                            foreach($banco_os as $row){ ?>
                         <tr>
                             <td class="btnEdit"><?php echo $row['id_evento']; ?></td>
                             <td class="btnEdit"><?php echo $row['id_usuario']; ?></td>
@@ -113,7 +113,7 @@
             </div>
 
             <!--Modal de cadastro de OS--> 
-            <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -124,32 +124,33 @@
                         <form class="">
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Nome:
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <input type="text" class="form-control" id="recipient-name" required autofocus>
                                 </label>
                                 <label for="recipient-name" class="col-form-label">CPF:
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <input type="text" class="form-control" id="recipient-name" required>
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Nome:
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <input type="text" class="form-control" id="recipient-name" required>
                                 </label>
                                 <label for="recipient-name" class="col-form-label">CPF:
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <input type="text" class="form-control" id="recipient-name" required>
                                 </label>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Salvar</button>
                     </div>
                     </div>
                 </div>
             </div>
+            <!----------------------------> 
 
             <!--Modal de edição de OS--> 
-            <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -157,22 +158,24 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <input type="hidden" name="" id="update_id">
-                        <input type="text" name="" id="id_usuario">
-                        <input type="text" name="" id="nome_evento">
-                        <input type="text" name="" id="desc_evento">
+                        <input type="hidden" name="" id="update_id" required autofocus>
+                        <input type="text" name="" id="id_usuario" required>
+                        <input type="text" name="" id="nome_evento" required>
+                        <input type="text" name="" id="desc_evento" required>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Salvar alterações</button>
                     </div>
                     </div>
                 </div>
             </div>
+            <!----------------------------> 
 
         </section>
-        <footer class="bd-footer bg-dark p-3 p-md-5 mt-5 bg-light text-center text-sm-start">
+
+        <!--<footer class="bd-footer bg-dark p-3 p-md-5 mt-5 bg-light text-center text-sm-start">
             <div class="container">
                 <ul class="bd-footer-links ps-0 mb-3">
                     <li class="d-inline-block"><a href="https://github.com/twbs"></a></li>
@@ -183,12 +186,12 @@
                 <p class="mb-0"><a href="/docs/5.0/about/team/"></a><a href="https://github.com/twbs/bootstrap/graphs/contributors"></a></p>
                 <p class="mb-0"><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener"></a><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"></a></p>
             </div>
-        </footer>
-
+        </footer> -->
+        
         <script>
             $(document).ready(function () {
                 $('.btnEdit').on('click', function(){
-                    $('#modalEdit').modal('show');
+                    $('#modalEditOs').modal('show');
 
                     $tr = $(this).closest('tr');
 
@@ -204,11 +207,10 @@
                     $('#desc_evento').val(data[3]);
                 });
                     $('.btnCadastro').on('click', function(){
-                        $('#modalCadastro').modal('show');
+                        $('#modalCadastroOs').modal('show');
                     });
             });
         </script>
-
     </body>
 </html>
 

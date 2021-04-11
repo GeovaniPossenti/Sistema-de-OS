@@ -23,8 +23,8 @@
 <body class="fundo">
     <form class="box_form" method="post" action="control/controle_usuario.php?op=log">
         <h1>Login</h1>
-        <input type="text" id="" name="emailUsuarioLog" size="" value="" placeholder="Usuário" required autofocus>
-        <input type="password" id="" name="senhaUsuarioLog" class="" placeholder="Senha" required>
+        <input type="text" id="" name="usernameLogin" size="" value="" placeholder="Usuário" required autofocus>
+        <input type="password" id="" name="passwordLogin" class="" placeholder="Senha" required>
         <input type="submit" name="submit" value="Login">
     </form>
 </body>

@@ -10,16 +10,16 @@
 
     //Login de usuario.
     if ($op == 'log'){
-        $login = isset($_POST['emailUsuarioLog']) ? $_POST['emailUsuarioLog'] : '';
-        $password = isset($_POST['senhaUsuarioLog']) ? $_POST['senhaUsuarioLog'] : '';
+        $username = isset($_POST['usernameLogin']) ? $_POST['usernameLogin'] : '';
+        $password = isset($_POST['passwordLogin']) ? $_POST['passwordLogin'] : '';
 
         //Aqui ele faz a senha em formato md5
-        //$passwordHash = make_hash($password);
+        $passwordMd5 = make_hash($password);
 
-        $sql = "SELECT `nome_usuario`, `email_usuario` FROM `usuario` WHERE BINARY email_usuario = ? AND BINARY senha_usuario = ?";
+        $sql = "SELECT `id_usuario`, `login_usuario`, `senha_usuario` FROM `usuarios` WHERE BINARY login_usuario = ? AND BINARY senha_usuario = ?";
         $stmt = $con->prepare($sql);
-        $stmt->bindParam(1, $login);
-        $stmt->bindParam(2, $password);
+        $stmt->bindParam(1, $username);
+        $stmt->bindParam(2, $passwordMd5);
         $stmt->execute();
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -33,12 +33,14 @@
             //Pega o primeiro usuário do array.
             $user = $users[0];
 
-            header("location: ../view/os.php");
-
             //Session com os dados e variaveis necessárias.
             $_SESSION['logged_in'] = true;
             $_SESSION['user_id'] = $user['id_usuario'];
             $_SESSION['alerts'] = 'logOk';
+            
+            header("location: ../view/os.php");
+
+
         }
     }
 ?>
