@@ -19,7 +19,7 @@
 	$arrayBancoOs = $stmt->fetchAll();
 
     //Select que pega os dados pra preencher a tabela de OS.
-    $selectClientes = "SELECT `nome_cliente` FROM `clientes`";
+    $selectClientes = "SELECT `id_cliente`, `nome_cliente`, `celular_cliente` FROM `clientes`";
     $stmt = $con->prepare($selectClientes);
     $stmt->execute();
     $arrayClientes = $stmt->fetchAll();
@@ -142,48 +142,47 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-control">
-                                <form action="../control/controle_os.php?op=cad" method="POST" class="">
-                                    <div class="form-group">
+                                <form action="../control/controle_os.php?op=cad" method="POST">
+                                    <div class="form-group">                           
                                         <label for="recipient-name" class="col-form-label">Cliente:
-                                            <select class="form-control" required>
-                                                <option value="">Selecione um Cliente</option>
+                                            <select name="idClienteCad" class="form-control" required autofocus>
+                                                <option value="" selected>Selecione um Cliente</option>
                                                 <?php foreach($arrayClientes as $rowCliente){ ?>
-                                                    <option value=""><?php echo $rowCliente['nome_cliente']; ?></option>
+                                                    <option value="<?php echo $rowCliente['id_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </label>
                                         <label for="" class="col-form-label">Nome Equipamento:
-                                            <input type="text" class="form-control" id="" required>
+                                            <input type="text" name="nomeEquipamentoCad" class="form-control" id="">
                                         </label>
                                     </div>
                                     <div class="form-group">
                                         <label for="" class="col-form-label">Descrição do Defeito:
-                                            <textarea class="form-control" id="" required></textarea>
+                                            <textarea class="form-control" name="descDefeitoCad" id=""></textarea>
                                         </label>
                                         <label for="" class="col-form-label">Descrição do Reparo:
-                                            <textarea class="form-control" id="" required></textarea>
+                                            <textarea class="form-control" name="descReparoCad" id=""></textarea>
                                         </label>
                                     </div>
                                     <div class="form-group">
                                         <label for="" class="col-form-label">Status
-                                            <select class="form-control" name="" id="">
-                                                <option value="">Orçamento</option>
-                                                <option value="">Aguardando</option>
-                                                <option value="">Em processo</option>
-                                                <option value="">Finalizado</option>
-                                                <option value="">Entregue</option>
+                                            <select name="statusCad" class="form-control" name="" id="" required>
+                                                <option value="Orçamento">Orçamento</option>
+                                                <option value="Aguardando">Aguardando</option>
+                                                <option value="processo">Em processo</option>
+                                                <option value="Finalizado">Finalizado</option>
+                                                <option value="Entregue">Entregue</option>
                                             </select>
                                         </label>
                                         <label for="" class="col-form-label">Data de Entrega:
-                                            <input type="date" class="form-control" id="" required>
+                                            <input type="date" name="dataEntregaCad" class="form-control">
                                         </label>
                                     </div>
                                     <div class="form-group">
                                         <label for="" class="col-form-label">Valor:
-                                            <input type="text" class="form-control" id="" required>
+                                            <input type="text" name="valorCad" class="form-control" id="">
                                         </label>
                                     </div>
-                                
                             </div>
                         </div>
                         <div class="modal-footer">
