@@ -43,8 +43,9 @@
 
         header("location: ../view/os.php");
 
-    }
-    elseif($op == 'del'){
+    }elseif($op == 'alt'){
+
+    }elseif($op == 'del'){
         $id_os_pendente = isset($_POST['id_os_pendente']) ? $_POST['id_os_pendente'] : '';
 
 		$sql = ("DELETE FROM `os_pendente` WHERE id_os_pendente = '$id_os_pendente'");

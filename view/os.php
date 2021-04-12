@@ -74,7 +74,7 @@
                 <input type="button" class="btn btn-info btnCadastro" value="Cadastrar Ordem de Serviços">
             </div>
             <div class="container text-start container-lista" >
-                <table id="table_os" class="display">
+                <table id="table_os" class="display text-center">
                     <thead>
                         <tr>
                             <th>ID Ordem de Serviço</th>
@@ -120,17 +120,6 @@
                     </tbody>
                 </table>
             </div>
-                            <!-- Para verificar o tamanho do texto. 
-                            <td>                   
-                                //If para verificar o tamanho da string e restringir a sua exibição. 
-                                if(strlen($row['nome_evento']) > 50){
-                                    $textArray = $row['nome_evento'];
-                                    $textCut = substr($row['nome_evento'], 0, 20);
-                                    echo "$textCut...";
-                                }else{
-                                    //echo $row['nome_evento'];
-                                }
-                            </td> -->
 
             <!--Modal de cadastro de OS--> 
             <div class="modal fade" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -165,7 +154,7 @@
                                         </label>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="col-form-label">Status
+                                        <label for="" class="col-form-label">Processo:
                                             <select name="statusCad" class="form-control" name="" id="" required>
                                                 <option value="Orçamento">Orçamento</option>
                                                 <option value="Aguardando">Aguardando</option>
@@ -174,22 +163,22 @@
                                                 <option value="Entregue">Entregue</option>
                                             </select>
                                         </label>
-                                        <label for="" class="col-form-label">Data de Entrega:
+                                        <label for="" class="col-form-label">Data de Entrega ao Cliente:
                                             <input type="date" name="dataEntregaCad" class="form-control">
                                         </label>
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="col-form-label">Valor:
+                                        <label for="" class="col-form-label">Valor a cobrar:
                                             <input type="text" name="valorCad" class="form-control" id="">
                                         </label>
                                     </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Salvar</button>
-                        </div>
-                        </form>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Salvar</button>
+                                    </div>
+                                </form>
                     </div>
                 </div>
             </div>
@@ -204,20 +193,52 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <input type="hidden" name="" id="id_os_pendente" required autofocus>
-                        <input type="hidden" name="" id="nome_cliente" required>
-                        <input type="text" name="" id="nome_equipamento" required>
-                        <input type="text" name="" id="descricao_defeito" required>
-                        <input type="text" name="" id="descricao_reparo" required>
-                        <input type="text" name="" id="status" required>
-                        <input type="text" name="" id="data_recebimento" required>
-                        <input type="text" name="" id="data_entrega_cliente" required>
-                        <input type="text" name="" id="valor_reparo" required>
+                        <form action="../control/controle_os.php?op=alt" method="POST">
+                            <div class="form-group">
+                                <input type="hidden" name="" id="id_os_pendente" required autofocus>
+                            </div>
+                            <div class="form-group">                           
+                                <label for="recipient-name" class="col-form-label">Cliente:
+                                    <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" readonly>
+                                </label>
+                                <label for="" class="col-form-label">Nome do Equipamento:
+                                    <input type="text" name="nomeEquipamentoAlt" class="form-control" id="nome_equipamento">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-form-label">Descrição do Defeito:
+                                    <textarea class="form-control" name="descDefeitoAlt" id="descricao_defeito"></textarea>
+                                </label>
+                                <label for="" class="col-form-label">Descrição do Reparo:
+                                    <textarea class="form-control" name="descReparoAlt" id="descricao_reparo"></textarea>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-form-label">Processo:
+                                    <select name="statusCadAlt" id="" class="form-control status"  required>
+                                        <option value="Orçamento">Orçamento</option>
+                                        <option value="Aguardando">Aguardando</option>
+                                        <option value="processo">Em processo</option>
+                                        <option value="Finalizado">Finalizado</option>
+                                        <option value="Entregue">Entregue</option>
+                                    </select>
+                                </label>
+                                <label for="" class="col-form-label">Data de Entrega ao Cliente:
+                                    <input type="date" name="dataEntregaAlt" id="data_entrega_cliente" class="form-control">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-form-label">Valor a cobrar:
+                                    <input type="text" name="valorReparoAlt"  id="valor_reparo" class="form-control">
+                                </label>
+                            </div>
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Salvar alterações</button>
+                        <button type="submit" class="btn btn-primary">Salvar alterações</button>
                     </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -275,7 +296,7 @@
                     $('#nome_equipamento').val(data[2]);
                     $('#descricao_defeito').val(data[3]);
                     $('#descricao_reparo').val(data[4]);
-                    $('#status').val(data[5]);
+                    $('.status').val(data[5]);
                     $('#data_recebimento').val(data[6]);
                     $('#data_entrega_cliente').val(data[7]);
                     $('#valor_reparo').val(data[8]);
