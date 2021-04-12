@@ -45,6 +45,31 @@
 
     }elseif($op == 'alt'){
 
+        $idOsPendenteAlt = isset($_POST['idOsPendenteAlt']) ? $_POST['idOsPendenteAlt'] : '';
+        $nomeClienteAlt = isset($_POST['nomeClienteAlt']) ? $_POST['nomeClienteAlt'] : '';
+        $nomeEquipamentoAlt = isset($_POST['nomeEquipamentoAlt']) ? $_POST['nomeEquipamentoAlt'] : '';
+        $descDefeitoAlt = isset($_POST['descDefeitoAlt']) ? $_POST['descDefeitoAlt'] : '';
+        $descReparoAlt = isset($_POST['descReparoAlt']) ? $_POST['descReparoAlt'] : '';
+        $statusCadAlt = isset($_POST['statusCadAlt']) ? $_POST['statusCadAlt'] : '';
+        $dataEntregaAlt = isset($_POST['dataEntregaAlt']) ? $_POST['dataEntregaAlt'] : '';
+        $valorReparoAlt = isset($_POST['valorReparoAlt']) ? $_POST['valorReparoAlt'] : '';
+
+        $sqlUpdateOs = "UPDATE `os_pendente` SET `nome_equipamento`= ?,`descricao_defeito`= ?,`descricao_reparo`= ?,`status`= ?,`data_entrega_cliente`= ?,`valor_reparo`= ? WHERE `id_os_pendente` = '$idOsPendenteAlt'";
+        $stmt = $con->prepare($sqlUpdateOs);
+        $stmt->bindParam(1, $nomeEquipamentoAlt);
+        $stmt->bindParam(2, $descDefeitoAlt);
+        $stmt->bindParam(3, $descReparoAlt);
+        $stmt->bindParam(4, $statusCadAlt);
+        $stmt->bindParam(5, $dataEntregaAlt);
+        $stmt->bindParam(6, $valorReparoAlt);
+        $stmt->execute();
+
+        //Session com os dados e variaveis necessárias.
+        $_SESSION['alerts'] = 'altOk';
+
+        header("location: ../view/os.php");
+
+
     }elseif($op == 'del'){
         $id_os_pendente = isset($_POST['id_os_pendente']) ? $_POST['id_os_pendente'] : '';
 

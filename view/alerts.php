@@ -1,13 +1,16 @@
 <script>
+    alertify.set('notifier','position', 'top-right');
+    //alertify.success('Current position : ' + alertify.get('notifier','position'));
+
     //Alertas sobre os eventos.
     function alert1(){
-        alertify.success('Seja bem vindo!');
+        alertify.message('Seja bem vindo!');
     }
     function alert2(){
         alertify.error('Dados Incorretos!');
     }
     function alert3(){
-        alertify.warning('Deslogado com Sucesso!');
+        alertify.message('Deslogado com Sucesso!');
     }
     function alert4(){
         alertify.success('Deletado com sucesso!');

@@ -103,7 +103,7 @@
                             <td class="btnDetailsOs hide"><?php echo $row['descricao_defeito']; ?></td>
                             <td class="btnDetailsOs hide"><?php echo $row['descricao_reparo']; ?></td>
                             <td class="btnDetailsOs"><?php echo $row['status']; ?></td>
-                            <td class="btnDetailsOs"><?php echo $row['data_recebimento']; ?></td>
+                            <td class="btnDetailsOs"><?php echo inverteData($row['data_recebimento']); ?></td>
                             <td class="btnDetailsOs hide"><?php echo $row['data_entrega_cliente']; ?></td>
                             <td class="btnDetailsOs"><?php echo $row['valor_reparo']; ?></td>
                             <td class="btnDetailsOs hide"><?php echo $row['link_webZap']; ?></td>
@@ -188,57 +188,56 @@
             <div class="modal fade" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Alterar OS</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Alterar OS</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
                         <form action="../control/controle_os.php?op=alt" method="POST">
-                            <div class="form-group">
-                                <input type="hidden" name="" id="id_os_pendente" required autofocus>
+                            <div class="modal-body">
+                                <div class="form-control">
+                                    <input type="hidden" name="idOsPendenteAlt" id="id_os_pendente" required>
+                                    <div class="form-group">                           
+                                        <label for="recipient-name" class="col-form-label">Cliente:
+                                            <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" readonly>
+                                        </label>
+                                        <label for="" class="col-form-label">Nome do Equipamento:
+                                            <input type="text" name="nomeEquipamentoAlt" class="form-control" id="nome_equipamento" autofocus>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-form-label">Descrição do Defeito:
+                                            <textarea class="form-control" name="descDefeitoAlt" id="descricao_defeito"></textarea>
+                                        </label>
+                                        <label for="" class="col-form-label">Descrição do Reparo:
+                                            <textarea class="form-control" name="descReparoAlt" id="descricao_reparo"></textarea>
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-form-label">Processo:
+                                            <select name="statusCadAlt" class="form-control"  required>
+                                                <option value="Orçamento">Orçamento</option>
+                                                <option value="Aguardando">Aguardando</option>
+                                                <option value="Em Processo">Em Processo</option>
+                                                <option value="Finalizado">Finalizado</option>
+                                                <option value="Entregue">Entregue</option>
+                                            </select>
+                                        </label>
+                                        <label for="" class="col-form-label">Data de Entrega ao Cliente:
+                                            <input type="date" name="dataEntregaAlt" id="data_entrega_cliente" class="form-control">
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="col-form-label">Valor a cobrar:
+                                            <input type="text" name="valorReparoAlt"  id="valor_reparo" class="form-control">
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">                           
-                                <label for="recipient-name" class="col-form-label">Cliente:
-                                    <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" readonly>
-                                </label>
-                                <label for="" class="col-form-label">Nome do Equipamento:
-                                    <input type="text" name="nomeEquipamentoAlt" class="form-control" id="nome_equipamento">
-                                </label>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Salvar alterações</button>
                             </div>
-                            <div class="form-group">
-                                <label for="" class="col-form-label">Descrição do Defeito:
-                                    <textarea class="form-control" name="descDefeitoAlt" id="descricao_defeito"></textarea>
-                                </label>
-                                <label for="" class="col-form-label">Descrição do Reparo:
-                                    <textarea class="form-control" name="descReparoAlt" id="descricao_reparo"></textarea>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="col-form-label">Processo:
-                                    <select name="statusCadAlt" id="" class="form-control status"  required>
-                                        <option value="Orçamento">Orçamento</option>
-                                        <option value="Aguardando">Aguardando</option>
-                                        <option value="processo">Em processo</option>
-                                        <option value="Finalizado">Finalizado</option>
-                                        <option value="Entregue">Entregue</option>
-                                    </select>
-                                </label>
-                                <label for="" class="col-form-label">Data de Entrega ao Cliente:
-                                    <input type="date" name="dataEntregaAlt" id="data_entrega_cliente" class="form-control">
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label for="" class="col-form-label">Valor a cobrar:
-                                    <input type="text" name="valorReparoAlt"  id="valor_reparo" class="form-control">
-                                </label>
-                            </div>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Salvar alterações</button>
-                    </div>
-                    </form>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -254,9 +253,9 @@
                         </div>
                         <div class="modal-body form-control">
                             <dl class="dl-horizontal form-control">
-								<dt>Descrição do defeito:</dt><textarea class="form-control" id="descricao_defeitoDet" rows="4" cols="64" readonly></textarea>                        
+								<dt >Descrição do defeito:</dt><textarea class="form-control" id="descricao_defeitoDet" rows="4" cols="64" readonly></textarea>                        
                                 <dt style="margin-top: 20px;">Descrição do reparo:</dt><textarea class="form-control" id="descricao_reparoDet" rows="4" cols="64" readonly></textarea>  
-                                <dt style="margin-top: 20px;">Data de entrega ao cliente: </dt><input type="text" class="form-control" name="" id="data_entrega_clienteDet" required readonly>
+                                <dt style="margin-top: 20px;">Data de entrega ao cliente: </dt><input type="date" class="form-control" name="" id="data_entrega_clienteDet" required readonly>
                                 <dt style="margin-top: 20px;">Link para mandar mensagem para o cliente: <input type="button" class="form-control" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);"></dt>
 							</dl>
                         </div>
@@ -296,7 +295,7 @@
                     $('#nome_equipamento').val(data[2]);
                     $('#descricao_defeito').val(data[3]);
                     $('#descricao_reparo').val(data[4]);
-                    $('.status').val(data[5]);
+                    $('#status').val(data[5]);
                     $('#data_recebimento').val(data[6]);
                     $('#data_entrega_cliente').val(data[7]);
                     $('#valor_reparo').val(data[8]);

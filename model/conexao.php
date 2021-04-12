@@ -22,4 +22,12 @@ class Conexao{
     function make_hash($str){
         return md5($str);
     }
+	
+	function inverteData($data){
+		if(count(explode("/",$data)) > 1){
+			return implode("-",array_reverse(explode("/",$data)));
+		}elseif(count(explode("-",$data)) > 1){
+			return implode("/",array_reverse(explode("-",$data)));
+		}
+	}
 ?>
