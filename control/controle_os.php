@@ -74,8 +74,22 @@
         $ArraySelect = $stmt->fetch();
         $id_cliente_update = $ArraySelect['id_cliente'];
 
+        //Aqui eu faço um Select na tabela de clientes, para pegar somente o telefone cadastrado no momento. 
+        $sqlSelectClienteCelular = "SELECT `celular_cliente` FROM `clientes` WHERE `id_cliente` = '$id_cliente_update'";
+        $stmt = $con->prepare($sqlSelectClienteCelular);
+        $stmt->execute();
+        $ArraySelectCelular = $stmt->fetch();
+        $celular_cliente = $ArraySelectCelular['celular_cliente'];
+
+        //Aqui eu filtro o celular vindo do banco, já que eu preciso dele sem () e - . 
+        $filtros = array("(",")","-"," ");
+        $celular_cliente_filtrado = str_replace($filtros, "", $celular_cliente);
+        
+        //E aqui eu junto esse telefone no link do WhatsApp.
+        $linkZapCad = "https://api.whatsapp.com/send?phone=+55$celular_cliente_filtrado";
+        
         //Aqui eu seto o update já colocando um novo cliente caso o usuario tenha mudado.
-        $sqlUpdateOs = "UPDATE `os_pendente` SET `id_cliente`=?,`nome_equipamento`= ?,`descricao_defeito`= ?,`descricao_reparo`= ?,`status`= ?,`data_entrega_cliente`= ?,`valor_reparo`= ? WHERE `id_os_pendente` = '$idOsPendenteAlt'";
+        $sqlUpdateOs = "UPDATE `os_pendente` SET `id_cliente`=?,`nome_equipamento`= ?,`descricao_defeito`= ?,`descricao_reparo`= ?,`status`= ?,`data_entrega_cliente`= ?,`valor_reparo`= ?,`link_webZap`= ? WHERE `id_os_pendente` = '$idOsPendenteAlt'";
         $stmt = $con->prepare($sqlUpdateOs);
         $stmt->bindParam(1, $id_cliente_update);
         $stmt->bindParam(2, $nomeEquipamentoAlt);
@@ -84,6 +98,7 @@
         $stmt->bindParam(5, $statusCadAlt);
         $stmt->bindParam(6, $dataEntregaAlt);
         $stmt->bindParam(7, $valorReparoAlt);
+        $stmt->bindParam(8, $linkZapCad);
         $stmt->execute();
         
 

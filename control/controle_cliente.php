@@ -30,26 +30,72 @@
         header("location: ../view/clientes.php");
 
     }elseif(@$op == 'alt'){
+        
         $id_cliente = isset($_POST['id_cliente']) ? $_POST['id_cliente'] : '';
         $nomeClienteAlt = isset($_POST['nomeClienteAlt']) ? $_POST['nomeClienteAlt'] : '';
         $cpfClienteAlt = isset($_POST['cpfClienteAlt']) ? $_POST['cpfClienteAlt'] : '';
         $celularClienteAlt = isset($_POST['celularClienteAlt']) ? $_POST['celularClienteAlt'] : '';
         $telefoneClienteAlt = isset($_POST['telefoneClienteAlt']) ? $_POST['telefoneClienteAlt'] : '';
 
-        //Ainda preciso fazer o update na tabela de OS. Pra isso preciso de um select e um if.
-
-        $sql = "UPDATE `clientes` SET `nome_cliente`= ?,`cpf_cliente`= ?,`celular_cliente`= ?,`telefone_cliente`= ? WHERE `id_cliente` = '$id_cliente'";
-        $stmt = $con->prepare($sql);
-        $stmt->bindParam(1, $nomeClienteAlt);
-        $stmt->bindParam(2, $cpfClienteAlt);
-        $stmt->bindParam(3, $celularClienteAlt);
-        $stmt->bindParam(4, $telefoneClienteAlt);
+        //Aqui eu faço um Select na tabela de clientes, para pegar somente o telefone cadastrado no momento. 
+        $sqlSelectCliente = "SELECT `celular_cliente` FROM `clientes` WHERE `id_cliente` = '$id_cliente'";
+        $stmt = $con->prepare($sqlSelectCliente);
         $stmt->execute();
+        $ArraySelect = $stmt->fetch();
+        $celular_cliente = $ArraySelect['celular_cliente'];
 
-        //Session com os dados e variaveis necessárias.
-        $_SESSION['alerts'] = 'altOk';
+        //Aqui eu verifico se aquele úsuario possue algum serviço cadastrado. 
+        $sqlSelectOS_id = "SELECT `id_os_pendente` FROM `os_pendente` WHERE `id_cliente` = '$id_cliente'";
+        $stmt = $con->prepare($sqlSelectOS_id);
+        $stmt->execute();
+        $ArraySelectOS = $stmt->fetch();
+        $Id_os_pendente = $ArraySelectOS['id_os_pendente'];
 
-        header("location: ../view/clientes.php");
+
+        //Se esse telefone que o usuario digitou for diferente do celular que foi gravado no banco anteriormente. 
+        //E ele tiver algum serviço cadastrado.
+        //Ele altera na tabela OS o link para chamar o cliente no zap. 
+        if($celularClienteAlt != $celular_cliente AND !empty($Id_os_pendente)){
+            //Aqui eu filtro o celular vindo do banco, já que eu preciso dele sem () e - . 
+            $filtros = array("(",")","-"," ");
+            $celular_cliente_filtrado = str_replace($filtros, "", $celularClienteAlt);
+
+            //E aqui eu junto esse telefone no link do WhatsApp.
+            $linkZapCad = "https://api.whatsapp.com/send?phone=+55$celular_cliente_filtrado";
+
+            $sqlUpdateOs = "UPDATE `os_pendente` SET `link_webZap` = ? WHERE `id_cliente` = '$id_cliente'";
+            $stmt = $con->prepare($sqlUpdateOs);
+            $stmt->bindParam(1, $linkZapCad);
+            $stmt->execute();
+
+            $sql = "UPDATE `clientes` SET `nome_cliente`= ?,`cpf_cliente`= ?,`celular_cliente`= ?,`telefone_cliente`= ? WHERE `id_cliente` = '$id_cliente'";
+            $stmt = $con->prepare($sql);
+            $stmt->bindParam(1, $nomeClienteAlt);
+            $stmt->bindParam(2, $cpfClienteAlt);
+            $stmt->bindParam(3, $celularClienteAlt);
+            $stmt->bindParam(4, $telefoneClienteAlt);
+            $stmt->execute();
+    
+            //Session com os dados e variaveis necessárias.
+            $_SESSION['alerts'] = 'altOk';
+    
+            header("location: ../view/clientes.php");
+        }else{
+
+            $sql = "UPDATE `clientes` SET `nome_cliente`= ?,`cpf_cliente`= ?,`celular_cliente`= ?,`telefone_cliente`= ? WHERE `id_cliente` = '$id_cliente'";
+            $stmt = $con->prepare($sql);
+            $stmt->bindParam(1, $nomeClienteAlt);
+            $stmt->bindParam(2, $cpfClienteAlt);
+            $stmt->bindParam(3, $celularClienteAlt);
+            $stmt->bindParam(4, $telefoneClienteAlt);
+            $stmt->execute();
+    
+            //Session com os dados e variaveis necessárias.
+            $_SESSION['alerts'] = 'altOk';
+    
+            header("location: ../view/clientes.php");
+        }
+
 
     }elseif(@$op == 'del'){
         $id_cliente = isset($_POST['id_cliente']) ? $_POST['id_cliente'] : '';
