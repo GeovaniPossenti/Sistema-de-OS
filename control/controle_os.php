@@ -5,6 +5,10 @@
     $conn = new Conexao;
     $con = $conn->conectar();
 
+    //Defino o date default para SP.
+	date_default_timezone_set('America/Sao_Paulo');
+	//Pego a data atual do dia.
+
     //Var passada pelo url.
     @$op = $_GET['op'];   
         

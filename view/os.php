@@ -52,6 +52,8 @@
                 });
             } );
         </script>
+        <!-- Arquivo JS onde ficam todos os scrips do sistema. -->
+        <script src="tools/js/scriptshome.js"></script>
         <title>Matrix</title>
     </head>
     <body>
@@ -134,7 +136,7 @@
                                 <form action="../control/controle_os.php?op=cad" method="POST">
                                     <div class="form-group">                           
                                         <label for="recipient-name" class="col-form-label">Cliente:
-                                            <select name="idClienteCad" class="form-control" required autofocus>
+                                            <select name="idClienteCad" class="form-control" required>
                                                 <option value="" selected>Selecione um Cliente</option>
                                                 <?php foreach($arrayClientes as $rowCliente){ ?>
                                                     <option value="<?php echo $rowCliente['id_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
@@ -214,7 +216,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="" class="col-form-label">Processo:
-                                            <select name="statusCadAlt" class="form-control"  required>
+                                            <select name="statusCadAlt" class="form-control" id="status" required>
                                                 <option value="Orçamento">Orçamento</option>
                                                 <option value="Aguardando">Aguardando</option>
                                                 <option value="Em Processo">Em Processo</option>
@@ -288,7 +290,7 @@
                         return $(this).text();
                     }).get();
                     
-                    console.log(data);
+                    //console.log(data);
 
                     $('#id_os_pendente').val(data[0]);
                     $('#nome_cliente').val(data[1]);
@@ -310,7 +312,7 @@
                         return $(this).text();
                     }).get();
                     
-                    console.log(data);
+                    //console.log(data);
 
                     $('#id_os_pendenteDet').val(data[0]);
                     $('#nome_clienteDet').val(data[1]);
