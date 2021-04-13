@@ -52,8 +52,6 @@
                 });
             } );
         </script>
-        <!-- Arquivo JS onde ficam todos os scrips do sistema. -->
-        <script src="tools/js/scriptshome.js"></script>
         <title>Matrix</title>
     </head>
     <body>
@@ -136,7 +134,7 @@
                                 <form action="../control/controle_os.php?op=cad" method="POST">
                                     <div class="form-group">                           
                                         <label for="recipient-name" class="col-form-label">Cliente:
-                                            <select name="idClienteCad" class="form-control" required>
+                                            <select name="idClienteCad" class="form-control" id="NomeClienteModalCad" required>
                                                 <option value="" selected>Selecione um Cliente</option>
                                                 <?php foreach($arrayClientes as $rowCliente){ ?>
                                                     <option value="<?php echo $rowCliente['id_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
@@ -200,7 +198,11 @@
                                     <input type="hidden" name="idOsPendenteAlt" id="id_os_pendente" required>
                                     <div class="form-group">                           
                                         <label for="recipient-name" class="col-form-label">Cliente:
-                                            <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" readonly>
+                                            <select name="nomeClienteAlt" class="form-control" id="nome_cliente" required>
+                                                <?php foreach($arrayClientes as $rowCliente){ ?>
+                                                    <option value="<?php echo $rowCliente['nome_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
+                                                <?php } ?>
+                                            </select>
                                         </label>
                                         <label for="" class="col-form-label">Nome do Equipamento:
                                             <input type="text" name="nomeEquipamentoAlt" class="form-control" id="nome_equipamento" autofocus>
@@ -328,8 +330,11 @@
                 $('.btnCadastro').on('click', function(){
                     $('#modalCadastroOs').modal('show');
                 });
+
             });
         </script>
+        <!-- Arquivo JS onde ficam todos os scrips do sistema. -->
+        <script src="../tools/js/scriptsmask.js"></script>
     </body>
 </html>
 

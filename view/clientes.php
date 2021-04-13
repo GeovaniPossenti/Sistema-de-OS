@@ -127,18 +127,18 @@
                             <div class="modal-body">
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Nome:
-                                            <input type="text" name="nomeClienteCad" class="form-control" id="recipient-name" required autofocus>
+                                            <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" required autofocus>
                                         </label>
                                         <label for="recipient-name" class="col-form-label">CPF:
-                                            <input type="text" name="CpfClienteCad" class="form-control" id="recipient-name" required>
+                                            <input type="text" name="CpfClienteCad" class="form-control" id="recipient-name" placeholder="000.000.000-00" onkeyup="mascara('###.###.###-##',this,event,true)" maxlength="14" required>
                                         </label>
                                     </div>
                                     <div class="form-group">
                                         <label for="recipient-name" class="col-form-label">Celular:
-                                            <input type="text" name="CelularClienteCad" class="form-control" id="" required>
+                                            <input type="text" name="CelularClienteCad" class="form-control phone" placeholder="(00) 00000-0000" onkeyup="mascara('(##) #####-####',this,event,true)" maxlength="15" required>
                                         </label>
                                         <label for="recipient-name" class="col-form-label">Telefone:
-                                            <input type="text" name="TelefoneClienteCad" class="form-control" id="" required>
+                                            <input type="text" name="TelefoneClienteCad" class="form-control phone" placeholder="(00) 0000-0000" onkeyup="mascara('(##) ####-####',this,event,true)" maxlength="14" required>
                                         </label>
                                     </div>                    
                                     <div class="modal-footer">
@@ -170,13 +170,13 @@
                                         <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" required autofocus>
                                     </label>
                                     <label for="form-control" class="col-form-label">CPF:
-                                        <input type="text" name="cpfClienteAlt" class="form-control" id="cpf_cliente" required>
+                                        <input type="text" name="cpfClienteAlt" class="form-control" id="cpf_cliente" placeholder="000.000.000-00" onkeyup="mascara('###.###.###-##',this,event,true)" maxlength="14" required>
                                     </label>
                                     <label for="form-control" class="col-form-label">Celular:
-                                        <input type="text" name="celularClienteAlt" class="form-control" id="celular_cliente" required>
+                                        <input type="text" name="celularClienteAlt" class="form-control" id="celular_cliente" placeholder="(00) 00000-0000" onkeyup="mascara('(##) #####-####',this,event,true)" maxlength="15" required>
                                     </label>
                                     <label for="form-control" class="col-form-label">Telefone:
-                                        <input type="text" name="telefoneClienteAlt" class="form-control" id="telefone_cliente" required>
+                                        <input type="text" name="telefoneClienteAlt" class="form-control" id="telefone_cliente" placeholder="(00) 0000-0000" onkeyup="mascara('(##) ####-####',this,event,true)" maxlength="14" required>
                                     </label>
                                 </div>
                             </div>
@@ -227,8 +227,11 @@
                 $('.btnCadastro').on('click', function(){
                     $('#modalCadastroClientes').modal('show');
                 });
+
             });
         </script>
+        <!-- Arquivo JS onde ficam todos os scrips do sistema. -->
+        <script src="../tools/js/scriptsmaskclientes.js"></script>
     </body>
 </html>
 <?php

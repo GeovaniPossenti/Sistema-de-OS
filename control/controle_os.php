@@ -24,10 +24,19 @@
         $dataEntregaCad = isset($_POST['dataEntregaCad']) ? $_POST['dataEntregaCad'] : '';
         $valorCad = isset($_POST['valorCad']) ? $_POST['valorCad'] : '';
 
-        //E aqui eu junto esse telefone no link do WhatsApp, para assim conseguir chama-lo posteriormente.
-        $linkZapCad = "https://github.com/GeovaniPossenti";
-
         //Aqui eu faço um Select na tabela de clientes, para pegar o telefone do cliente cadastrado no serviço.
+        $sqlSelectCliente = "SELECT `celular_cliente` FROM `clientes` WHERE `id_cliente` = '$idClienteCad'";
+        $stmt = $con->prepare($sqlSelectCliente);
+        $stmt->execute();
+        $ArraySelect = $stmt->fetch();
+        $celular_cliente = $ArraySelect['celular_cliente'];
+
+        //Aqui eu filtro o celular vindo do banco, já que eu preciso dele sem () e - . 
+        $filtros = array("(",")","-"," ");
+        $celular_cliente_filtrado = str_replace($filtros, "", $celular_cliente);
+
+        //E aqui eu junto esse telefone no link do WhatsApp.
+        $linkZapCad = "https://api.whatsapp.com/send?phone=+55$celular_cliente_filtrado";
 
         $sqlInsertOS = "INSERT INTO `os_pendente`(`id_cliente`, `nome_equipamento`, `descricao_defeito`, `descricao_reparo`, `status`, `data_recebimento`, `data_entrega_cliente`, `valor_reparo`, `link_webZap`) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $con->prepare($sqlInsertOS);
@@ -58,15 +67,25 @@
         $dataEntregaAlt = isset($_POST['dataEntregaAlt']) ? $_POST['dataEntregaAlt'] : '';
         $valorReparoAlt = isset($_POST['valorReparoAlt']) ? $_POST['valorReparoAlt'] : '';
 
-        $sqlUpdateOs = "UPDATE `os_pendente` SET `nome_equipamento`= ?,`descricao_defeito`= ?,`descricao_reparo`= ?,`status`= ?,`data_entrega_cliente`= ?,`valor_reparo`= ? WHERE `id_os_pendente` = '$idOsPendenteAlt'";
-        $stmt = $con->prepare($sqlUpdateOs);
-        $stmt->bindParam(1, $nomeEquipamentoAlt);
-        $stmt->bindParam(2, $descDefeitoAlt);
-        $stmt->bindParam(3, $descReparoAlt);
-        $stmt->bindParam(4, $statusCadAlt);
-        $stmt->bindParam(5, $dataEntregaAlt);
-        $stmt->bindParam(6, $valorReparoAlt);
+        //Aqui eu dou um select pra pegar o id do cliente, já que no input eu sou obrigado a passar somente o nome dele. 
+        $sqlSelectIdCliente = "SELECT `id_cliente` FROM `clientes` WHERE `nome_cliente` = '$nomeClienteAlt'";
+        $stmt = $con->prepare($sqlSelectIdCliente);
         $stmt->execute();
+        $ArraySelect = $stmt->fetch();
+        $id_cliente_update = $ArraySelect['id_cliente'];
+
+        //Aqui eu seto o update já colocando um novo cliente caso o usuario tenha mudado.
+        $sqlUpdateOs = "UPDATE `os_pendente` SET `id_cliente`=?,`nome_equipamento`= ?,`descricao_defeito`= ?,`descricao_reparo`= ?,`status`= ?,`data_entrega_cliente`= ?,`valor_reparo`= ? WHERE `id_os_pendente` = '$idOsPendenteAlt'";
+        $stmt = $con->prepare($sqlUpdateOs);
+        $stmt->bindParam(1, $id_cliente_update);
+        $stmt->bindParam(2, $nomeEquipamentoAlt);
+        $stmt->bindParam(3, $descDefeitoAlt);
+        $stmt->bindParam(4, $descReparoAlt);
+        $stmt->bindParam(5, $statusCadAlt);
+        $stmt->bindParam(6, $dataEntregaAlt);
+        $stmt->bindParam(7, $valorReparoAlt);
+        $stmt->execute();
+        
 
         //Session com os dados e variaveis necessárias.
         $_SESSION['alerts'] = 'altOk';
