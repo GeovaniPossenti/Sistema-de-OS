@@ -36,6 +36,8 @@
         $celularClienteAlt = isset($_POST['celularClienteAlt']) ? $_POST['celularClienteAlt'] : '';
         $telefoneClienteAlt = isset($_POST['telefoneClienteAlt']) ? $_POST['telefoneClienteAlt'] : '';
 
+        //Ainda preciso fazer o update na tabela de OS. Pra isso preciso de um select e um if.
+
         $sql = "UPDATE `clientes` SET `nome_cliente`= ?,`cpf_cliente`= ?,`celular_cliente`= ?,`telefone_cliente`= ? WHERE `id_cliente` = '$id_cliente'";
         $stmt = $con->prepare($sql);
         $stmt->bindParam(1, $nomeClienteAlt);

@@ -71,12 +71,12 @@
                 <table id="table_clientes" class="display">
                     <thead>
                         <tr>
-                            <th>id_cliente</th>
-                            <th>nome_cliente</th>
-                            <th>cpf_cliente</th>
-                            <th>celular_cliente</th>
-                            <th>telefone_cliente</th>
-                            <th>Funcoes</th>
+                            <th>Id do Cliente</th>
+                            <th>Nome do Cliente</th>
+                            <th>CPF do Cliente</th>
+                            <th>Celular do Cliente</th>
+                            <th>Telefone do Cliente</th>
+                            <th>Funções</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -228,10 +228,23 @@
                     $('#modalCadastroClientes').modal('show');
                 });
 
+                var modalModalEditClientes = document.getElementById('modalEditClientes');
+                var myInputNome_cliente = document.getElementById('nome_cliente');
+                
+                modalModalEditClientes.addEventListener('shown.bs.modal', function () {            
+                    myInputNome_cliente.focus();
+                });
+
+                var modalmodalCadastroClientes = document.getElementById('modalCadastroClientes');
+                var myInputnomeClienteCad = document.getElementById('nomeClienteCad');
+                
+                modalmodalCadastroClientes.addEventListener('shown.bs.modal', function () {            
+                    myInputnomeClienteCad.focus();
+                });
             });
         </script>
         <!-- Arquivo JS onde ficam todos os scrips do sistema. -->
-        <script src="../tools/js/scriptsmaskclientes.js"></script>
+        <script src="../tools/js/scriptsmask.js"></script>
     </body>
 </html>
 <?php

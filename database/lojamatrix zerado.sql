@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Abr-2021 às 23:25
+-- Tempo de geração: 13-Abr-2021 às 16:52
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -33,18 +33,10 @@ DROP TABLE IF EXISTS `clientes`;
 CREATE TABLE `clientes` (
   `id_cliente` int(11) NOT NULL,
   `nome_cliente` varchar(255) NOT NULL,
-  `cpf_cliente` varchar(12) DEFAULT NULL,
+  `cpf_cliente` varchar(14) DEFAULT NULL,
   `celular_cliente` varchar(20) DEFAULT NULL,
   `telefone_cliente` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `clientes`
---
-
-INSERT INTO `clientes` (`id_cliente`, `nome_cliente`, `cpf_cliente`, `celular_cliente`, `telefone_cliente`) VALUES
-(1, 'Geovani', 'gdgdgdasv', 'gdaggeete', 'fdvcbbdsag'),
-(2, 'GeovanTeste212', '313123', '43242342', '42424');
 
 -- --------------------------------------------------------
 
@@ -65,14 +57,6 @@ CREATE TABLE `os_pendente` (
   `valor_reparo` decimal(10,2) DEFAULT NULL,
   `link_webZap` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `os_pendente`
---
-
-INSERT INTO `os_pendente` (`id_os_pendente`, `id_cliente`, `nome_equipamento`, `descricao_defeito`, `descricao_reparo`, `status`, `data_recebimento`, `data_entrega_cliente`, `valor_reparo`, `link_webZap`) VALUES
-(2, 1, 'nome', 'desc', 'desc reparo', 'status', '2021-04-07', '2021-04-07', '150.00', 'fsfsfsfsdf'),
-(4, 2, 'nome 2 ', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis vitae aliquam voluptate culpa placeat, eaque ipsa ea non veniam? Dolorum modi consequuntur recusandae rem nesciunt quasi, molestias velit corrupti debitis!', 'desc reparo 2', 'status 2', '2021-04-02', NULL, '150.00', 'https://guilhermemuller.com.br/ead/html-css-na-pratica/inserindo-texto-website');
 
 -- --------------------------------------------------------
 
@@ -125,13 +109,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `os_pendente`
 --
 ALTER TABLE `os_pendente`
-  MODIFY `id_os_pendente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_os_pendente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`

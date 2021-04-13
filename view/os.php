@@ -71,7 +71,7 @@
         </header>
         <section style="margin-top: 20px;">
             <div class="container" style="margin-bottom: 20px;">
-                <input type="button" class="btn btn-info btnCadastro" value="Cadastrar Ordem de Serviços">
+                <input type="button" class="btn btn-info text-white btnCadastro" value="Cadastrar Ordem de Serviços">
             </div>
             <div class="container text-start container-lista" >
                 <table id="table_os" class="display text-center">
@@ -79,15 +79,15 @@
                         <tr>
                             <th>ID Ordem de Serviço</th>
                             <th>Nome do Cliente</th>
-                            <th>Nome Equipamento</th>
+                            <th>Nome do Equipamento</th>
                             <th class="hide">descricao_defeito</th>
                             <th class="hide">descricao_reparo</th>
                             <th>Status</th>
-                            <th>Data Recebimento</th>
+                            <th>Data de Recebimento</th>
                             <th class="hide">data_entrega_cliente</th>
-                            <th class="">valor_reparo</th>
+                            <th class="">Valor do Reparo</th>
                             <th class="hide">link_webZap</th>
-                            <th>Funcoes</th>
+                            <th>Funções</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -169,7 +169,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="" class="col-form-label">Valor a cobrar:
-                                            <input type="text" name="valorCad" class="form-control" id="">
+                                            <input type="text" name="valorCad" class="form-control">
                                         </label>
                                     </div>
                             </div>
