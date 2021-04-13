@@ -65,10 +65,10 @@
         </header>
         <section style="margin-top: 20px;">
             <div class="container" style="margin-bottom: 20px;">
-                <input type="button" class="btn btn-primary btnCadastro" value="Cadastrar Clientes">
+                <input type="button" class="btn btn-info btnCadastro text-white" value="Cadastrar Clientes">
             </div>
             <div class="container text-start container-lista" >
-                <table id="table_clientes" class="display">
+                <table id="table_clientes" class="display text-center">
                     <thead>
                         <tr>
                             <th>Id do Cliente</th>
@@ -84,8 +84,8 @@
                         //Foreach para mostrar a lista com base no Array criado a partir dos dados do banco. 
                             foreach($clientes as $row){ ?>
                         <tr>
-                            <td class=""><?php echo $row['id_cliente']; ?></td>
-                            <td class=""><?php echo $row['nome_cliente']; ?></td>
+                            <td class="btnEdit"><?php echo $row['id_cliente']; ?></td>
+                            <td class="btnEdit"><?php echo $row['nome_cliente']; ?></td>
                             <!-- Para verificar o tamanho do texto. 
                             <td>                   
                                 //If para verificar o tamanho da string e restringir a sua exibição. 
@@ -98,9 +98,9 @@
                                 }
                             </td> -->
 
-                            <td class=""><?php echo $row['cpf_cliente']; ?></td>
-                            <td class=""><?php echo $row['celular_cliente']; ?></td>
-                            <td class=""><?php echo $row['telefone_cliente']; ?></td>
+                            <td class="btnEdit"><?php echo $row['cpf_cliente']; ?></td>
+                            <td class="btnEdit"><?php echo $row['celular_cliente']; ?></td>
+                            <td class="btnEdit"><?php echo $row['telefone_cliente']; ?></td>
                             <td class="text-center">
                                 <!--Formulario para deletar uma linha no banco-->
                                 <form action="../control/controle_cliente.php?op=del" method="POST">
@@ -125,27 +125,28 @@
                         </div>
                         <form action="../control/controle_cliente.php?op=cad" method="POST">
                             <div class="modal-body">
-                                    <div class="form-group">
+                                <div class="container">
+                                    <div class="form-control">
                                         <label for="recipient-name" class="col-form-label">Nome:
                                             <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" required autofocus>
                                         </label>
                                         <label for="recipient-name" class="col-form-label">CPF:
                                             <input type="text" name="CpfClienteCad" class="form-control" id="recipient-name" placeholder="000.000.000-00" onkeyup="mascara('###.###.###-##',this,event,true)" maxlength="14" required>
                                         </label>
-                                    </div>
-                                    <div class="form-group">
+
                                         <label for="recipient-name" class="col-form-label">Celular:
                                             <input type="text" name="CelularClienteCad" class="form-control phone" placeholder="(00) 00000-0000" onkeyup="mascara('(##) #####-####',this,event,true)" maxlength="15" required>
                                         </label>
                                         <label for="recipient-name" class="col-form-label">Telefone:
                                             <input type="text" name="TelefoneClienteCad" class="form-control phone" placeholder="(00) 0000-0000" onkeyup="mascara('(##) ####-####',this,event,true)" maxlength="14" required>
-                                        </label>
-                                    </div>                    
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn btn-primary">Salvar</button>
+                                        </label>                 
+ 
                                     </div>
-                                
+                                </div>
+                            </div>                                       
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
                             </div>
                         </form>
                     </div>

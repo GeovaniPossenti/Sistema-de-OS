@@ -1,0 +1,8 @@
+-Alterar na lista de OS. ✓
+-Fazer update do Link sempre que eu alterar o número de celular/Alterar o cliente da OS. ✓
+-Fazer o link automatico do zap. ✓
+-Fazer as mascaras dos campos de cpf, telefone. ✓
+
+-Máscara do campo de valor (Cadastro OS).
+-Preciso decidir se faço uma nova tabela para os_finalizadas.
+-Validar CPF.

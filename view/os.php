@@ -73,7 +73,7 @@
             <div class="container" style="margin-bottom: 20px;">
                 <input type="button" class="btn btn-info text-white btnCadastro" value="Cadastrar Ordem de Serviços">
             </div>
-            <div class="container text-start container-lista" >
+            <div class="container container-lista" >
                 <table id="table_os" class="display text-center">
                     <thead>
                         <tr>
