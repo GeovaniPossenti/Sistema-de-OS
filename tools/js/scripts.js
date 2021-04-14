@@ -38,8 +38,8 @@
          t.setSelectionRange(cursor, cursor);
     }
 
-    //Aqui pro autofocus dos modais funcionar certinho.
-    //Aqui eu arrumo os modais da tela de OS.php
+    //Aqui eu arrumo o autofocus dos modais da tela de os.php
+    //Por algum motivo que eu desconheço, eu não posso deixar eles no mesmo arquivo. ????
     var modalEditOs = document.getElementById('modalEditOs');
     var myInputNome_equipamento = document.getElementById('nome_equipamento');
 

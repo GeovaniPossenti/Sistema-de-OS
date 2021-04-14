@@ -5,7 +5,8 @@
     $conn = new Conexao;
     $con = $conn->conectar();
 
-    //Var passada pelo url.
+    //Sempre quando eu venho pra control, eu passo uma váriavel pela url dizendo qual função que o úsuario quer. 
+    //op = 'cad'astro / op = 'alt'erar / op = 'del'etar
     @$op = $_GET['op'];
 
     //Login de usuario.
@@ -13,7 +14,7 @@
         $username = isset($_POST['usernameLogin']) ? $_POST['usernameLogin'] : '';
         $password = isset($_POST['passwordLogin']) ? $_POST['passwordLogin'] : '';
 
-        //Aqui ele faz a senha em formato md5
+        //Aqui eu uso uma função pra criar a versão md5 da senha digitada.
         $passwordMd5 = make_hash($password);
 
         $sql = "SELECT `id_usuario`, `login_usuario`, `senha_usuario` FROM `usuarios` WHERE BINARY login_usuario = ? AND BINARY senha_usuario = ?";
@@ -26,8 +27,12 @@
         //Faz a contagem pra ver se aquele login existe no banco.
         if (count($users) <= 0){
             //Se ele não existir
-            header("location: ../index.php");
+            //Seto o alerta, e volto pra página de login.
+            
             $_SESSION['alerts'] = 'logFail';
+            
+            header("location: ../index.php");
+            
         }elseif(count($users) > 0){
             //Se ele existir
             //Pega o primeiro usuário do array.
@@ -39,7 +44,6 @@
             $_SESSION['alerts'] = 'logOk';
             
             header("location: ../view/os.php");
-
 
         }
     }

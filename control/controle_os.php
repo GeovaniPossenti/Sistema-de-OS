@@ -9,7 +9,8 @@
 	date_default_timezone_set('America/Sao_Paulo');
 	//Pego a data atual do dia.
 
-    //Var passada pelo url.
+    //Sempre quando eu venho pra control, eu passo uma váriavel pela url dizendo qual função que o úsuario quer. 
+    //op = 'cad'astro / op = 'alt'erar / op = 'del'etar
     @$op = $_GET['op'];   
         
     if($op == 'cad'){
@@ -19,8 +20,10 @@
         $descDefeitoCad = isset($_POST['descDefeitoCad']) ? $_POST['descDefeitoCad'] : '';
         $descReparoCad = isset($_POST['descReparoCad']) ? $_POST['descReparoCad'] : '';
         $statusCad = isset($_POST['statusCad']) ? $_POST['statusCad'] : '';
+
         //Aqui eu crio uma variavel com a data atual do cadastramento da OS.
         $dataRecebimentoCad = date('Y-m-d');
+
         $dataEntregaCad = isset($_POST['dataEntregaCad']) ? $_POST['dataEntregaCad'] : '';
         $valorCad = isset($_POST['valorCad']) ? $_POST['valorCad'] : '';
 
@@ -109,6 +112,7 @@
 
 
     }elseif($op == 'del'){
+        
         $id_os_pendente = isset($_POST['id_os_pendente']) ? $_POST['id_os_pendente'] : '';
 
 		$sql = ("DELETE FROM `os_pendente` WHERE id_os_pendente = '$id_os_pendente'");

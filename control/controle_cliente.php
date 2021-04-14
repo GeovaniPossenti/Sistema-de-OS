@@ -1,11 +1,11 @@
 <?php 
     @session_start();
-
     include_once '../model/conexao.php';
     $conn = new Conexao;
     $con = $conn->conectar();
 
-    //Var passada pelo url.
+    //Sempre quando eu venho pra control, eu passo uma váriavel pela url dizendo qual função que o úsuario quer. 
+    //op = 'cad'astro / op = 'alt'erar / op = 'del'etar
     @$op = $_GET['op'];
 
     if(@$op == 'cad'){
@@ -14,7 +14,7 @@
         $CelularClienteCad = isset($_POST['CelularClienteCad']) ? $_POST['CelularClienteCad'] : '';
         $TelefoneClienteCad = isset($_POST['TelefoneClienteCad']) ? $_POST['TelefoneClienteCad'] : '';
 
-        //Falta verificar se o cliente já existe no banco!
+        //Falta verificar se o cliente já existe no banco! COM O CPF DELE.
 
         $sql = "INSERT INTO `clientes`(`nome_cliente`, `cpf_cliente`, `celular_cliente`, `telefone_cliente`) VALUES (?, ?, ?, ?)";
         $stmt = $con->prepare($sql);
@@ -30,7 +30,7 @@
         header("location: ../view/clientes.php");
 
     }elseif(@$op == 'alt'){
-        
+    
         $id_cliente = isset($_POST['id_cliente']) ? $_POST['id_cliente'] : '';
         $nomeClienteAlt = isset($_POST['nomeClienteAlt']) ? $_POST['nomeClienteAlt'] : '';
         $cpfClienteAlt = isset($_POST['cpfClienteAlt']) ? $_POST['cpfClienteAlt'] : '';
@@ -96,8 +96,8 @@
             header("location: ../view/clientes.php");
         }
 
-
     }elseif(@$op == 'del'){
+        
         $id_cliente = isset($_POST['id_cliente']) ? $_POST['id_cliente'] : '';
 
         //Aqui eu primeiro verifico se aquele cliente possue algum serviço vinculado. 
@@ -120,8 +120,10 @@
 
         }elseif(count($arrayId_usuario) > 0){
 
-            header("location: ../view/clientes.php");
             $_SESSION['alerts'] = 'deleteClienteFail';
+            
+            header("location: ../view/clientes.php");
+            
         
         }
     }

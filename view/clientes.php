@@ -1,18 +1,20 @@
 <?php 
+    //Starto a sessão e pego o SESSION da váriavel que diz se eu estou logado ou não.
     session_start();
     $login = $_SESSION['logged_in'];
 
+    //Include da conexão com o banco.
     include_once '../model/conexao.php';
     $conn = new Conexao;
     $con = $conn->conectar();
 
-    //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in.
+    //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in != de vazio.
     if($login != true){
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
     }
     
-    //Select random só pra pegar dados e popular a tabela dinamica.
+    //Select que pega os dados pra preencher a tabela de Clientes.
     $selectCliente = "SELECT `id_cliente`, `nome_cliente`, `cpf_cliente`, `celular_cliente`, `telefone_cliente` FROM `clientes`";
 	$stmt = $con->prepare($selectCliente);
 	$stmt->execute();
@@ -24,7 +26,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="../tools/css/style.css">
+        <title>Matrix</title>
+        <!-- Logo da página. -->
+		<link rel="shorcut icon" href="../tools/img/computador-pessoal.png">
+        <!--CSS da página. -->
+        <link rel="stylesheet" href="../tools/css/styleClientes.css">
         <!--Bootstrap.-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
@@ -46,7 +52,6 @@
                 });
             } );
         </script>
-        <title>Matrix</title>
     </head>
     <body>
         <header class="p-3 bg-dark text-white">
@@ -80,34 +85,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php   
-                        //Foreach para mostrar a lista com base no Array criado a partir dos dados do banco. 
-                            foreach($clientes as $row){ ?>
+                        <?php foreach($clientes as $row){ ?>
                         <tr>
                             <td class="btnEdit"><?php echo $row['id_cliente']; ?></td>
                             <td class="btnEdit"><?php echo $row['nome_cliente']; ?></td>
-                            <!-- Para verificar o tamanho do texto. 
-                            <td>                   
-                                //If para verificar o tamanho da string e restringir a sua exibição. 
-                                if(strlen($row['nome_evento']) > 50){
-                                    $textArray = $row['nome_evento'];
-                                    $textCut = substr($row['nome_evento'], 0, 20);
-                                    echo "$textCut...";
-                                }else{
-                                    //echo $row['nome_evento'];
-                                }
-                            </td> -->
-
                             <td class="btnEdit"><?php echo $row['cpf_cliente']; ?></td>
                             <td class="btnEdit"><?php echo $row['celular_cliente']; ?></td>
                             <td class="btnEdit"><?php echo $row['telefone_cliente']; ?></td>
                             <td class="text-center">
-                                <!--Formulario para deletar uma linha no banco-->
+                                <!--Formulario para deletar um cliente do banco. -->
                                 <form action="../control/controle_cliente.php?op=del" method="POST">
                                     <input type="button" class="btn btn-outline-primary btnEdit" value="Alterar" onclick="">
                                     <input type="hidden" name="id_cliente" value="<?php echo $row['id_cliente']; ?>">
                                     <input type="submit" class="btn btn-outline-danger" value="Deletar">                          
                                 </form>
+                                <!------------------------------------------------->
                             </td>
                         </tr>
                         <?php } ?>
@@ -152,7 +144,7 @@
                     </div>
                 </div>
             </div>
-            <!----------------------------> 
+            <!----------------------------------------------->  
 
             <!--Modal de edição de CLientes--> 
             <div class="modal fade" id="modalEditClientes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -190,7 +182,7 @@
                     </div>
                 </div>
             </div>
-            <!----------------------------> 
+            <!-----------------------------------------------> 
 
         </section>
 
@@ -206,46 +198,12 @@
                 <p class="mb-0"><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener"></a><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"></a></p>
             </div>
         </footer> -->
-        <script>
-            $(document).ready(function () {
-                $('.btnEdit').on('click', function(){
-                    $('#modalEditClientes').modal('show');
 
-                    $tr = $(this).closest('tr');
-
-                    var data = $tr.children("td").map(function(){
-                        return $(this).text();
-                    }).get();
-                    
-                    console.log(data);
-
-                    $('#id_cliente').val(data[0]);
-                    $('#nome_cliente').val(data[1]);
-                    $('#cpf_cliente').val(data[2]);
-                    $('#celular_cliente').val(data[3]);
-                    $('#telefone_cliente').val(data[4]);
-                });
-                $('.btnCadastro').on('click', function(){
-                    $('#modalCadastroClientes').modal('show');
-                });
-
-                var modalModalEditClientes = document.getElementById('modalEditClientes');
-                var myInputNome_cliente = document.getElementById('nome_cliente');
-                
-                modalModalEditClientes.addEventListener('shown.bs.modal', function () {            
-                    myInputNome_cliente.focus();
-                });
-
-                var modalmodalCadastroClientes = document.getElementById('modalCadastroClientes');
-                var myInputnomeClienteCad = document.getElementById('nomeClienteCad');
-                
-                modalmodalCadastroClientes.addEventListener('shown.bs.modal', function () {            
-                    myInputnomeClienteCad.focus();
-                });
-            });
-        </script>
+        <!-- Aqui ficam os triggers para abrir os modais, e também 
+        os comandos pra pegar os values da tabela dinamica e coloca-los em ids .-->
+        <script src="../tools/js/modalOpenAndVal.js"></script>
         <!-- Arquivo JS onde ficam todos os scrips do sistema. -->
-        <script src="../tools/js/scriptsmask.js"></script>
+        <script src="../tools/js/scripts.js"></script>
     </body>
 </html>
 <?php

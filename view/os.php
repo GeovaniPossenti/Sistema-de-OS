@@ -1,12 +1,14 @@
 <?php 
+    //Starto a sessão e pego o SESSION da váriavel que diz se eu estou logado ou não.
     session_start();
     $login = $_SESSION['logged_in'];
 
+    //Include da conexão com o banco.
     include_once '../model/conexao.php';
     $conn = new Conexao;
     $con = $conn->conectar();
 
-    //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in.
+    //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in != de vazio.
     if($login != true){
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
@@ -18,7 +20,7 @@
 	$stmt->execute();
 	$arrayBancoOs = $stmt->fetchAll();
 
-    //Select que pega os dados pra preencher a tabela de OS.
+    //Select que pega os dados do cliente, eu uso pra exibir no select de clientes, e também pra passar o id dele quando a OS sofrer alteração.
     $selectClientes = "SELECT `id_cliente`, `nome_cliente`, `celular_cliente` FROM `clientes`";
     $stmt = $con->prepare($selectClientes);
     $stmt->execute();
@@ -30,7 +32,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="../tools/css/stylehome.css">
+        <title>Matrix</title>
+        <!-- Logo da página. -->
+		<link rel="shorcut icon" href="../tools/img/computador-pessoal.png">
+        <!--CSS da página. -->
+        <link rel="stylesheet" href="../tools/css/styleOs.css">
         <!--Bootstrap.-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
@@ -52,7 +58,7 @@
                 });
             } );
         </script>
-        <title>Matrix</title>
+        
     </head>
     <body>
         <header class="p-3 bg-dark text-white">
@@ -61,7 +67,7 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="os.php" class="nav-link px-2 text-white">OS Pendentes</a></li>
                     <li><a href="clientes.php" class="nav-link px-2 text-white">Lista de Clientes</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">OS Finalizadas</a></li>
+                    <li><a href="#" class="nav-link px-2 text-secondary">OS Finalizadas</a></li>
                 </ul>
                 <div class="text-end">
                     <a href="../control/logout.php"><button type="button" class="btn btn-danger">Sair</button></a>
@@ -76,6 +82,9 @@
             <div class="container container-lista" >
                 <table id="table_os" class="display text-center">
                     <thead>
+                        <!--Aqui eu uso uma classe no css, pra não exibir algumas colunas, 
+                        porque lá em baixo quando eu pego os valores de cada linha com o JQUERY, 
+                        eu preciso de todos as colunas para assim ter todos os dados. -->
                         <tr>
                             <th>ID Ordem de Serviço</th>
                             <th>Nome do Cliente</th>
@@ -91,9 +100,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php   
-                        //Foreach para mostrar a lista com base no Array criado a partir dos dados do banco. 
-                            foreach($arrayBancoOs as $row){ ?>
+                        <!-- A mesma coisa acontece aqui, eu preciso colocar a mesma qtd de colunas pra tabela funcionar, 
+                        porém preciso usar uma classe no css pra deixar essas colunas não visiveis.-->
+                        <?php foreach($arrayBancoOs as $row){ ?>
                         <tr>  
                             <td class="btnDetailsOs"><?php echo $row['id_os_pendente']; ?></td>
                             <!--Aqui eu mostro o nome do cliente ao inves do id, usando um inner join no topo da página-->
@@ -108,12 +117,13 @@
                             <td class="btnDetailsOs"><?php echo $row['valor_reparo']; ?></td>
                             <td class="btnDetailsOs hide"><?php echo $row['link_webZap']; ?></td>
                             <td class="text-center">
-                                <!--Formulario para deletar uma linha no banco-->
+                                <!--Formulario para deletar uma linha no na tabela de os_pendente. -->
                                 <form action="../control/controle_os.php?op=del" method="POST">
                                     <input type="button" class="btn btn-outline-primary btnEdit" value="Alterar" onclick="">
                                     <input type="hidden" name="id_os_pendente" value="<?php echo $row['id_os_pendente']; ?>">
                                     <input type="submit" class="btn btn-outline-danger" value="Deletar">                          
                                 </form>
+                                <!------------------------------------------------------------------->
                             </td>
                         </tr>
                         <?php } ?>
@@ -129,9 +139,10 @@
                             <h5 class="modal-title" id="exampleModalLabel">Cadastro de OS</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <div class="form-control">
-                                <form action="../control/controle_os.php?op=cad" method="POST">
+                        <!-- Formulario de cadastro de OS. -->
+                        <form action="../control/controle_os.php?op=cad" method="POST">
+                            <div class="modal-body">
+                                <div class="form-control">                   
                                     <div class="form-group">                           
                                         <label for="recipient-name" class="col-form-label">Cliente:
                                             <select name="idClienteCad" class="form-control" id="NomeClienteModalCad" required>
@@ -159,7 +170,7 @@
                                                 <option value="Orçamento">Orçamento</option>
                                                 <option value="Aguardando">Aguardando</option>
                                                 <option value="processo">Em processo</option>
-                                                <option value="Finalizado">Finalizado</option>
+                                                    <option value="Finalizado">Finalizado</option>
                                                 <option value="Entregue">Entregue</option>
                                             </select>
                                         </label>
@@ -172,17 +183,18 @@
                                             <input type="text" name="valorCad" class="form-control">
                                         </label>
                                     </div>
+                                </div>
                             </div>
-                        </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn btn-primary">Salvar</button>
-                                    </div>
-                                </form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </div>
+                        </form>
+                        <!--------------------------->
                     </div>
                 </div>
             </div>
-            <!----------------------------> 
+            <!-----------------------------------------------> 
 
             <!--Modal de edição de OS--> 
             <div class="modal fade" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -192,6 +204,7 @@
                             <h5 class="modal-title" id="exampleModalLabel">Alterar OS</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+                        <!-- Formulario de alteração de OS. -->
                         <form action="../control/controle_os.php?op=alt" method="POST">
                             <div class="modal-body">
                                 <div class="form-control">
@@ -242,10 +255,11 @@
                                 <button type="submit" class="btn btn-primary">Salvar alterações</button>
                             </div>
                         </form>
+                        <!--------------------------->
                     </div>
                 </div>
             </div>
-            <!----------------------------> 
+            <!----------------------------------------------->  
 
             <!--Modal de detalhes de OS--> 
             <div class="modal fade" id="modalDetailsOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -259,15 +273,17 @@
                             <dl class="dl-horizontal form-control">
 								<dt >Descrição do defeito:</dt><textarea class="form-control" id="descricao_defeitoDet" rows="4" cols="64" readonly></textarea>                        
                                 <dt style="margin-top: 20px;">Descrição do reparo:</dt><textarea class="form-control" id="descricao_reparoDet" rows="4" cols="64" readonly></textarea>  
-                                <dt style="margin-top: 20px;">Data de entrega ao cliente: </dt><input type="date" class="form-control" name="" id="data_entrega_clienteDet" required readonly>
+                                <dt style="margin-top: 20px;">Data de entrega ao cliente: </dt><input type="date" class="form-control" name="" id="data_entrega_clienteDet" readonly>
                                 <dt style="margin-top: 20px;">Link para mandar mensagem para o cliente: <input type="button" class="form-control" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);"></dt>
 							</dl>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-----------------------------------------------> 
 
         </section>
+
         <!--<footer class="bd-footer bg-dark p-3 p-md-5 mt-5 bg-light text-center text-sm-start">
             <div class="container">
                 <ul class="bd-footer-links ps-0 mb-3">
@@ -281,63 +297,13 @@
             </div>
         </footer> -->
         
-        <script>
-            $(document).ready(function () {
-                $('.btnEdit').on('click', function(){
-                    $('#modalEditOs').modal('show');
-
-                    $tr = $(this).closest('tr');
-
-                    var data = $tr.children("td").map(function(){
-                        return $(this).text();
-                    }).get();
-                    
-                    //console.log(data);
-
-                    $('#id_os_pendente').val(data[0]);
-                    $('#nome_cliente').val(data[1]);
-                    $('#nome_equipamento').val(data[2]);
-                    $('#descricao_defeito').val(data[3]);
-                    $('#descricao_reparo').val(data[4]);
-                    $('#status').val(data[5]);
-                    $('#data_recebimento').val(data[6]);
-                    $('#data_entrega_cliente').val(data[7]);
-                    $('#valor_reparo').val(data[8]);
-                    $('#link_webZap').val(data[9]);
-                });
-                $('.btnDetailsOs').on('click', function(){
-                    $('#modalDetailsOs').modal('show');
-
-                    $tr = $(this).closest('tr');
-
-                    var data = $tr.children("td").map(function(){
-                        return $(this).text();
-                    }).get();
-                    
-                    //console.log(data);
-
-                    $('#id_os_pendenteDet').val(data[0]);
-                    $('#nome_clienteDet').val(data[1]);
-                    $('#nome_equipamentoDet').val(data[2]);
-                    $('#descricao_defeitoDet').val(data[3]);
-                    $('#descricao_reparoDet').val(data[4]);
-                    $('#statusDet').val(data[5]);
-                    $('#data_recebimentoDet').val(data[6]);
-                    $('#data_entrega_clienteDet').val(data[7]);
-                    $('#valor_reparoDet').val(data[8]);
-                    $('#link_webZapDet').val(data[9]);
-                });
-                $('.btnCadastro').on('click', function(){
-                    $('#modalCadastroOs').modal('show');
-                });
-
-            });
-        </script>
+        <!-- Aqui ficam os triggers para abrir os modais, e também 
+        os comandos pra pegar os values da tabela dinamica e coloca-los em ids .-->
+        <script src="../tools/js/modalOpenAndVal.js"></script>
         <!-- Arquivo JS onde ficam todos os scrips do sistema. -->
-        <script src="../tools/js/scriptsmask.js"></script>
+        <script src="../tools/js/scripts.js"></script>
     </body>
 </html>
-
 <?php
     //Include da .php onde ficam as funcões de alertas, precisa ser incluido no final da página. 
     include_once ('../view/alerts.php');
