@@ -14,20 +14,33 @@
         $CelularClienteCad = isset($_POST['CelularClienteCad']) ? $_POST['CelularClienteCad'] : '';
         $TelefoneClienteCad = isset($_POST['TelefoneClienteCad']) ? $_POST['TelefoneClienteCad'] : '';
 
-        //Falta verificar se o cliente já existe no banco! COM O CPF DELE.
-
-        $sql = "INSERT INTO `clientes`(`nome_cliente`, `cpf_cliente`, `celular_cliente`, `telefone_cliente`) VALUES (?, ?, ?, ?)";
-        $stmt = $con->prepare($sql);
-        $stmt->bindParam(1, $nomeClienteCad);
-        $stmt->bindParam(2, $CpfClienteCad);
-        $stmt->bindParam(3, $CelularClienteCad);
-        $stmt->bindParam(4, $TelefoneClienteCad);
+        //Aqui eu verifico se aquele CPF já foi cadastrado no banco. 
+        $selectCPF = "SELECT `cpf_cliente` FROM `clientes` WHERE `cpf_cliente` = '$CpfClienteCad'";
+        $stmt = $con->prepare($selectCPF);
         $stmt->execute();
+        $arrayCPF = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        //Session com os dados e variaveis necessárias.
-        $_SESSION['alerts'] = 'cadOk';
+        if (count($arrayCPF) <= 0){
 
-        header("location: ../view/clientes.php");
+            $sql = "INSERT INTO `clientes`(`nome_cliente`, `cpf_cliente`, `celular_cliente`, `telefone_cliente`) VALUES (?, ?, ?, ?)";
+            $stmt = $con->prepare($sql);
+            $stmt->bindParam(1, $nomeClienteCad);
+            $stmt->bindParam(2, $CpfClienteCad);
+            $stmt->bindParam(3, $CelularClienteCad);
+            $stmt->bindParam(4, $TelefoneClienteCad);
+            $stmt->execute();
+
+            //Session com os dados e variaveis necessárias.
+            $_SESSION['alerts'] = 'cadOk';
+
+            header("location: ../view/clientes.php");
+        }else{
+
+            //Session com os dados e variaveis necessárias.
+            $_SESSION['alerts'] = 'cpfExiste';
+
+            header("location: ../view/clientes.php");
+        }
 
     }elseif(@$op == 'alt'){
     
@@ -36,6 +49,8 @@
         $cpfClienteAlt = isset($_POST['cpfClienteAlt']) ? $_POST['cpfClienteAlt'] : '';
         $celularClienteAlt = isset($_POST['celularClienteAlt']) ? $_POST['celularClienteAlt'] : '';
         $telefoneClienteAlt = isset($_POST['telefoneClienteAlt']) ? $_POST['telefoneClienteAlt'] : '';
+        
+        //****************** Ainda preciso fazer a verificação de cpf digitado.
 
         //Aqui eu faço um Select na tabela de clientes, para pegar somente o telefone cadastrado no momento. 
         $sqlSelectCliente = "SELECT `celular_cliente` FROM `clientes` WHERE `id_cliente` = '$id_cliente'";

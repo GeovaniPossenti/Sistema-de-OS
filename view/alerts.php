@@ -24,6 +24,9 @@
     function alert7(){
         alertify.error('Não é possível deletar clientes que possuem serviços vinculados!');
     }
+    function alert8(){
+        alertify.error('CPF já cadastrado no banco!');
+    }
 </script>
 <?php
 
@@ -50,6 +53,9 @@
         $_SESSION['alerts'] = ' ';
         break;
         case 'deleteClienteFail': echo '<script> alert7(); </script>'; 
+        $_SESSION['alerts'] = ' ';
+        break;
+        case 'cpfExiste': echo '<script> alert8(); </script>'; 
         $_SESSION['alerts'] = ' ';
         break;
     }
