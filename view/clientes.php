@@ -124,7 +124,7 @@
                                             <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" required autofocus>
                                         </label>
                                         <label for="recipient-name" class="col-form-label">CPF:
-                                            <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="recipient-name" placeholder="000.000.000-00" required>
+                                            <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="inputCPF" placeholder="000.000.000-00" required> <!--onkeyup="TestaCPF(this)"-->
                                         </label>
 
                                         <label for="recipient-name" class="col-form-label">Celular:
@@ -139,7 +139,7 @@
                             </div>                                       
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
+                                <button type="submit" class="btn btn-primary" id="btnSalvarCadastroClientes">Salvar</button>
                             </div>
                         </form>
                     </div>
