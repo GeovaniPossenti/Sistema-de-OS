@@ -49,7 +49,7 @@
         $cpfClienteAlt = isset($_POST['cpfClienteAlt']) ? $_POST['cpfClienteAlt'] : '';
         $celularClienteAlt = isset($_POST['celularClienteAlt']) ? $_POST['celularClienteAlt'] : '';
         $telefoneClienteAlt = isset($_POST['telefoneClienteAlt']) ? $_POST['telefoneClienteAlt'] : '';
-        
+       
         //****************** Ainda preciso fazer a verificação de cpf digitado.
 
         //Aqui eu faço um Select na tabela de clientes, para pegar somente o telefone cadastrado no momento. 
