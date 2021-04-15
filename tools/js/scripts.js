@@ -1,42 +1,11 @@
-    //Aqui fica a função que valida telefone, celular e campo de cpf tudo junto. 
-    function mascara(m,t,e,c){
-        var cursor = t.selectionStart;
-        var texto = t.value;
-        texto = texto.replace(/\D/g,'');
-        var l = texto.length;
-        var lm = m.length;
-        if(window.event) {                  
-            id = e.keyCode;
-        } else if(e.which){                 
-            id = e.which;
-        }
-        cursorfixo=false;
-        if(cursor < l)cursorfixo=true;
-        var livre = false;
-        if(id == 16 || id == 19 || (id >= 33 && id <= 40))livre = true;
-         ii=0;
-         mm=0;
-         if(!livre){
-             if(id!=8){
-                 t.value="";
-                 j=0;
-                 for(i=0;i<lm;i++){
-                     if(m.substr(i,1)=="#"){
-                         t.value+=texto.substr(j,1);
-                         j++;
-                     }else if(m.substr(i,1)!="#"){
-                         t.value+=m.substr(i,1);
-                     }
-                     if(id!=8 && !cursorfixo)cursor++;
-                     if((j)==l+1)break;
-                     
-                 } 	
-             }
-             if(c)coresMask(t);
-         }
-         if(cursorfixo && !livre)cursor--;
-         t.setSelectionRange(cursor, cursor);
-    }
+    //Mascara que arruma o input de valor.
+    $('.inputDinheiro').mask('#.##0,00', {
+        reverse: true
+    });
+
+    $('.inputCelular').mask('(00) 00000-0000');
+    $('.inputTelefone').mask('(00) 0000-0000');
+    $('.inputCPF').mask('000.000.000-00');
 
     //Aqui eu arrumo o autofocus dos modais da tela de os.php
     //Por algum motivo que eu desconheço, eu não posso deixar eles no mesmo arquivo. ????

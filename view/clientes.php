@@ -37,6 +37,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
         <!--JQuery.-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
         <!--Script dos alertas.-->
         <link rel="stylesheet" href="../tools/lib/alertifyjs/css/alertify.min.css">
         <link rel="stylesheet" href="../tools/lib/alertifyjs/css/themes/default.min.css">
@@ -123,14 +124,14 @@
                                             <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" required autofocus>
                                         </label>
                                         <label for="recipient-name" class="col-form-label">CPF:
-                                            <input type="text" name="CpfClienteCad" class="form-control" id="recipient-name" placeholder="000.000.000-00" onkeyup="mascara('###.###.###-##',this,event,true)" maxlength="14">
+                                            <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="recipient-name" placeholder="000.000.000-00" required>
                                         </label>
 
                                         <label for="recipient-name" class="col-form-label">Celular:
-                                            <input type="text" name="CelularClienteCad" class="form-control phone" placeholder="(00) 00000-0000" onkeyup="mascara('(##) #####-####',this,event,true)" maxlength="15" required>
+                                            <input type="text" name="CelularClienteCad" class="inputCelular form-control" placeholder="(00) 00000-0000" required>
                                         </label>
                                         <label for="recipient-name" class="col-form-label">Telefone:
-                                            <input type="text" name="TelefoneClienteCad" class="form-control phone" placeholder="(00) 0000-0000" onkeyup="mascara('(##) ####-####',this,event,true)" maxlength="14">
+                                            <input type="text" name="TelefoneClienteCad" class="inputTelefone form-control" placeholder="(00) 0000-0000">
                                         </label>                 
  
                                     </div>
@@ -163,13 +164,13 @@
                                         <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" required autofocus>
                                     </label>
                                     <label for="form-control" class="col-form-label">CPF: (Não é possível alterar)
-                                        <input type="text" name="cpfClienteAlt" class="form-control" id="cpf_cliente" placeholder="000.000.000-00" onkeyup="mascara('###.###.###-##',this,event,true)" maxlength="14" required readonly>
+                                        <input type="text" name="cpfClienteAlt" class="inputCPF form-control" id="cpf_cliente" placeholder="000.000.000-00" required readonly>
                                     </label>
                                     <label for="form-control" class="col-form-label">Celular:
-                                        <input type="text" name="celularClienteAlt" class="form-control" id="celular_cliente" placeholder="(00) 00000-0000" onkeyup="mascara('(##) #####-####',this,event,true)" maxlength="15" required>
+                                        <input type="text" name="celularClienteAlt" class="inputCelular form-control" id="celular_cliente" placeholder="(00) 00000-0000" required>
                                     </label>
                                     <label for="form-control" class="col-form-label">Telefone:
-                                        <input type="text" name="telefoneClienteAlt" class="form-control" id="telefone_cliente" placeholder="(00) 0000-0000" onkeyup="mascara('(##) ####-####',this,event,true)" maxlength="14">
+                                        <input type="text" name="telefoneClienteAlt" class="inputTelefone form-control" id="telefone_cliente" placeholder="(00) 0000-0000">
                                     </label>
                                 </div>
                             </div>

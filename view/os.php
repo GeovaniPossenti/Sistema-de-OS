@@ -43,6 +43,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
         <!--JQuery.-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
         <!--Script dos alertas.-->
         <link rel="stylesheet" href="../tools/lib/alertifyjs/css/alertify.min.css">
         <link rel="stylesheet" href="../tools/lib/alertifyjs/css/themes/default.min.css">
@@ -180,7 +181,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="" class="col-form-label">Valor a cobrar:
-                                            <input type="text" name="valorCad" class="form-control">
+                                            <input type="text" name="valorCad" class="inputDinheiro form-control" id="" placeholder="Digite um valor">
                                         </label>
                                     </div>
                                 </div>
@@ -245,7 +246,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="" class="col-form-label">Valor a cobrar:
-                                            <input type="text" name="valorReparoAlt"  id="valor_reparo" class="form-control">
+                                            <input type="text" name="valorReparoAlt"  id="valor_reparo" class="inputDinheiro form-control">
                                         </label>
                                     </div>
                                 </div>

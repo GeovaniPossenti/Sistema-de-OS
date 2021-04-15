@@ -50,8 +50,6 @@
             $('#modalCadastroOs').modal('show');
         });
 
-
-
         //Aqui ficam as opçoes da página de cliente.php 
         $('.btnEdit').on('click', function(){
             $('#modalEditClientes').modal('show');
@@ -73,7 +71,6 @@
         $('.btnCadastro').on('click', function(){
             $('#modalCadastroClientes').modal('show');
         });
-
             
         //Aqui eu arrumo o autofocus dos modais da tela de clientes.php
         //Por algum motivo que eu desconheço, eu não posso deixar eles no mesmo arquivo. ????
