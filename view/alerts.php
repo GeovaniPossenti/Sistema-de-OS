@@ -25,7 +25,7 @@
         alertify.error('Não é possível deletar clientes que possuem serviços vinculados!');
     }
     function alert8(){
-        alertify.error('CPF já cadastrado no banco!');
+        alertify.error('CPF já foi cadastrado!');
     }
 </script>
 <?php

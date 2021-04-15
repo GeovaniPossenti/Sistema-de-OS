@@ -163,8 +163,8 @@
                                     <label for="form-control" class="col-form-label">Nome:
                                         <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" required autofocus>
                                     </label>
-                                    <label for="form-control" class="col-form-label">CPF: (Não é possível alterar)
-                                        <input type="text" name="cpfClienteAlt" class="inputCPF form-control" id="cpf_cliente" placeholder="000.000.000-00" required readonly>
+                                    <label for="form-control" class="col-form-label">CPF:
+                                        <input type="text" name="cpfClienteAlt" class="inputCPF form-control" id="cpf_cliente" placeholder="000.000.000-00" required>
                                     </label>
                                     <label for="form-control" class="col-form-label">Celular:
                                         <input type="text" name="celularClienteAlt" class="inputCelular form-control" id="celular_cliente" placeholder="(00) 00000-0000" required>
