@@ -6,6 +6,8 @@
 -Máscara do campo de valor (Cadastro OS). ✓
 -Controle Cliente Alterar, preciso verificar se ele digitou um novo CPF, se sim eu preciso verificar se o novo cpf já existe no banco. ✓
 -Validar CPF. ✓
-
-
--Preciso decidir se faço uma nova tabela para os_finalizadas.
+-Preciso decidir se faço uma nova tabela para os_finalizadas. (Não vou fazer) ✓
+-Status com diferentes cores. ✓
+-Testar mais de 100 dados na tabela. ✓
+-Arrumar placeholders. ✓
+-Arrumar a fonte geral da page. ✓
