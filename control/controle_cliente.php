@@ -41,9 +41,7 @@
 
             header("location: ../view/clientes.php");
         }
-
-
-
+        
     }elseif(@$op == 'alt'){
     
         $id_cliente = isset($_POST['id_cliente']) ? $_POST['id_cliente'] : '';

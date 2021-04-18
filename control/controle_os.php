@@ -27,6 +27,12 @@
         $dataEntregaCad = isset($_POST['dataEntregaCad']) ? $_POST['dataEntregaCad'] : '';
         $valorCad = isset($_POST['valorCad']) ? $_POST['valorCad'] : '';
 
+        //Aqui eu formato o valor que eu recebo do input, já que eu preciso dele com o formato 00000.00 pra gravar no banco.
+        //Primeiro eu tiro todos os pontos.
+        $valorSemVirgula = str_replace('.', '', $valorCad);
+        //Depois mudo a virgulo por ponto, assim ficando no foramto 00000.00.
+        $valorReparoAltFormatado = str_replace(',', '.', $valorSemVirgula);
+
         //Aqui eu faço um Select na tabela de clientes, para pegar o telefone do cliente cadastrado no serviço.
         $sqlSelectCliente = "SELECT `celular_cliente` FROM `clientes` WHERE `id_cliente` = '$idClienteCad'";
         $stmt = $con->prepare($sqlSelectCliente);
@@ -50,7 +56,7 @@
         $stmt->bindParam(5, $statusCad);
         $stmt->bindParam(6, $dataRecebimentoCad);
         $stmt->bindParam(7, $dataEntregaCad);
-        $stmt->bindParam(8, $valorCad);
+        $stmt->bindParam(8, $valorReparoAltFormatado);
         $stmt->bindParam(9, $linkZapCad);
         $stmt->execute();
         
@@ -69,6 +75,12 @@
         $statusCadAlt = isset($_POST['statusCadAlt']) ? $_POST['statusCadAlt'] : '';
         $dataEntregaAlt = isset($_POST['dataEntregaAlt']) ? $_POST['dataEntregaAlt'] : '';
         $valorReparoAlt = isset($_POST['valorReparoAlt']) ? $_POST['valorReparoAlt'] : '';
+
+        //Aqui eu formato o valor que eu recebo do input, já que eu preciso dele com o formato 00000.00 pra gravar no banco.
+        //Primeiro eu tiro todos os pontos.
+        $valorSemVirgula = str_replace('.', '', $valorReparoAlt);
+        //Depois mudo a virgulo por ponto, assim ficando no foramto 00000.00.
+        $valorReparoAltFormatado = str_replace(',', '.', $valorSemVirgula);
 
         //Aqui eu dou um select pra pegar o id do cliente, já que no input eu sou obrigado a passar somente o nome dele. 
         $sqlSelectIdCliente = "SELECT `id_cliente` FROM `clientes` WHERE `nome_cliente` = '$nomeClienteAlt'";
@@ -100,7 +112,7 @@
         $stmt->bindParam(4, $descReparoAlt);
         $stmt->bindParam(5, $statusCadAlt);
         $stmt->bindParam(6, $dataEntregaAlt);
-        $stmt->bindParam(7, $valorReparoAlt);
+        $stmt->bindParam(7, $valorReparoAltFormatado);
         $stmt->bindParam(8, $linkZapCad);
         $stmt->execute();
         

@@ -1,6 +1,5 @@
    
-    //Aqui é onde ficam todos os comandos pra abrir os modais, manipular dados dentros dos modais.
-    $(document).ready(function () {
+        //Aqui é onde ficam todos os comandos pra abrir os modais, manipular dados dentros dos modais.
         //Aqui ficam as opçoes da tela de os.php
         $('.btnEdit').on('click', function(){
             $('#modalEditOs').modal('show');
@@ -87,5 +86,4 @@
         modalmodalCadastroClientes.addEventListener('shown.bs.modal', function () {            
             myInputnomeClienteCad.focus();
         });
-    });
     

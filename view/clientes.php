@@ -70,7 +70,7 @@
             </div>
         </header>
         <section style="margin-top: 20px;">
-            <div class="container" style="margin-bottom: 20px;">
+            <div class="container text-center"" style="margin-bottom: 20px;">
                 <input type="button" class="btn btn-info btnCadastro text-white" value="Cadastrar Clientes">
             </div>
             <div class="container text-start container-lista" >
@@ -121,7 +121,7 @@
                                 <div class="container">
                                     <div class="form-control">
                                         <label for="recipient-name" class="col-form-label">Nome:
-                                            <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" required autofocus>
+                                            <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" placeholder="Digite o nome do cliente" required autofocus>
                                         </label>
                                         <label for="recipient-name" class="col-form-label">CPF:
                                             <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="inputCPF" placeholder="000.000.000-00" required> <!--onkeyup="TestaCPF(this)"-->
@@ -161,7 +161,7 @@
                                 <div class="form-control">
                                     <input type="hidden" name="id_cliente" id="id_cliente">
                                     <label for="form-control" class="col-form-label">Nome:
-                                        <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" required autofocus>
+                                        <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" placeholder="Digite o nome do cliente" required autofocus>
                                     </label>
                                     <label for="form-control" class="col-form-label">CPF:
                                         <input type="text" name="cpfClienteAlt" class="inputCPF form-control" id="cpf_cliente" placeholder="000.000.000-00" required>

@@ -19,8 +19,11 @@
 	font-size: 1em;
 }
 
-body {
-	font-family: 'OpenSans';
+section {
+	font-family: OpenSans;
+	font-size: 12pt;
+	color: black;
+	
 }
 
 .hide{
