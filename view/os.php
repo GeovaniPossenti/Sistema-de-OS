@@ -77,7 +77,7 @@
         </header>
         <section style="margin-top: 20px;">
             <div class="container text-center" style="margin-bottom: 20px;">
-                <input type="button" class="btn btn-info text-white btnCadastro" value="Cadastrar Ordem de Serviços">
+                <input type="button" class="btn btn-info text-white btnCadastro" value="Cadastrar Ordem de Serviço">
             </div>
             <div class="container container-lista" >
                 <table id="table_os" class="display text-center">
