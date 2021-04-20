@@ -119,21 +119,31 @@
                         <form action="../control/controle_cliente.php?op=cad" method="POST">
                             <div class="modal-body">
                                 <div class="container">
-                                    <div class="form-control">
-                                        <label for="recipient-name" class="col-form-label">Nome:
-                                            <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" placeholder="Digite o nome do cliente" required autofocus>
-                                        </label>
-                                        <label for="recipient-name" class="col-form-label">CPF:
-                                            <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="inputCPF" placeholder="000.000.000-00" required> <!--onkeyup="TestaCPF(this)"-->
-                                        </label>
-
-                                        <label for="recipient-name" class="col-form-label">Celular:
-                                            <input type="text" name="CelularClienteCad" class="inputCelular form-control" placeholder="(00) 00000-0000" required>
-                                        </label>
-                                        <label for="recipient-name" class="col-form-label">Telefone:
-                                            <input type="text" name="TelefoneClienteCad" class="inputTelefone form-control" placeholder="(00) 0000-0000">
-                                        </label>                 
- 
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" placeholder="" required autofocus>
+                                                <label for="nomeClienteCad">Nome:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">                                      
+                                                <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="inputCPF" placeholder="" required> <!--onkeyup="TestaCPF(this)"-->
+                                                <label for="inputCPF">CPF:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">   
+                                            <div class="form-floating">                                        
+                                                <input type="text" name="CelularClienteCad" class="inputCelular form-control" id="inputCelular" placeholder="" required>
+                                                <label for="inputCelular">Celular:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">         
+                                            <div class="form-floating">                                      
+                                                <input type="text" name="TelefoneClienteCad" class="inputTelefone form-control" id="inputTelefone" placeholder="">
+                                                <label for="inputTelefone">Telefone:</label> 
+                                            </div>
+                                        </div>         
                                     </div>
                                 </div>
                             </div>                                       
