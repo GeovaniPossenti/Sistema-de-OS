@@ -25,3 +25,42 @@ section {
 	color: black;
 	
 }
+
+.modalfade {
+    animation: fadeIn 0.4s;
+    -moz-animation: fadeIn 0.4s; /* Firefox */
+    -webkit-animation: fadeIn 0.4s; /* Safari and Chrome */
+    -o-animation: fadeIn 0.4s; /* Opera */
+}
+@keyframes fadeIn {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadeIn { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadeIn { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadeIn { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}

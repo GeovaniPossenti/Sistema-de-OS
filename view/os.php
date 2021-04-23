@@ -82,8 +82,11 @@
     <body>
         <header class="p-3 bg-dark text-white">
             <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">                        
+                    <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <img src="../tools/img/computador-pessoal.png" alt="" width="40px" height="40px">
+                    </a>
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 20px;">
                         <li><a href="os.php" class="nav-link px-2 text-white">Ordens de Serviço</a></li>
                         <li><a href="clientes.php" class="nav-link px-2 text-secondary">Lista de Clientes</a></li>
                         <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
@@ -96,7 +99,7 @@
         </header>
         <section style="margin-top: 20px;">
             <div class="container text-center" style="margin-bottom: 20px;">
-                <button type="button" class="btn btn-info text-white btnCadastro" value="" title="Cadastro de OS">Cadastrar Ordem de Serviço</button>
+                <button type="button" class="btn btn-info text-white btnCadastro" value="" title="Cadastro de OS"><i class="bi bi-file-earmark-plus"></i> Cadastrar Ordem de Serviço</button>
             </div>
             <div class="container container-lista" >
                 <table id="table_os" class="display text-center">
@@ -182,7 +185,7 @@
             </div>
 
             <!--Modal de cadastro de OS--> 
-            <div class="modal fade" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade modalfade" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -236,8 +239,16 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar">Cancelar</button>
-                                <button type="submit" class="btn btn-primary" title="Salvar">Salvar</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>Cancelar
+                                </button>
+                                <button type="submit" class="btn btn-primary" title="Salvar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                                        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                    </svg>Salvar
+                                </button>
                             </div>
                         </form>
                         <!--------------------------->
@@ -247,7 +258,7 @@
             <!-----------------------------------------------> 
 
             <!--Modal de edição de OS--> 
-            <div class="modal fade" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade modalfade" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -301,8 +312,16 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar">Cancelar</button>
-                                <button type="submit" class="btn btn-primary" title="Salvar">Salvar alterações</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>Cancelar
+                                </button>
+                                <button type="submit" class="btn btn-primary" title="Salvar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                                        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                    </svg>Salvar alterações
+                                </button>
                             </div>
                         </form>
                         <!--------------------------->
@@ -312,7 +331,7 @@
             <!----------------------------------------------->  
 
             <!--Modal de detalhes de OS--> 
-            <div class="modal fade" id="modalDetailsOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade modalfade" id="modalDetailsOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
