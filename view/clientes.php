@@ -144,7 +144,7 @@
                         <form action="../control/controle_cliente.php?op=cad" method="POST">
                             <div class="modal-body">
                                 <div class="container">
-                                    <div class="row g-3">
+                                    <div class="row g-3 gy-3">
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" placeholder="" required autofocus>
@@ -153,8 +153,11 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">                                      
-                                                <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="inputCPF" placeholder="" required> <!--onkeyup="TestaCPF(this)"-->
+                                                <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="inputCPF" onkeyup="TestaCPF(this)" onfocus="TestaCPF(this)" required> <!--onkeyup="TestaCPF(this)"-->
                                                 <label for="inputCPF">CPF:</label>
+                                                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                                    CPF Inválido!
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">   
@@ -201,20 +204,36 @@
                     <form action="../control/controle_cliente.php?op=alt" method="POST">
                         <div class="modal-body">
                             <div class="container">
-                                <div class="form-control">
-                                    <input type="hidden" name="id_cliente" id="id_cliente">
-                                    <label for="form-control" class="col-form-label">Nome:
-                                        <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" placeholder="Digite o nome do cliente" required autofocus>
-                                    </label>
-                                    <label for="form-control" class="col-form-label">CPF:
-                                        <input type="text" name="cpfClienteAlt" class="inputCPF form-control" id="cpf_cliente" placeholder="000.000.000-00" required>
-                                    </label>
-                                    <label for="form-control" class="col-form-label">Celular:
-                                        <input type="text" name="celularClienteAlt" class="inputCelular form-control" id="celular_cliente" placeholder="(00) 00000-0000" required>
-                                    </label>
-                                    <label for="form-control" class="col-form-label">Telefone:
-                                        <input type="text" name="telefoneClienteAlt" class="inputTelefone form-control" id="telefone_cliente" placeholder="(00) 0000-0000">
-                                    </label>
+                                <div class="row g-3 gy-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="hidden" name="id_cliente" id="id_cliente">
+                                            <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" placeholder="" required autofocus>
+                                            <label for="nomeClienteCad">Nome:</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">                                      
+                                            <input type="text" name="cpfClienteAlt" class="inputCPF form-control" id="cpf_cliente" onkeyup="TestaCPF2(this)" onfocus="TestaCPF2(this)" required> <!--onkeyup="TestaCPF(this)"-->
+                                            <label for="inputCPF">CPF:</label>                                        
+                                            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                                CPF Inválido!
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">   
+                                        <div class="form-floating">                                        
+                                            <input type="text" name="celularClienteAlt" class="inputCelular form-control" id="celular_cliente" placeholder="" required>
+                                            <label for="inputCelular">Celular:</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">         
+                                        <div class="form-floating">                                      
+                                            <input type="text" name="telefoneClienteAlt" class="inputTelefone form-control" id="telefone_cliente" placeholder="">
+                                            <label for="inputTelefone">Telefone:</label> 
+                                        </div>
+                                    </div>         
                                 </div>
                             </div>
                         </div>
@@ -224,7 +243,7 @@
                                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>Cancelar
                             </button>
-                            <button type="submit" class="btn btn-primary" title="Salvar">
+                            <button type="submit" class="btn btn-primary" title="Salvar" id="btnEditarClientes">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
                                     <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
                                 </svg>Salvar alterações
