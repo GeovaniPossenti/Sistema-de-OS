@@ -41,6 +41,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+        <!--Bootstrap icons.-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
         <!--JQuery.-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
@@ -64,20 +66,20 @@
         <header class="p-3 bg-dark text-white">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="os.php" class="nav-link px-2 text-white">OS Pendentes</a></li>
-                    <li><a href="clientes.php" class="nav-link px-2 text-white">Lista de Clientes</a></li>
-                    <li><a href="#" class="nav-link px-2 text-secondary">OS Finalizadas</a></li>
-                </ul>
-                <div class="text-end">
-                    <a href="../control/logout.php"><button type="button" class="btn btn-danger">Sair</button></a>
-                </div>
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="os.php" class="nav-link px-2 text-white">Ordens de Serviço</a></li>
+                        <li><a href="clientes.php" class="nav-link px-2 text-secondary">Lista de Clientes</a></li>
+                        <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
+                    </ul>
+                    <div class="text-end">
+                        <a href="../control/logout.php"><button type="button" class="btn btn-danger" title="Logout">Sair</button></a>
+                    </div>
                 </div>
             </div>
         </header>
         <section style="margin-top: 20px;">
             <div class="container text-center" style="margin-bottom: 20px;">
-                <input type="button" class="btn btn-info text-white btnCadastro" value="Cadastrar Ordem de Serviço">
+                <button type="button" class="btn btn-info text-white btnCadastro" value="" title="Cadastro de OS">Cadastrar Ordem de Serviço</button>
             </div>
             <div class="container container-lista" >
                 <table id="table_os" class="display text-center">
@@ -97,6 +99,7 @@
                             <th class="">Valor do Reparo R$</th>
                             <th class="hide">link_webZap</th>
                             <th>Funções</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -138,12 +141,23 @@
                             <td class="text-center">
                                 <!--Formulario para deletar uma linha no na tabela de os_pendente. -->
                                 <form action="../control/controle_os.php?op=del" method="POST">
-                                    <input type="button" class="btn btn-outline-primary btnEdit" value="Alterar" onclick="">
+                                    <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
                                     <input type="hidden" name="id_os_pendente" value="<?php echo $row['id_os_pendente']; ?>">
-                                    <input type="submit" class="btn btn-outline-danger" value="Deletar">                          
+                                    <button type="submit" class="btn btn-outline-danger" value="Deletar" title="Deletar">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
                                 </form>
                                 <!------------------------------------------------------------------->
-                            </td>
+                            </td>                                    
+                            <td class="text-center">
+                                <?php if($row['status'] == 'Entregue'){ ?>           
+                                    <a href="relatorio.php?id=<?php echo $row['id_os_pendente']; ?>"><button type="button" class="btn btn-outline-info" title="Gerar Relatório">
+                                        <i class="bi bi-file-earmark-text"></i>
+                                    </button></a>
+                                <?php } ?>
+                            </td>   
                         </tr>
                         <?php } ?>
                     </tbody>
@@ -205,8 +219,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" title="Salvar">Salvar</button>
                             </div>
                         </form>
                         <!--------------------------->
@@ -270,8 +284,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" title="Salvar">Salvar alterações</button>
                             </div>
                         </form>
                         <!--------------------------->
@@ -290,10 +304,15 @@
                         </div>
                         <div class="modal-body form-control">
                             <dl class="dl-horizontal form-control">
-								<dt >Descrição do defeito:</dt><textarea class="form-control" id="descricao_defeitoDet" rows="4" cols="64" placeholder="Não há dados" readonly></textarea>                        
-                                <dt style="margin-top: 20px;">Descrição do reparo:</dt><textarea class="form-control" id="descricao_reparoDet" rows="4" cols="64" placeholder="Não há dados" readonly></textarea>  
+								<dt >Descrição do defeito:</dt><textarea class="form-control" id="descricao_defeitoDet" rows="4" cols="64" placeholder="Não há dados..." readonly></textarea>                        
+                                <dt style="margin-top: 20px;">Descrição do reparo:</dt><textarea class="form-control" id="descricao_reparoDet" rows="4" cols="64" placeholder="Não há dados..." readonly></textarea>  
                                 <dt style="margin-top: 20px;">Data de entrega ao cliente: </dt><input type="date" class="form-control" name="" id="data_entrega_clienteDet" readonly>
-                                <dt style="margin-top: 20px;">Link para mandar mensagem para o cliente: <input type="button" class="form-control" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);"></dt>
+                                <dt style="margin-top: 20px;">Contatar cliente via: 
+                                    <button type="button" class="btn btn-outline-success" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);" title="Whatsapp">
+                                        <i class="bi bi-whatsapp"></i> 
+                                        Whatsapp   
+                                    </button>
+                                </dt>
 							</dl>
                         </div>
                     </div>
