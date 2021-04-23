@@ -51,7 +51,23 @@
             $(document).ready( function () {
                 $('#table_clientes').DataTable({
                     "lengthMenu": [25, 50, 75, 100],
-                    
+                    "language": {
+                        "lengthMenu": "Exibir _MENU_ linhas por página",
+                        "zeroRecords": "Nada encontrado!",
+                        "info": "Mostrando página _PAGE_ de _PAGES_",
+                        "infoEmpty": "Nenhum registro disponível",
+                        "infoFiltered": "(filtrado de _MAX_ registros totais)",
+                        "emptyTable": "Sem dados disponíveis na tabela!",
+                        "loadingRecords": "Carregando...",
+                        "processing": "Em processamento...",
+                        "search": "Procurar:",
+                        "paginate": {
+                            "first": "Primeiro",
+                            "last": "Último",
+                            "next": "Próximo",
+                            "previous": "Anterior"
+                        },
+                    },
                 });
             } );
         </script>
@@ -203,7 +219,7 @@
 
         </section>
 
-        <!--<footer class="bd-footer bg-dark p-3 p-md-5 mt-5 bg-light text-center text-sm-start">
+        <footer class="bd-footer bg-dark p-3 p-md-3 mt-5 bg-light text-center text-sm-start">
             <div class="container">
                 <ul class="bd-footer-links ps-0 mb-3">
                     <li class="d-inline-block"><a href="https://github.com/twbs"></a></li>
@@ -214,7 +230,7 @@
                 <p class="mb-0"><a href="/docs/5.0/about/team/"></a><a href="https://github.com/twbs/bootstrap/graphs/contributors"></a></p>
                 <p class="mb-0"><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener"></a><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"></a></p>
             </div>
-        </footer> -->
+        </footer>
 
         <!-- Aqui ficam os triggers para abrir os modais, e também 
         os comandos pra pegar os values da tabela dinamica e coloca-los em ids .-->
