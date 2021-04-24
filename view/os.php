@@ -189,52 +189,68 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Cadastrar Novas Ordens de Serviços</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Cadastrar ordens de serviços</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <!-- Formulario de cadastro de OS. -->
                         <form action="../control/controle_os.php?op=cad" method="POST">
                             <div class="modal-body">
-                                <div class="form-control">                   
-                                    <div class="form-group">                           
-                                        <label for="recipient-name" class="col-form-label">Cliente:
-                                            <select name="idClienteCad" class="form-control" id="NomeClienteModalCad" required>
-                                                <option value="" selected>Selecione um Cliente</option>
-                                                <?php foreach($arrayClientes as $rowCliente){ ?>
-                                                    <option value="<?php echo $rowCliente['id_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </label>
-                                        <label for="" class="col-form-label">Nome do Equipamento:
-                                            <input type="text" name="nomeEquipamentoCad" class="form-control" placeholder="">
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-form-label">Descrição do Defeito:
-                                            <textarea class="form-control" name="descDefeitoCad" placeholder="Digite a descrição do defeito" rows="4" cols="64" maxlength="1000"></textarea>
-                                        </label>
-                                        <label for="" class="col-form-label">Descrição do Reparo:
-                                            <textarea class="form-control" name="descReparoCad" placeholder="Digite a descrição do reparo" rows="4" cols="64" maxlength="1000"></textarea>
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-form-label">Processo:
-                                            <select name="statusCad" class="form-control" name="" id="" required>
-                                                <option value="Orçamento" style="color: #DAA520">Orçamento</option>
-                                                <option value="Aguardando" style="color: #DC143C">Aguardando</option>
-                                                <option value="Processando" style="color: #A020F0">Processando</option>
-                                                <option value="Finalizado" style="color: #4169E1">Finalizado</option>
-                                                <option value="Entregue" style="color: #008000">Entregue</option>
-                                            </select>
-                                        </label>
-                                        <label for="" class="col-form-label">Data de Entrega ao Cliente:
-                                            <input type="date" name="dataEntregaCad" class="form-control">
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-form-label">Valor a cobrar:
-                                            <input type="text" name="valorCad" class="inputDinheiro form-control" placeholder="Digite um valor">
-                                        </label>
+                                <div class="container">                   
+                                    <div class="row g-3 gy-3">  
+                                        <div class="col-md-6">         
+                                            <div class="form-floating">
+                                                <select name="idClienteCad" class="form-select" id="NomeClienteModalCad" required>
+                                                    <option value="" selected>Selecione</option>
+                                                    <?php foreach($arrayClientes as $rowCliente){ ?>
+                                                        <option value="<?php echo $rowCliente['id_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                                <label for="" class="">Selecione um Cliente:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6"> 
+                                            <div class="form-floating">
+                                                <input type="text" name="nomeEquipamentoCad" class="form-control">
+                                                <label for="">Nome do Equipamento:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12"> 
+                                            <div class="form-floating">
+                                                <textarea class="form-control" name="descDefeitoCad" style="height: 150px" maxlength="1000"></textarea> 
+                                                <label for="">Descrição do Defeito:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12"> 
+                                            <div class="form-floating">
+                                                <textarea class="form-control" name="descReparoCad" style="height: 150px" maxlength="1000"></textarea> 
+                                                <label for="">Descrição do Reparo:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5"> 
+                                            <div class="form-floating">
+                                                <select name="statusCad" class="form-select" name="" id="" required>
+                                                    <option value="Orçamento" style="color: #DAA520">Orçamento</option>
+                                                    <option value="Aguardando" style="color: #DC143C">Aguardando</option>
+                                                    <option value="Processando" style="color: #A020F0">Processando</option>
+                                                    <option value="Finalizado" style="color: #4169E1">Finalizado</option>
+                                                    <option value="Entregue" style="color: #008000">Entregue</option>
+                                                </select>
+                                                <label for="">Processo:</label>
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-7"> 
+                                            <div class="form-floating">
+                                                <input type="date" name="dataEntregaCad" class="form-control">
+                                                <label for="">Data de Entrega ao Cliente:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 input-group"> 
+                                            <span class="input-group-text" id="basic-addon1">R$</span>
+                                            <div class="form-floating">
+                                                <input type="text" name="valorCad" class="inputDinheiro form-control">
+                                                <label for="">Valor do serviço:</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -262,52 +278,68 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Alterar as Ordens de Serviços</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Modificar ordens de serviços</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <!-- Formulario de alteração de OS. -->
                         <form action="../control/controle_os.php?op=alt" method="POST">
                             <div class="modal-body">
-                                <div class="form-control">
-                                    <input type="hidden" name="idOsPendenteAlt" id="id_os_pendente" required>
-                                    <div class="form-group">                           
-                                        <label for="recipient-name" class="col-form-label">Cliente:
-                                            <select name="nomeClienteAlt" class="form-control" id="nome_cliente" required>
-                                                <?php foreach($arrayClientes as $rowCliente){ ?>
-                                                    <option value="<?php echo $rowCliente['nome_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </label>
-                                        <label for="" class="col-form-label">Nome do Equipamento:
-                                            <input type="text" name="nomeEquipamentoAlt" class="form-control" id="nome_equipamento" autofocus>
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-form-label">Descrição do Defeito:
-                                            <textarea class="form-control" name="descDefeitoAlt" id="descricao_defeito" placeholder="Digite a descrição do defeito" rows="4" cols="64" maxlength="1000"></textarea>
-                                        </label>
-                                        <label for="" class="col-form-label">Descrição do Reparo:
-                                            <textarea class="form-control" name="descReparoAlt" id="descricao_reparo" placeholder="Digite a descrição do reparo" rows="4" cols="64" maxlength="1000"></textarea>
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-form-label">Processo:
-                                            <select name="statusCadAlt" class="form-control" id="status" required>
-                                            <option value="Orçamento" style="color: #DAA520">Orçamento</option>
-                                                <option value="Aguardando" style="color: #DC143C">Aguardando</option>
-                                                <option value="Processando" style="color: #A020F0">Processando</option>
-                                                <option value="Finalizado" style="color: #4169E1">Finalizado</option>
-                                                <option value="Entregue" style="color: #008000">Entregue</option>
-                                            </select>
-                                        </label>
-                                        <label for="" class="col-form-label">Data de Entrega ao Cliente:
-                                            <input type="date" name="dataEntregaAlt" id="data_entrega_cliente" class="form-control">
-                                        </label>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-form-label">Valor a cobrar:
-                                            <input type="text" name="valorReparoAlt"  id="valor_reparo" class="inputDinheiro form-control" placeholder="Digite um valor">
-                                        </label>
+                                <div class="container">
+                                    <div class="row g-3 gy-3">  
+                                        <div class="col-md-6">
+                                            <input type="hidden" name="idOsPendenteAlt" id="id_os_pendente" required>         
+                                            <div class="form-floating">
+                                                <select name="nomeClienteAlt" class="form-select" id="nome_cliente" required>
+                                                    <?php foreach($arrayClientes as $rowCliente){ ?>
+                                                        <option value="<?php echo $rowCliente['nome_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                                <label for="">Selecione um Cliente:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" name="nomeEquipamentoAlt" class="form-control" id="nome_equipamento" autofocus>
+                                                <label for="">Nome do Equipamento:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" name="descDefeitoAlt" id="descricao_defeito" style="height: 150px" maxlength="1000"></textarea>
+                                                <label for="">Descrição do Defeito:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" name="descReparoAlt" id="descricao_reparo" style="height: 150px" maxlength="1000"></textarea>
+                                                <label for="">Descrição do Reparo:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-floating">
+                                                <select name="statusCadAlt" class="form-select" id="status" required>
+                                                    <option value="Orçamento" style="color: #DAA520">Orçamento</option>
+                                                    <option value="Aguardando" style="color: #DC143C">Aguardando</option>
+                                                    <option value="Processando" style="color: #A020F0">Processando</option>
+                                                    <option value="Finalizado" style="color: #4169E1">Finalizado</option>
+                                                    <option value="Entregue" style="color: #008000">Entregue</option>
+                                                </select>
+                                                <label for="">Processo:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="form-floating">
+                                                <input type="date" name="dataEntregaAlt" id="data_entrega_cliente" class="form-control">
+                                                <label for="" class="col-form-label">Data de Entrega ao Cliente:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 input-group"> 
+                                            <span class="input-group-text" id="basic-addon1">R$</span>
+                                            <div class="form-floating">
+                                                <input type="text" name="valorReparoAlt"  id="valor_reparo" class="inputDinheiro form-control" placeholder="Digite um valor">
+                                                <label for="">Valor a cobrar:</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -335,21 +367,32 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Detalhes das Ordens de Serviços</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Detalhes sobre a ordem de serviço</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body form-control">
-                            <dl class="dl-horizontal form-control">
-								<dt >Descrição do defeito:</dt><textarea class="form-control" id="descricao_defeitoDet" rows="6" cols="64" placeholder="Não há dados..." readonly></textarea>                        
-                                <dt style="margin-top: 20px;">Descrição do reparo:</dt><textarea class="form-control" id="descricao_reparoDet" rows="6" cols="64" placeholder="Não há dados..." readonly></textarea>  
-                                <dt style="margin-top: 20px;">Data de entrega ao cliente: </dt><input type="date" class="form-control" name="" id="data_entrega_clienteDet" readonly>
-                                <dt style="margin-top: 20px;">Contatar cliente via: 
-                                    <button type="button" class="btn btn-outline-success" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);" title="Whatsapp">
-                                        <i class="bi bi-whatsapp"></i> 
-                                        Whatsapp   
-                                    </button>
-                                </dt>
-							</dl>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row g-3 gy-3">  
+                                    <div class="col-md-12">
+                                        <label for="">Descrição do defeito:</label>
+                                        <textarea class="form-control" id="descricao_defeitoDet" rows="6" cols="64" placeholder="Não há dados..." readonly></textarea>        
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="">Descrição do reparo:</label>
+                                        <textarea class="form-control" id="descricao_reparoDet" rows="6" cols="64" placeholder="Não há dados..." readonly></textarea>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">Data de entrega ao cliente:</label>
+                                        <input type="date" class="form-control" name="" id="data_entrega_clienteDet" readonly>
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <label for="">Contatar cliente via:</label>
+                                        <button type="button" class="btn btn-outline-success" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);" title="Whatsapp">
+                                            <i class="bi bi-whatsapp"></i> Whatsapp 
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

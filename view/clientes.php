@@ -138,7 +138,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Cadastro de Clientes</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Cadastrar clientes</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form action="../control/controle_cliente.php?op=cad" method="POST">
@@ -198,7 +198,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modificar Cliente</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Modificar dados de clientes</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form action="../control/controle_cliente.php?op=alt" method="POST">
