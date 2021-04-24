@@ -211,10 +211,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="" class="col-form-label">Descrição do Defeito:
-                                            <textarea class="form-control" name="descDefeitoCad" placeholder="Digite a descrição do defeito" rows="4" cols="64"></textarea>
+                                            <textarea class="form-control" name="descDefeitoCad" placeholder="Digite a descrição do defeito" rows="4" cols="64" maxlength="1000"></textarea>
                                         </label>
                                         <label for="" class="col-form-label">Descrição do Reparo:
-                                            <textarea class="form-control" name="descReparoCad" placeholder="Digite a descrição do reparo" rows="4" cols="64"></textarea>
+                                            <textarea class="form-control" name="descReparoCad" placeholder="Digite a descrição do reparo" rows="4" cols="64" maxlength="1000"></textarea>
                                         </label>
                                     </div>
                                     <div class="form-group">
@@ -284,10 +284,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="" class="col-form-label">Descrição do Defeito:
-                                            <textarea class="form-control" name="descDefeitoAlt" id="descricao_defeito" placeholder="Digite a descrição do defeito" rows="4" cols="64"></textarea>
+                                            <textarea class="form-control" name="descDefeitoAlt" id="descricao_defeito" placeholder="Digite a descrição do defeito" rows="4" cols="64" maxlength="1000"></textarea>
                                         </label>
                                         <label for="" class="col-form-label">Descrição do Reparo:
-                                            <textarea class="form-control" name="descReparoAlt" id="descricao_reparo" placeholder="Digite a descrição do reparo" rows="4" cols="64"></textarea>
+                                            <textarea class="form-control" name="descReparoAlt" id="descricao_reparo" placeholder="Digite a descrição do reparo" rows="4" cols="64" maxlength="1000"></textarea>
                                         </label>
                                     </div>
                                     <div class="form-group">
