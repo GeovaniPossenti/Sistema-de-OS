@@ -193,7 +193,7 @@
             </div>
             <!----------------------------------------------->  
 
-            <!--Modal de edição de CLientes--> 
+            <!--Modal de edição de Clientes--> 
             <div class="modal fade modalfade" id="modalEditClientes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -256,18 +256,18 @@
 
         </section>
 
-        <footer class="bd-footer bg-dark p-3 p-md-3 mt-5 bg-light text-center text-sm-start">
+        <!--<footer class="bd-footer bg-dark p-3 p-md-3 mt-5 bg-light text-center text-sm-start">
             <div class="container">
-                <!--<ul class="bd-footer-links ps-0 mb-3">
+                <ul class="bd-footer-links ps-0 mb-3">
                     <li class="d-inline-block"><a href="https://github.com/twbs"></a></li>
                     <li class="d-inline-block ms-3"><a href="https://twitter.com/getbootstrap"></a></li>
                     <li class="d-inline-block ms-3"><a href="/docs/5.0/examples/"></a></li>
                     <li class="d-inline-block ms-3"><a href="/docs/5.0/about/overview/"></a></li>
                 </ul>
                 <p class="mb-0"><a href="/docs/5.0/about/team/"></a><a href="https://github.com/twbs/bootstrap/graphs/contributors"></a></p>
-                <p class="mb-0"><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener"></a><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"></a></p>-->
+                <p class="mb-0"><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener"></a><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"></a></p>
             </div>
-        </footer>
+        </footer>-->
 
         <!-- Aqui ficam os triggers para abrir os modais, e também 
         os comandos pra pegar os values da tabela dinamica e coloca-los em ids .-->

@@ -86,6 +86,7 @@
         modalModalEditClientes.addEventListener('hidden.bs.modal', function (event) {
             document.getElementById("cpf_cliente").classList.remove("is-invalid");
             document.getElementById("cpf_cliente").classList.remove("is-valid");
+            document.getElementById("btnSalvarCadastroClientes").disabled = false;
         });
 
         //Aqui eu seto em vars o modal/botão de open.
@@ -101,6 +102,7 @@
         modalmodalCadastroClientes.addEventListener('hidden.bs.modal', function (event) {
             document.getElementById("inputCPF").classList.remove("is-invalid");
             document.getElementById("inputCPF").classList.remove("is-valid");
+            document.getElementById("btnSalvarCadastroClientes").disabled = false;
         });
         
         

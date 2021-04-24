@@ -146,17 +146,17 @@
                             }                        
                         ?>
                         <tr>  
-                            <td class="btnDetailsOs"><?php echo $row['id_os_pendente']; ?></td>
+                            <td class="btnDetailsOs" title="Ver detalhes"><?php echo $row['id_os_pendente']; ?></td>
                             <!--Aqui eu mostro o nome do cliente ao inves do id, usando um inner join no topo da página-->
-                            <td class="btnDetailsOs"><?php echo $row['nome_cliente']; ?></td>
+                            <td class="btnDetailsOs" title="Ver detalhes"><?php echo $row['nome_cliente']; ?></td>
                             <!--------------------------------------------------------->
-                            <td class="btnDetailsOs"><?php echo $row['nome_equipamento']; ?></td>
+                            <td class="btnDetailsOs" title="Ver detalhes"><?php echo $row['nome_equipamento']; ?></td>
                             <td class="btnDetailsOs hide"><?php echo $row['descricao_defeito']; ?></td>
                             <td class="btnDetailsOs hide"><?php echo $row['descricao_reparo']; ?></td>
-                            <td class="btnDetailsOs" style="color: <?php echo $color; ?>"><?php echo $row['status']; ?></td>
-                            <td class="btnDetailsOs"><?php echo inverteData($row['data_recebimento']); ?></td>
+                            <td class="btnDetailsOs" style="color: <?php echo $color; ?>" title="Ver detalhes"><?php echo $row['status']; ?></td>
+                            <td class="btnDetailsOs" title="Ver detalhes"><?php echo inverteData($row['data_recebimento']); ?></td>
                             <td class="btnDetailsOs hide"><?php echo $row['data_entrega_cliente']; ?></td>
-                            <td class="btnDetailsOs"><?php echo str_replace('.', ',', $row['valor_reparo']); ?></td>
+                            <td class="btnDetailsOs" title="Ver detalhes"><?php echo str_replace('.', ',', $row['valor_reparo']); ?></td>
                             <td class="btnDetailsOs hide"><?php echo $row['link_webZap']; ?></td>
                             <td class="text-center">
                                 <!--Formulario para deletar uma linha no na tabela de os_pendente. -->
@@ -358,7 +358,7 @@
 
         </section>
 
-        <footer class="bd-footer bg-dark p-3 p-md-3 mt-5 bg-light text-center text-sm-start">
+        <!-- <footer class="bd-footer fixed-bottom bg-dark p-3 p-md-3 mt-5">
             <div class="container">
                 <ul class="bd-footer-links ps-0 mb-3">
                     <li class="d-inline-block"><a href="https://github.com/twbs"></a></li>
@@ -369,7 +369,7 @@
                 <p class="mb-0"><a href="/docs/5.0/about/team/"></a><a href="https://github.com/twbs/bootstrap/graphs/contributors"></a></p>
                 <p class="mb-0"><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener"></a><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"></a></p>
             </div>
-        </footer>
+        </footer> -->
         
         <!-- Aqui ficam os triggers para abrir os modais, e também 
         os comandos pra pegar os values da tabela dinamica e coloca-los em ids .-->
