@@ -92,7 +92,12 @@
         </header>
         <section style="margin-top: 20px;">
             <div class="container text-center"" style="margin-bottom: 20px;">
-                <button type="button" class="btn btn-info btnCadastro text-white" value="" title="Cadastro de Clientes"><i class="bi bi-person-plus"></i> Cadastrar Clientes</button>
+                <button type="button" class="btn btn-info btnCadastro text-white" value="" title="Cadastro de Clientes">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                    </svg> Cadastrar Clientes
+                </button>
             </div>
             <div class="container text-start container-lista" >
                 <table id="table_clientes" class="display text-center">
@@ -118,11 +123,11 @@
                                 <!--Formulario para deletar um cliente do banco. -->
                                 <form action="../control/controle_cliente.php?op=del" method="POST">
                                     <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
-                                        <i class="bi bi-pencil"></i>
+                                        <i class="bi bi-pencil-fill"></i>
                                     </button>
                                     <input type="hidden" name="id_cliente" value="<?php echo $row['id_cliente']; ?>">
                                     <button type="submit" class="btn btn-outline-danger" value="Deletar" title="Deletar">
-                                        <i class="bi bi-trash"></i>
+                                        <i class="bi bi-trash-fill"></i>
                                     </button>                          
                                 </form>
                                 <!------------------------------------------------->

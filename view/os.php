@@ -99,7 +99,11 @@
         </header>
         <section style="margin-top: 20px;">
             <div class="container text-center" style="margin-bottom: 20px;">
-                <button type="button" class="btn btn-info text-white btnCadastro" value="" title="Cadastro de OS"><i class="bi bi-file-earmark-plus"></i> Cadastrar Ordem de Serviço</button>
+                <button type="button" class="btn btn-info text-white btnCadastro" value="" title="Cadastro de OS">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
+                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"/>
+                    </svg> Cadastrar Ordem de Serviço
+                </button>
             </div>
             <div class="container container-lista" >
                 <table id="table_os" class="display text-center">
@@ -162,11 +166,11 @@
                                 <!--Formulario para deletar uma linha no na tabela de os_pendente. -->
                                 <form action="../control/controle_os.php?op=del" method="POST">
                                     <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
-                                        <i class="bi bi-pencil"></i>
+                                        <i class="bi bi-pencil-fill"></i>
                                     </button>
                                     <input type="hidden" name="id_os_pendente" value="<?php echo $row['id_os_pendente']; ?>">
                                     <button type="submit" class="btn btn-outline-danger" value="Deletar" title="Deletar">
-                                        <i class="bi bi-trash"></i>
+                                        <i class="bi bi-trash-fill"></i>
                                     </button>
                                 </form>
                                 <!------------------------------------------------------------------->
@@ -174,7 +178,7 @@
                             <td class="text-center">
                                 <?php if($row['status'] == 'Entregue'){ ?>           
                                     <a href="relatorio.php?id=<?php echo $row['id_os_pendente']; ?>"><button type="button" class="btn btn-outline-info" title="Gerar Relatório">
-                                        <i class="bi bi-file-earmark-text"></i>
+                                        <i class="bi bi-file-earmark-text-fill"></i>
                                     </button></a>
                                 <?php } ?>
                             </td>   
@@ -398,7 +402,7 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Fechar">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                </svg>Cancelar
+                                </svg>Fechar
                             </button>
                         </div>
                     </div>
