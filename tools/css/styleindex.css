@@ -30,6 +30,8 @@
   font-family: OpenSansLight;
 	font-size: 12pt;
 	color: black;
+
+  box-shadow: 0 0 4em black;
 }
 .box_form h1{
   color: white;

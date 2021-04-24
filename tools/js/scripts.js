@@ -7,6 +7,14 @@
     $('.inputTelefone').mask('(00) 0000-0000');
     $('.inputCPF').mask('000.000.000-00');
 
+    function limparCPF(){
+        cpfinput = document.getElementById("inputCPF").value;
+        if(cpfinput == ''){
+            document.getElementById("inputCPF").classList.remove("is-invalid");
+            document.getElementById("inputCPF").classList.remove("is-valid");
+        }
+    }
+
     //Função pra validar CPF.
     function TestaCPF(elemento) {
         cpfinput = elemento.value;
@@ -65,7 +73,15 @@
         
     }
 
-        //Função pra validar CPF.
+    function limparCPF2(){
+        cpfinput = document.getElementById("cpf_cliente").value;
+        if(cpfinput == ''){
+            document.getElementById("cpf_cliente").classList.remove("is-invalid");
+            document.getElementById("cpf_cliente").classList.remove("is-valid");
+        }
+    }
+
+    //Função pra validar CPF.
     function TestaCPF2(elemento) {
         cpfinput = elemento.value;
         cpf = cpfinput.replace(/[^\d]+/g, '');

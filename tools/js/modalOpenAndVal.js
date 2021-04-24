@@ -73,17 +73,34 @@
             
         //Aqui eu arrumo o autofocus dos modais da tela de clientes.php
         //Por algum motivo que eu desconheço, eu não posso deixar eles no mesmo arquivo. ????
+        //Aqui eu seto em vars o modal/botão de open.
         var modalModalEditClientes = document.getElementById('modalEditClientes');
         var myInputNome_cliente = document.getElementById('nome_cliente');
         
+        //Aqui eu coloco o focus no input que eu quero.
         modalModalEditClientes.addEventListener('shown.bs.modal', function () {            
             myInputNome_cliente.focus();
         });
 
+        //Aqui eu reseto a validação do CPF quando eu fecho o modal, assim toda vez que ele abrir um novo modal, ele não carrega a informação passada.
+        modalModalEditClientes.addEventListener('hidden.bs.modal', function (event) {
+            document.getElementById("cpf_cliente").classList.remove("is-invalid");
+            document.getElementById("cpf_cliente").classList.remove("is-valid");
+        });
+
+        //Aqui eu seto em vars o modal/botão de open.
         var modalmodalCadastroClientes = document.getElementById('modalCadastroClientes');
         var myInputnomeClienteCad = document.getElementById('nomeClienteCad');
         
+        //Aqui eu coloco o focus no input que eu quero.
         modalmodalCadastroClientes.addEventListener('shown.bs.modal', function () {            
             myInputnomeClienteCad.focus();
         });
+
+        //Aqui eu reseto a validação do CPF quando eu fecho o modal, assim toda vez que ele abrir um novo modal, ele não carrega a informação passada.
+        modalmodalCadastroClientes.addEventListener('hidden.bs.modal', function (event) {
+            document.getElementById("inputCPF").classList.remove("is-invalid");
+            document.getElementById("inputCPF").classList.remove("is-valid");
+        });
+        
         

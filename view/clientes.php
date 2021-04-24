@@ -153,7 +153,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">                                      
-                                                <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="inputCPF" onkeyup="TestaCPF(this)" onfocus="TestaCPF(this)" required> <!--onkeyup="TestaCPF(this)"-->
+                                                <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="inputCPF" onkeyup="TestaCPF(this)" onfocus="TestaCPF(this)" onblur="limparCPF()" required> <!--onkeyup="TestaCPF(this)"-->
                                                 <label for="inputCPF">CPF:</label>
                                                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                                     CPF Inválido!
@@ -214,13 +214,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">                                      
-                                            <input type="text" name="cpfClienteAlt" class="inputCPF form-control" id="cpf_cliente" onkeyup="TestaCPF2(this)" onfocus="TestaCPF2(this)" required> <!--onkeyup="TestaCPF(this)"-->
+                                            <input type="text" name="cpfClienteAlt" class="inputCPF form-control" id="cpf_cliente" onkeyup="TestaCPF2(this)" onfocus="TestaCPF2(this)" onblur="limparCPF2()" required> <!--onkeyup="TestaCPF(this)"-->
                                             <label for="inputCPF">CPF:</label>                                        
                                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                                 CPF Inválido!
                                             </div>
                                         </div>
-
                                     </div>
                                     <div class="col-md-6">   
                                         <div class="form-floating">                                        

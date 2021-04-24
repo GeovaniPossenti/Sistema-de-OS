@@ -340,8 +340,8 @@
                         </div>
                         <div class="modal-body form-control">
                             <dl class="dl-horizontal form-control">
-								<dt >Descrição do defeito:</dt><textarea class="form-control" id="descricao_defeitoDet" rows="4" cols="64" placeholder="Não há dados..." readonly></textarea>                        
-                                <dt style="margin-top: 20px;">Descrição do reparo:</dt><textarea class="form-control" id="descricao_reparoDet" rows="4" cols="64" placeholder="Não há dados..." readonly></textarea>  
+								<dt >Descrição do defeito:</dt><textarea class="form-control" id="descricao_defeitoDet" rows="6" cols="64" placeholder="Não há dados..." readonly></textarea>                        
+                                <dt style="margin-top: 20px;">Descrição do reparo:</dt><textarea class="form-control" id="descricao_reparoDet" rows="6" cols="64" placeholder="Não há dados..." readonly></textarea>  
                                 <dt style="margin-top: 20px;">Data de entrega ao cliente: </dt><input type="date" class="form-control" name="" id="data_entrega_clienteDet" readonly>
                                 <dt style="margin-top: 20px;">Contatar cliente via: 
                                     <button type="button" class="btn btn-outline-success" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);" title="Whatsapp">
