@@ -103,22 +103,22 @@
                 <table id="table_clientes" class="display text-center">
                     <thead>
                         <tr>
-                            <th>Id Cliente</th>
-                            <th>Nome do Cliente</th>
-                            <th>CPF do Cliente</th>
-                            <th>Celular do Cliente</th>
-                            <th>Telefone do Cliente</th>
-                            <th>Funções</th>
+                            <th title="Filtrar por:">Id Cliente</th>
+                            <th title="Filtrar por:">Nome do Cliente</th>
+                            <th title="Filtrar por:">CPF do Cliente</th>
+                            <th title="Filtrar por:">Celular do Cliente</th>
+                            <th title="Filtrar por:">Telefone do Cliente</th>
+                            <th title="Filtrar por:">Funções</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($clientes as $row){ ?>
                         <tr>
-                            <td class="btnEdit"><?php echo $row['id_cliente']; ?></td>
-                            <td class="btnEdit"><?php echo $row['nome_cliente']; ?></td>
-                            <td class="btnEdit"><?php echo $row['cpf_cliente']; ?></td>
-                            <td class="btnEdit"><?php echo $row['celular_cliente']; ?></td>
-                            <td class="btnEdit"><?php echo $row['telefone_cliente']; ?></td>
+                            <td class="btnEdit" title="Alterar"><?php echo $row['id_cliente']; ?></td>
+                            <td class="btnEdit" title="Alterar"><?php echo $row['nome_cliente']; ?></td>
+                            <td class="btnEdit" title="Alterar"><?php echo $row['cpf_cliente']; ?></td>
+                            <td class="btnEdit" title="Alterar"><?php echo $row['celular_cliente']; ?></td>
+                            <td class="btnEdit" title="Alterar"><?php echo $row['telefone_cliente']; ?></td>
                             <td class="text-center">
                                 <!--Formulario para deletar um cliente do banco. -->
                                 <form action="../control/controle_cliente.php?op=del" method="POST">
@@ -161,7 +161,7 @@
                                                 <input type="text" name="CpfClienteCad" class="inputCPF form-control" id="inputCPF" onkeyup="TestaCPF(this)" onfocus="TestaCPF(this)" onblur="limparCPF()" required> <!--onkeyup="TestaCPF(this)"-->
                                                 <label for="inputCPF">CPF:</label>
                                                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                                                    CPF Inválido!
+                                                    Digite um CPF válido!
                                                 </div>
                                             </div>
                                         </div>
@@ -222,7 +222,7 @@
                                             <input type="text" name="cpfClienteAlt" class="inputCPF form-control" id="cpf_cliente" onkeyup="TestaCPF2(this)" onfocus="TestaCPF2(this)" onblur="limparCPF2()" required> <!--onkeyup="TestaCPF(this)"-->
                                             <label for="inputCPF">CPF:</label>                                        
                                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                                                CPF Inválido!
+                                                Digite um CPF válido!
                                             </div>
                                         </div>
                                     </div>
@@ -274,11 +274,8 @@
             </div>
         </footer>-->
 
-        <!-- Aqui ficam os triggers para abrir os modais, e também 
-        os comandos pra pegar os values da tabela dinamica e coloca-los em ids .-->
-        <script src="../tools/js/modalOpenAndVal.js"></script>
-        <!-- Arquivo JS onde ficam todos os scrips do sistema. -->
-        <script src="../tools/js/scripts.js"></script>
+        <!-- Arquivo JS onde ficam os scrips dessa página. -->
+        <script src="../tools/js/clientes.js"></script>
     </body>
 </html>
 <?php

@@ -76,19 +76,18 @@
                     },
                 });
             } );
-        </script>
-        
+        </script>     
     </head>
     <body>
         <header class="p-3 bg-dark text-white">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">                        
                     <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <img src="../tools/img/computador-pessoal.png" alt="" width="40px" height="40px">
+                        <img src="../tools/img/computador-pessoal.png" alt="" width="40px" height="40px" title="Logo">
                     </a>
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 20px;">
-                        <li><a href="os.php" class="nav-link px-2 text-white">Ordens de Serviço</a></li>
-                        <li><a href="clientes.php" class="nav-link px-2 text-secondary">Lista de Clientes</a></li>
+                        <li><a href="os.php" class="nav-link px-2 text-white" title="Página com a lista de Ordens de Serviços">Ordens de Serviço</a></li>
+                        <li><a href="clientes.php" class="nav-link px-2 text-secondary" title="Página com a lista de Clientes">Lista de Clientes</a></li>
                         <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
                     </ul>
                     <div class="text-end">
@@ -112,18 +111,18 @@
                         porque lá em baixo quando eu pego os valores de cada linha com o JQUERY, 
                         eu preciso de todos as colunas para assim ter todos os dados. -->
                         <tr>
-                            <th>ID OS</th>
-                            <th>Nome do Cliente</th>
-                            <th>Nome do Equipamento</th>
+                            <th title="Filtrar por:">ID OS</th>
+                            <th title="Filtrar por:">Nome do Cliente</th>
+                            <th title="Filtrar por:">Nome do Equipamento</th>
                             <th class="hide">descricao_defeito</th>
                             <th class="hide">descricao_reparo</th>
-                            <th>Status</th>
-                            <th>Data de Recebimento</th>
+                            <th title="Filtrar por:">Status</th>
+                            <th title="Filtrar por:">Data de Recebimento</th>
                             <th class="hide">data_entrega_cliente</th>
-                            <th class="">Valor do Reparo R$</th>
+                            <th title="Filtrar por:">Valor do Reparo R$</th>
                             <th class="hide">link_webZap</th>
-                            <th>Funções</th>
-                            <th></th>
+                            <th title="Filtrar por:">Funções</th>
+                            <th title="Filtrar por:"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -425,11 +424,8 @@
             </div>
         </footer> -->
         
-        <!-- Aqui ficam os triggers para abrir os modais, e também 
-        os comandos pra pegar os values da tabela dinamica e coloca-los em ids .-->
-        <script src="../tools/js/modalOpenAndVal.js"></script>
-        <!-- Arquivo JS onde ficam todos os scrips do sistema. -->
-        <script src="../tools/js/scripts.js"></script>
+        <!-- Arquivo JS onde ficam os scrips dessa página. -->
+        <script src="../tools/js/os.js"></script>
     </body>
 </html>
 <?php

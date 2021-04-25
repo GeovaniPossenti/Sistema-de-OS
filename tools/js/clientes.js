@@ -1,12 +1,29 @@
-    //Mascara que arruma o input de valor.
-    $('.inputDinheiro').mask('#.##0,00', {
-        reverse: true
-    });
-
+    //Mask para os campos da página cliente.php
     $('.inputCelular').mask('(00) 00000-0000');
     $('.inputTelefone').mask('(00) 0000-0000');
     $('.inputCPF').mask('000.000.000-00');
 
+    //Aqui ficam os open dos modais da página clientes.php
+    $('.btnEdit').on('click', function(){
+        $('#modalEditClientes').modal('show');
+
+        $tr = $(this).closest('tr');
+
+        var data = $tr.children("td").map(function(){
+            return $(this).text();
+        }).get();
+
+        $('#id_cliente').val(data[0]);
+        $('#nome_cliente').val(data[1]);
+        $('#cpf_cliente').val(data[2]);
+        $('#celular_cliente').val(data[3]);
+        $('#telefone_cliente').val(data[4]);
+    });
+    $('.btnCadastro').on('click', function(){
+        $('#modalCadastroClientes').modal('show');
+    });
+
+    //Function pra remover a notificação de cpf invalido quando clicar fora do input.
     function limparCPF(){
         cpfinput = document.getElementById("inputCPF").value;
         if(cpfinput == ''){
@@ -73,6 +90,7 @@
         
     }
 
+    //Function pra remover a notificação de cpf invalido quando clicar fora do input.
     function limparCPF2(){
         cpfinput = document.getElementById("cpf_cliente").value;
         if(cpfinput == ''){
@@ -139,19 +157,36 @@
         
     }
 
-
-    //Aqui eu arrumo o autofocus dos modais da tela de os.php
+    //Aqui eu arrumo o autofocus dos modais da tela de clientes.php
     //Por algum motivo que eu desconheço, eu não posso deixar eles no mesmo arquivo. ????
-    var modalEditOs = document.getElementById('modalEditOs');
-    var myInputNome_equipamento = document.getElementById('nome_equipamento');
-
-    modalEditOs.addEventListener('shown.bs.modal', function () {            
-        myInputNome_equipamento.focus();
+    //Aqui eu seto em vars o modal/botão de open.
+    var modalModalEditClientes = document.getElementById('modalEditClientes');
+    var myInputNome_cliente = document.getElementById('nome_cliente');
+            
+    //Aqui eu coloco o focus no input que eu quero.
+    modalModalEditClientes.addEventListener('shown.bs.modal', function () {            
+        myInputNome_cliente.focus();
     });
 
-    var modalCadastroOs = document.getElementById('modalCadastroOs');
-    var myInputNomeClienteModalCad = document.getElementById('NomeClienteModalCad');
-    
-    modalCadastroOs.addEventListener('shown.bs.modal', function () {            
-        myInputNomeClienteModalCad.focus();
+    //Aqui eu reseto a validação do CPF quando eu fecho o modal, assim toda vez que ele abrir um novo modal, ele não carrega a informação passada.
+    modalModalEditClientes.addEventListener('hidden.bs.modal', function (event) {
+        document.getElementById("cpf_cliente").classList.remove("is-invalid");
+        document.getElementById("cpf_cliente").classList.remove("is-valid");
+        document.getElementById("btnSalvarCadastroClientes").disabled = false;
+    });
+
+    //Aqui eu seto em vars o modal/botão de open.
+    var modalmodalCadastroClientes = document.getElementById('modalCadastroClientes');
+    var myInputnomeClienteCad = document.getElementById('nomeClienteCad');
+            
+    //Aqui eu coloco o focus no input que eu quero.
+    modalmodalCadastroClientes.addEventListener('shown.bs.modal', function () {            
+        myInputnomeClienteCad.focus();
+    });
+
+    //Aqui eu reseto a validação do CPF quando eu fecho o modal, assim toda vez que ele abrir um novo modal, ele não carrega a informação passada.
+    modalmodalCadastroClientes.addEventListener('hidden.bs.modal', function (event) {
+        document.getElementById("inputCPF").classList.remove("is-invalid");
+        document.getElementById("inputCPF").classList.remove("is-valid");
+        document.getElementById("btnSalvarCadastroClientes").disabled = false;
     });
