@@ -219,13 +219,13 @@
                                         </div>
                                         <div class="col-md-12"> 
                                             <div class="form-floating">
-                                                <textarea class="form-control" name="descDefeitoCad" style="height: 150px" maxlength="1000"></textarea> 
+                                                <textarea class="form-control" name="descDefeitoCad" style="height: 150px" maxlength="255"></textarea> 
                                                 <label for="">Descrição do Defeito:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-12"> 
                                             <div class="form-floating">
-                                                <textarea class="form-control" name="descReparoCad" style="height: 150px" maxlength="1000"></textarea> 
+                                                <textarea class="form-control" name="descReparoCad" style="height: 150px" maxlength="255"></textarea> 
                                                 <label for="">Descrição do Reparo:</label>
                                             </div>
                                         </div>
@@ -308,13 +308,13 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control" name="descDefeitoAlt" id="descricao_defeito" style="height: 150px" maxlength="1000"></textarea>
+                                                <textarea class="form-control" name="descDefeitoAlt" id="descricao_defeito" style="height: 150px" maxlength="255"></textarea>
                                                 <label for="">Descrição do Defeito:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control" name="descReparoAlt" id="descricao_reparo" style="height: 150px" maxlength="1000"></textarea>
+                                                <textarea class="form-control" name="descReparoAlt" id="descricao_reparo" style="height: 150px" maxlength="255"></textarea>
                                                 <label for="">Descrição do Reparo:</label>
                                             </div>
                                         </div>
