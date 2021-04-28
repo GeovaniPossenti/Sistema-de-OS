@@ -11,3 +11,6 @@
 -Testar mais de 100 dados na tabela. ✓
 -Arrumar placeholders. ✓
 -Arrumar a fonte geral da page. ✓
+-Relatorio automatico. ✓
+-Icons. ✓
+-Arrumar formularios com o floating label. ✓
