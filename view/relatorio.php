@@ -48,12 +48,12 @@
             $pdf->SetFillColor(255,255,255);
             
             //Número da ordem de serviço.
-            $pdf->SetFont('OpenSans','',10);
+            $pdf->SetFont('OpenSansLight','',8);
             $pdf->SetY(1); $pdf->SetX(10);
-            $pdf->Cell(25,8, utf8_decode("Ordem de serviço N°: $id_os"),0,0,"C","false");
+            $pdf->Cell(18,8, utf8_decode("Ordem de serviço N°: $id_os"),0,0,"C","false");
 
             //Logo da página.
-            $pdf->Image("../tools/img/computador-pessoal.png",120,10,20,0);
+            $pdf->Image("../tools/img/computador-pessoal.png",123,5,20,0);
 
             //Titulo.
             $pdf->SetFont('OpenSans','', 23);
@@ -61,7 +61,7 @@
             $pdf->Cell(75, 33, utf8_decode("Ordem de serviço") ,0,1,'C');
 
             //Informações sobre a empresa/técnico.
-            $pdf->SetFont('OpenSans','',8);
+            $pdf->SetFont('OpenSansLight','',8);
             $pdf->SetY(29); $pdf->SetX(18);
             $pdf->Cell(25,8, utf8_decode("Empresa: Matrix Informática"),0,0,"C","false");
 
