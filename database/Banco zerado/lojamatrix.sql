@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Abr-2021 às 16:52
+-- Tempo de geração: 29-Abr-2021 às 03:50
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -49,8 +49,8 @@ CREATE TABLE `os_pendente` (
   `id_os_pendente` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `nome_equipamento` varchar(255) DEFAULT NULL,
-  `descricao_defeito` varchar(500) DEFAULT NULL,
-  `descricao_reparo` varchar(500) DEFAULT NULL,
+  `descricao_defeito` varchar(255) DEFAULT NULL,
+  `descricao_reparo` varchar(255) DEFAULT NULL,
   `status` varchar(255) NOT NULL,
   `data_recebimento` date NOT NULL,
   `data_entrega_cliente` date DEFAULT NULL,
