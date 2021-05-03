@@ -10,10 +10,9 @@
 }
 
 .fundo{
-  margin: 0;
-  padding: 0;
-  font-family: OpenSansLight;
-  background: #34495e;
+  background: #4B79A1;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #283E51, #4B79A1);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #283E51, #4B79A1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .box_form{
   width: 300px;
@@ -54,7 +53,7 @@
 }
 .box_form input[type = "text"]:focus,.box_form input[type = "password"]:focus{
   width: 280px;
-  border-color: #2ecc71;
+  border-color: #2ecc97;
 }
 .box_form input[type = "submit"]{
   border:0;
@@ -62,7 +61,7 @@
   display: block;
   margin: 20px auto;
   text-align: center;
-  border: 2px solid #2ecc71;
+  border: 2px solid #2ecc97;
   padding: 14px 40px;
   outline: none;
   color: white;

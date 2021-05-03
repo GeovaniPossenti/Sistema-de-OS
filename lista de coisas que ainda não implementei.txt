@@ -14,3 +14,5 @@
 -Relatorio automatico. ✓
 -Icons. ✓
 -Arrumar formularios com o floating label. ✓
+-Select2 nos campos de nome_cliente ✓
+-CSS base pra tirar o background white. ✓
