@@ -57,7 +57,7 @@
                         "info": "Mostrando página _PAGE_ de _PAGES_",
                         "infoEmpty": "Nenhum registro disponível",
                         "infoFiltered": "(filtrado de _MAX_ registros totais)",
-                        "emptyTable": "Sem dados disponíveis na tabela!",
+                        "emptyTable": "Não há dados para exibir!",
                         "loadingRecords": "Carregando...",
                         "processing": "Em processamento...",
                         "search": "Procurar:",
@@ -72,7 +72,7 @@
             } );
         </script>
     </head>
-    <body>
+    <body class="fundo">
         <header class="p-3 bg-dark text-white">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -90,17 +90,18 @@
                 </div>
             </div>
         </header>
-        <section style="margin-top: 20px;">
-            <div class="container text-center"" style="margin-bottom: 20px;">
-                <button type="button" class="btn btn-info btnCadastro text-white" value="" title="Cadastro de Clientes">
+        <section>
+        <div class="quadrado">
+            <div class="container text-center" style="margin-bottom: 20px;">
+                <button type="button" class="btn btn-primary btnCadastro text-white" value="" title="Cadastro de Clientes">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
                         <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                         <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
                     </svg> Cadastrar Clientes
                 </button>
             </div>
-            <div class="container text-start container-lista" >
-                <table id="table_clientes" class="display text-center">
+            <div class="text-start">
+                <table id="table_clientes" class="display text-center cell-border">
                     <thead>
                         <tr>
                             <th title="Filtrar por:">Id Cliente</th>
@@ -258,7 +259,7 @@
                 </div>
             </div>
             <!-----------------------------------------------> 
-
+        </div>
         </section>
 
         <!--<footer class="bd-footer bg-dark p-3 p-md-3 mt-5 bg-light text-center text-sm-start">

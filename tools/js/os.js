@@ -29,6 +29,8 @@
         $('#link_webZap').val(data[9]);
 
         //Aqui eu passo o nome do cliente para o primeiro valor do select2.
+        //Porque sem isso, ele pega o value normal, porém só quando abrimos o select. 
+        //Quando ele ainda está fechado, o nome que aparece é o primeiro da lista. 
         $('.selectEditClientes').val(data[1]).trigger('change.select2');
     });
     $('.btnDetailsOs').on('click', function(){
