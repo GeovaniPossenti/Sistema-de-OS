@@ -21,7 +21,7 @@
 	$arrayBancoOs = $stmt->fetchAll();
 
     //Select que pega os dados do cliente, eu uso pra exibir no select de clientes, e também pra passar o id dele quando a OS sofrer alteração.
-    $selectClientes = "SELECT `id_cliente`, `nome_cliente`, `celular_cliente` FROM `clientes`";
+    $selectClientes = "SELECT `id_cliente`, `nome_cliente`, `celular_cliente` FROM `clientes` ORDER BY `nome_cliente` asc";
     $stmt = $con->prepare($selectClientes);
     $stmt->execute();
     $arrayClientes = $stmt->fetchAll();
@@ -53,6 +53,10 @@
         <!--DataTables-->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+        <!--Select2-->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../tools/css/select2-bootstrap5.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <script>
             $(document).ready( function () {
                 $('#table_os').DataTable({
@@ -91,7 +95,7 @@
                         <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
                     </ul>
                     <div class="text-end">
-                        <a href="../control/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="bi bi-box-arrow-right"></i></button></a>
+                        <a href="../control/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="bi bi-box-arrow-right"></i> Sair</button></a>
                     </div>
                 </div>
             </div>
@@ -104,7 +108,7 @@
                     </svg> Cadastrar Ordem de Serviço
                 </button>
             </div>
-            <div class="container container-lista" >
+            <div class="container container-lista">
                 <table id="table_os" class="display text-center">
                     <thead>
                         <!--Aqui eu uso uma classe no css, pra não exibir algumas colunas, 
@@ -200,15 +204,15 @@
                             <div class="modal-body">
                                 <div class="container">                   
                                     <div class="row g-3 gy-3">  
-                                        <div class="col-md-6">         
-                                            <div class="form-floating">
+                                        <div class="col-md-6">    
+                                            <div style="margin-top: -5px;">
+                                            <label for="" class="">Selecione um Cliente:</label>
                                                 <select name="idClienteCad" class="form-select" id="NomeClienteModalCad" required>
                                                     <option value="" selected>Selecione</option>
                                                     <?php foreach($arrayClientes as $rowCliente){ ?>
                                                         <option value="<?php echo $rowCliente['id_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
                                                     <?php } ?>
                                                 </select>
-                                                <label for="" class="">Selecione um Cliente:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6"> 
@@ -291,13 +295,14 @@
                                     <div class="row g-3 gy-3">  
                                         <div class="col-md-6">
                                             <input type="hidden" name="idOsPendenteAlt" id="id_os_pendente" required>         
-                                            <div class="form-floating">
-                                                <select name="nomeClienteAlt" class="form-select" id="nome_cliente" required>
+                                            <div style="margin-top: -5px;">
+                                                <label for="">Selecione um Cliente:</label>
+                                                <select name="nomeClienteAlt" class="form-control selectEditClientes nome_cliente" id="nome_cliente" required>
                                                     <?php foreach($arrayClientes as $rowCliente){ ?>
                                                         <option value="<?php echo $rowCliente['nome_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
                                                     <?php } ?>
                                                 </select>
-                                                <label for="">Selecione um Cliente:</label>
+                                                
                                             </div>
                                         </div>
                                         <div class="col-md-6">

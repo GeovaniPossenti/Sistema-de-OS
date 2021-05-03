@@ -27,6 +27,9 @@
         $('#data_entrega_cliente').val(data[7]);
         $('#valor_reparo').val(data[8]);
         $('#link_webZap').val(data[9]);
+
+        //Aqui eu passo o nome do cliente para o primeiro valor do select2.
+        $('.selectEditClientes').val(data[1]).trigger('change.select2');
     });
     $('.btnDetailsOs').on('click', function(){
         $('#modalDetailsOs').modal('show');
@@ -52,6 +55,27 @@
     });
     $('.btnCadastro').on('click', function(){
         $('#modalCadastroOs').modal('show');
+    });
+    
+    //Campo dinamica de busca nos selects de clientes. 
+    //Select de cadastro de OS.
+    $('#NomeClienteModalCad').select2({
+        dropdownParent: $('#modalCadastroOs'),
+        placeholder: 'Selecione...',
+        //width: 'resolve',
+        theme: "bootstrap5",
+        //theme: "classic",
+        allowClear: true,
+    });
+
+    //Select de edição de OS.
+    $('.selectEditClientes').select2({
+        dropdownParent: $('#modalEditOs'),
+        placeholder: 'Selecione...',
+        theme: "bootstrap5",
+        allowClear: true,
+        selectOnClose: true,
+        
     });
 
     //Aqui eu arrumo o autofocus dos modais.

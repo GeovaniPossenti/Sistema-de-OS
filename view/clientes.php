@@ -85,7 +85,7 @@
                         <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
                     </ul>
                     <div class="text-end">
-                        <a href="../control/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="bi bi-box-arrow-right"></i></button></a>
+                        <a href="../control/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="bi bi-box-arrow-right"></i> Sair</button></a>
                     </div>
                 </div>
             </div>
@@ -167,13 +167,13 @@
                                         </div>
                                         <div class="col-md-6">   
                                             <div class="form-floating">                                        
-                                                <input type="text" name="CelularClienteCad" class="inputCelular form-control" id="inputCelular" placeholder="" required>
+                                                <input type="text" name="CelularClienteCad" class="inputCelular form-control" id="inputCelular" minlength="15" required>
                                                 <label for="inputCelular">Celular:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">         
                                             <div class="form-floating">                                      
-                                                <input type="text" name="TelefoneClienteCad" class="inputTelefone form-control" id="inputTelefone" placeholder="">
+                                                <input type="text" name="TelefoneClienteCad" class="inputTelefone form-control" id="inputTelefone" minlength="14">
                                                 <label for="inputTelefone">Telefone:</label> 
                                             </div>
                                         </div>         
@@ -228,13 +228,13 @@
                                     </div>
                                     <div class="col-md-6">   
                                         <div class="form-floating">                                        
-                                            <input type="text" name="celularClienteAlt" class="inputCelular form-control" id="celular_cliente" placeholder="" required>
+                                            <input type="text" name="celularClienteAlt" class="inputCelular form-control" id="celular_cliente" minlength="15" required>
                                             <label for="inputCelular">Celular:</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">         
                                         <div class="form-floating">                                      
-                                            <input type="text" name="telefoneClienteAlt" class="inputTelefone form-control" id="telefone_cliente" placeholder="">
+                                            <input type="text" name="telefoneClienteAlt" class="inputTelefone form-control" id="telefone_cliente" minlength="14">
                                             <label for="inputTelefone">Telefone:</label> 
                                         </div>
                                     </div>         
