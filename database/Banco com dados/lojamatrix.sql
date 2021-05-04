@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Maio-2021 às 06:17
+-- Tempo de geração: 05-Maio-2021 às 00:21
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -94,6 +94,33 @@ CREATE TABLE `os_pendente` (
   `link_webZap` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `os_pendente`
+--
+
+INSERT INTO `os_pendente` (`id_os_pendente`, `id_cliente`, `nome_equipamento`, `descricao_defeito`, `descricao_reparo`, `status`, `data_recebimento`, `data_entrega_cliente`, `valor_reparo`, `link_webZap`) VALUES
+(1, 6, 'Notebook Dell', '', 'Troca HD', 'Entregue', '2021-05-03', '2021-05-21', '250.00', 'https://api.whatsapp.com/send?phone=+5541991553930'),
+(2, 30, 'Tablet', '', 'Atualização OS', 'Aguardando', '2021-05-04', '0000-00-00', '0.00', 'https://api.whatsapp.com/send?phone=+5541997871190'),
+(3, 2, 'Computador de mesa', '', 'Limpeza e formatação', 'Aguardando', '2021-05-04', '0000-00-00', '0.00', 'https://api.whatsapp.com/send?phone=+5541993170169'),
+(4, 14, 'Celular Samsung ', '', 'Troca de tela defeituosa', 'Processando', '2021-05-04', '2021-05-08', '150.00', 'https://api.whatsapp.com/send?phone=+5541986107277'),
+(5, 21, 'Celular Iphone', 'Troca da bateria', '', 'Finalizado', '2021-05-04', '2021-05-12', '500.00', 'https://api.whatsapp.com/send?phone=+5541993707997'),
+(6, 16, 'Notebook Positivo', 'Substituição do teclado ', '', 'Finalizado', '2021-05-04', '0000-00-00', '600.00', 'https://api.whatsapp.com/send?phone=+5541999581366'),
+(7, 17, 'Computador de mesa', 'Upgrade de peças, instalação de OS e montagem. ', '', 'Finalizado', '2021-05-04', '0000-00-00', '200.00', 'https://api.whatsapp.com/send?phone=+5541995707697'),
+(8, 9, 'Computador de mesa', 'Instalação de ssd', '', 'Finalizado', '2021-05-04', '0000-00-00', '100.00', 'https://api.whatsapp.com/send?phone=+5541981911947'),
+(9, 24, 'Notebook ', 'Troca de pasta térmica ', '', 'Aguardando', '2021-05-04', '0000-00-00', '50.00', 'https://api.whatsapp.com/send?phone=+5541985451285'),
+(10, 19, 'Celular Motorola', 'Troca de tela', '', 'Aguardando', '2021-05-04', '0000-00-00', '150.00', 'https://api.whatsapp.com/send?phone=+5541991288791'),
+(11, 19, 'Notebook HP', 'Manutenção', '', 'Processando', '2021-05-04', '0000-00-00', '180.00', 'https://api.whatsapp.com/send?phone=+5541991288791'),
+(12, 28, 'Notebook Avell', 'Manutenção, troca de pasta térmica e troca de teclado. ', '', 'Aguardando', '2021-05-04', '0000-00-00', '1000.00', 'https://api.whatsapp.com/send?phone=+5541992187910'),
+(13, 15, 'Celular Asus', 'Troca de tela, troca de auto-falante e troca de conector de carga ', '', 'Aguardando', '2021-05-04', '0000-00-00', '400.00', 'https://api.whatsapp.com/send?phone=+5541996425837'),
+(14, 8, 'Computador de mesa', '', 'Limpeza e formatação', 'Finalizado', '2021-05-04', '0000-00-00', '150.00', 'https://api.whatsapp.com/send?phone=+5541993582868'),
+(15, 4, 'Computador de mesa', 'Troca de placa de vídeo', '', 'Aguardando', '2021-05-04', '0000-00-00', '120.00', 'https://api.whatsapp.com/send?phone=+5541997883894'),
+(16, 23, 'Placa mãe', 'Curto circuito no processador \r\n', '', 'Orçamento', '2021-05-04', '0000-00-00', '400.00', 'https://api.whatsapp.com/send?phone=+5541984311525'),
+(17, 25, 'Placa de vídeo', '', 'Precisa fazer reballing ', 'Aguardando', '2021-05-04', '0000-00-00', '400.00', 'https://api.whatsapp.com/send?phone=+5541981620592'),
+(18, 10, 'Notebook Acer', 'Não liga e não da vídeo ', '', 'Orçamento', '2021-05-04', '0000-00-00', '0.00', 'https://api.whatsapp.com/send?phone=+5541982872520'),
+(19, 28, 'Computador de mesa', '', 'Manutenção', 'Entregue', '2021-05-04', '2021-05-26', '100.00', 'https://api.whatsapp.com/send?phone=+5541992187910'),
+(20, 12, 'Notebook', 'Não da vídeo', 'Limpeza e formatação ', 'Entregue', '2021-05-04', '2021-05-12', '150.00', 'https://api.whatsapp.com/send?phone=+5541985288941'),
+(21, 11, 'Celular Xiaomi', '', 'Troca de tela', 'Entregue', '2021-05-04', '2021-05-31', '250.00', 'https://api.whatsapp.com/send?phone=+5541981912023');
+
 -- --------------------------------------------------------
 
 --
@@ -151,7 +178,7 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de tabela `os_pendente`
 --
 ALTER TABLE `os_pendente`
-  MODIFY `id_os_pendente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_os_pendente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
