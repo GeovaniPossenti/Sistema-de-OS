@@ -235,7 +235,7 @@
                                             </div>
                                             <div class="col-md-6"> 
                                                 <div class="form-floating">
-                                                    <input type="text" name="nomeEquipamentoCad" class="form-control">
+                                                    <input type="text" name="nomeEquipamentoCad" class="form-control" id="nomeEquipamentoCad">
                                                     <label for="">Nome do Equipamento:</label>
                                                 </div>
                                             </div>

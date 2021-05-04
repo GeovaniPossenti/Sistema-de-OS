@@ -90,8 +90,8 @@
     });
 
     var modalCadastroOs = document.getElementById('modalCadastroOs');
-    var myInputNomeClienteModalCad = document.getElementById('NomeClienteModalCad');
+    var nomeEquipamentoCad = document.getElementById('nomeEquipamentoCad');
     
     modalCadastroOs.addEventListener('shown.bs.modal', function () {            
-        myInputNomeClienteModalCad.focus();
+        nomeEquipamentoCad.focus();
     });
