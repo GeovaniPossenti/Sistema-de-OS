@@ -50,8 +50,8 @@
         <script>
             $(document).ready( function () {
                 $('#table_clientes').DataTable({
-                    "lengthMenu": [25, 50, 75, 100],
-                    "language": {
+                    lengthMenu: [25, 50, 75, 100],
+                    language: {
                         "lengthMenu": "Exibir _MENU_ linhas por página",
                         "zeroRecords": "Nada encontrado!",
                         "info": "Mostrando página _PAGE_ de _PAGES_",
@@ -68,12 +68,15 @@
                             "previous": "Anterior"
                         },
                     },
+                    buttons: [
+                        'copy', 'excel', 'pdf'
+                    ],
                 });
             } );
         </script>
     </head>
     <body class="fundo">
-        <header class="p-3 bg-dark text-white">
+        <header class="p-3 text-white header">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -102,7 +105,7 @@
             </div>
             <div class="text-start">
                 <table id="table_clientes" class="display text-center cell-border">
-                    <thead>
+                    <thead style="color: white;">
                         <tr>
                             <th title="Filtrar por:">Id Cliente</th>
                             <th title="Filtrar por:">Nome do Cliente</th>
@@ -138,7 +141,24 @@
                     </tbody>
                 </table>
             </div>
-
+            <style> 
+                /*Style dos textos do datatables*/
+                .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+                    color: white;
+                }
+                .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+                    color: white !important;
+                }
+                .dataTables_wrapper .dataTables_filter input {
+                    background-color: transparent;
+                }
+                .dataTables_wrapper .dataTables_length select{
+                    background-color: white;
+                }
+                .dataTables_wrapper .dataTables_paginate .paginate_button {
+                    color: white !important;
+                }
+            </style>
             <!--Modal de cadastro de Clientes--> 
             <div class="modal fade modalfade" id="modalCadastroClientes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">

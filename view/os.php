@@ -25,7 +25,7 @@
     $stmt = $con->prepare($selectClientes);
     $stmt->execute();
     $arrayClientes = $stmt->fetchAll();
-?> 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -83,7 +83,7 @@
         </script>     
     </head>
     <body class="fundo">
-        <header class="p-3 bg-dark text-white">
+        <header class="p-3 text-white header">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">                        
                     <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -110,10 +110,8 @@
                     </button>
                 </div>
                 <div>
-                <script>
-                </script>
                     <table id="table_os" class="display text-center cell-border">
-                        <thead>
+                        <thead style="color: white;">
                             <!--Aqui eu uso uma classe no css, pra não exibir algumas colunas, 
                             porque lá em baixo quando eu pego os valores de cada linha com o JQUERY, 
                             eu preciso de todos as colunas para assim ter todos os dados. -->
@@ -193,9 +191,26 @@
                         </tbody>
                     </table>
                 </div>
-
+                <style> 
+                    /*Style dos textos do datatables*/
+                    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+                        color: white;
+                    }
+                    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+                        color: white !important;
+                    }
+                    .dataTables_wrapper .dataTables_filter input {
+                        background-color: transparent;
+                    }
+                    .dataTables_wrapper .dataTables_length select{
+                        background-color: white;
+                    }
+                    .dataTables_wrapper .dataTables_paginate .paginate_button {
+                        color: white !important;
+                    }
+                </style>
                 <!--Modal de cadastro de OS--> 
-                <div class="modal fade modalfade" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade modalfade text-start" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -284,7 +299,7 @@
                 <!-----------------------------------------------> 
 
                 <!--Modal de edição de OS--> 
-                <div class="modal fade modalfade" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade modalfade text-start" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -374,7 +389,7 @@
                 <!----------------------------------------------->  
 
                 <!--Modal de detalhes de OS--> 
-                <div class="modal fade modalfade" id="modalDetailsOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade modalfade text-start" id="modalDetailsOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">

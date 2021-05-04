@@ -67,6 +67,9 @@ section {
         opacity: 1;
     }
 }
+.header{
+    background-color: rgba(0,0,0,0.6);
+}
 .fundo{
     margin: 0;
     padding: 0;
@@ -80,11 +83,44 @@ section {
     margin-left: 10%;
     margin-right: 10%;
     padding: 50px;
-    background-color: rgba(240,255,255,0.7);
+    background-color: rgba(0,0,0,0.6);
     text-align: center;
     border-radius: 20px;
     font-family: OpenSansLight;
     font-size: 12pt;
+    box-shadow: 9px 7px 10px rgba(50, 50, 50, 0.5);
 }
+/*
+table#table_clientes.dataTable{
+    color: white;
+}
+
+Style das linhas do datatables
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+    background-color: rgba(240,255,255, 0.1);
+}
+table.dataTable tbody tr {
+    background-color: red;
+}
+
+Cor da linha quando ordenado.
+table.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+    background-color: green;
+}
+table.dataTable.display tbody tr.odd > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
+    background-color: royalblue;
+}
+
+Aqui ficam as o mouse hover da linha
+table#table_clientes.dataTable tbody tr:hover {
+    background-color: yellow;
+}
+    
+table#table_clientes.dataTable tbody tr:hover > .sorting_1 {
+    background-color: yellow;
+}
+*/
+
+
 
 	
