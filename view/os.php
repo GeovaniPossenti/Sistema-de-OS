@@ -35,8 +35,6 @@
         <title>Matrix</title>
         <!-- Logo da página. -->
 		<link rel="shorcut icon" href="../tools/img/computador-pessoal.png">
-        <!--CSS da página. -->
-        <link rel="stylesheet" href="../tools/css/styleOs.css">
         <!--Bootstrap.-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
@@ -57,6 +55,8 @@
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="../tools/css/select2-bootstrap5.min.css">
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <!--CSS da página. -->
+        <link rel="stylesheet" href="../tools/css/styleOs.css">
         <script>
             $(document).ready( function () {
                 $('#table_os').DataTable({
@@ -191,24 +191,7 @@
                         </tbody>
                     </table>
                 </div>
-                <style> 
-                    /*Style dos textos do datatables*/
-                    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
-                        color: white;
-                    }
-                    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
-                        color: white !important;
-                    }
-                    .dataTables_wrapper .dataTables_filter input {
-                        background-color: transparent;
-                    }
-                    .dataTables_wrapper .dataTables_length select{
-                        background-color: white;
-                    }
-                    .dataTables_wrapper .dataTables_paginate .paginate_button {
-                        color: white !important;
-                    }
-                </style>
+
                 <!--Modal de cadastro de OS--> 
                 <div class="modal fade modalfade text-start" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">

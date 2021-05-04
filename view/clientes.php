@@ -29,8 +29,6 @@
         <title>Matrix</title>
         <!-- Logo da página. -->
 		<link rel="shorcut icon" href="../tools/img/computador-pessoal.png">
-        <!--CSS da página. -->
-        <link rel="stylesheet" href="../tools/css/styleClientes.css">
         <!--Bootstrap.-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
@@ -47,6 +45,8 @@
         <!--DataTables-->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+        <!--CSS da página. -->
+        <link rel="stylesheet" href="../tools/css/styleClientes.css">
         <script>
             $(document).ready( function () {
                 $('#table_clientes').DataTable({
@@ -141,24 +141,7 @@
                     </tbody>
                 </table>
             </div>
-            <style> 
-                /*Style dos textos do datatables*/
-                .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
-                    color: white;
-                }
-                .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
-                    color: white !important;
-                }
-                .dataTables_wrapper .dataTables_filter input {
-                    background-color: transparent;
-                }
-                .dataTables_wrapper .dataTables_length select{
-                    background-color: white;
-                }
-                .dataTables_wrapper .dataTables_paginate .paginate_button {
-                    color: white !important;
-                }
-            </style>
+            
             <!--Modal de cadastro de Clientes--> 
             <div class="modal fade modalfade" id="modalCadastroClientes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
