@@ -74,9 +74,16 @@ section {
     margin: 0;
     padding: 0;
     font-family: OpenSansLight;
-    background: #4B79A1;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #283E51, #4B79A1);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #283E51, #4B79A1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    /* Aquele azul que eu tinha deixado por um tempo
+    background: #4B79A1; 
+    background: -webkit-linear-gradient(to right, #283E51, #4B79A1); 
+    background: linear-gradient(to right, #283E51, #4B79A1); 
+    */
+
+    background: #2b5876; 
+    background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
+    background: linear-gradient(to right, #4e4376, #2b5876);
   }
 .quadrado{
     margin-top: 1%;
@@ -106,6 +113,10 @@ section {
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button {
     color: white !important;
+}
+.dataTables_wrapper .dataTables_filter input {
+    color: white;
+    background-color: rgba(220,220,220, 0.1);
 }
 
 /*
