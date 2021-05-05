@@ -39,8 +39,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-        <!--Bootstrap icons.-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+        <!--FontAwesome icons.-->
+        <script src="https://kit.fontawesome.com/ff5269617c.js" crossorigin="anonymous"></script>
         <!--JQuery.-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
@@ -90,12 +90,12 @@
                         <img src="../tools/img/computador-pessoal.png" alt="" width="40px" height="40px" title="Logo">
                     </a>
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 20px;">
-                        <li><a href="os.php" class="nav-link px-2 text-white" title="Página com a lista de Ordens de Serviços">Ordens de Serviço</a></li>
-                        <li><a href="clientes.php" class="nav-link px-2 text-secondary" title="Página com a lista de Clientes">Lista de Clientes</a></li>
+                        <li><a href="os.php" class="nav-link px-2 text-white" title="Página com a lista de Ordens de Serviços"><i class="fas fa-clipboard"></i> Ordens de Serviço</a></li>
+                        <li><a href="clientes.php" class="nav-link px-2 text-secondary" title="Página com a lista de Clientes"><i class="fas fa-user-friends"></i> Lista de Clientes</a></li>
                         <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
                     </ul>
                     <div class="text-end">
-                        <a href="../control/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="bi bi-box-arrow-right"></i> Sair</button></a>
+                        <a href="../control/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="fas fa-sign-out-alt"></i> Sair</button></a>
                     </div>
                 </div>
             </div>
@@ -103,11 +103,7 @@
         <section>
             <div class="quadrado">
                 <div class="container text-center" style="margin-bottom: 20px;">
-                    <button type="button" class="btn btn-primary text-white btnCadastro" value="" title="Cadastro de OS">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
-                            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"/>
-                        </svg> Cadastrar Ordem de Serviço
-                    </button>
+                    <button type="button" class="btn btn-primary text-white btnCadastro" value="" title="Cadastro de OS"><i class="fas fa-plus"></i> Cadastrar Ordem de Serviço</button>
                 </div>
                 <div>
                     <table id="table_os" class="display text-center cell-border">
@@ -170,19 +166,19 @@
                                     <!--Formulario para deletar uma linha no na tabela de os_pendente. -->
                                     <form action="../control/controle_os.php?op=del" method="POST">
                                         <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
-                                            <i class="bi bi-pencil-fill"></i>
+                                            <i class="far fa-edit"></i>
                                         </button>
                                         <input type="hidden" name="id_os_pendente" value="<?php echo $row['id_os_pendente']; ?>">
                                         <button type="submit" class="btn btn-outline-danger" value="Deletar" title="Deletar">
-                                            <i class="bi bi-trash-fill"></i>
+                                            <i class="fas fa-backspace"></i>
                                         </button>
                                     </form>
                                     <!------------------------------------------------------------------->
                                 </td>                                    
                                 <td class="text-center">
                                     <?php if($row['status'] == 'Entregue'){ ?>           
-                                        <a href="relatorio.php?id=<?php echo $row['id_os_pendente']; ?>"><button type="button" class="btn btn-outline-info" title="Gerar Relatório">
-                                            <i class="bi bi-file-earmark-text-fill"></i>
+                                        <a href="relatorio.php?id=<?php echo $row['id_os_pendente']; ?>"><button type="button" class="btn btn-outline-warning" title="Gerar Relatório">
+                                            <i class="fas fa-file-pdf"></i>
                                         </button></a>
                                     <?php } ?>
                                 </td>   

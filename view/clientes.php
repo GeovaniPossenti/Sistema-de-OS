@@ -33,8 +33,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-        <!--Bootstrap icons.-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+        <!--FontAwesome icons.-->
+        <script src="https://kit.fontawesome.com/ff5269617c.js" crossorigin="anonymous"></script>
         <!--JQuery.-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
@@ -83,12 +83,12 @@
                         <img src="../tools/img/computador-pessoal.png" alt="" width="40px" height="40px">
                     </a>
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 20px;">
-                        <li><a href="os.php" class="nav-link px-2 text-secondary">Ordens de Serviço</a></li>
-                        <li><a href="clientes.php" class="nav-link px-2 text-white">Lista de Clientes</a></li>
+                        <li><a href="os.php" class="nav-link px-2 text-secondary"><i class="fas fa-clipboard"></i> Ordens de Serviço</a></li>
+                        <li><a href="clientes.php" class="nav-link px-2 text-white"><i class="fas fa-user-friends"></i> Lista de Clientes</a></li>
                         <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
                     </ul>
                     <div class="text-end">
-                        <a href="../control/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="bi bi-box-arrow-right"></i> Sair</button></a>
+                        <a href="../control/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="fas fa-sign-out-alt"></i> Sair</button></a>
                     </div>
                 </div>
             </div>
@@ -96,12 +96,7 @@
         <section>
         <div class="quadrado">
             <div class="container text-center" style="margin-bottom: 20px;">
-                <button type="button" class="btn btn-primary btnCadastro text-white" value="" title="Cadastro de Clientes">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-                    </svg> Cadastrar Clientes
-                </button>
+                <button type="button" class="btn btn-primary btnCadastro text-white" value="" title="Cadastro de Clientes"><i class="fas fa-user-plus"></i> Cadastrar Clientes</button>
             </div>
             <div class="text-start">
                 <table id="table_clientes" class="display text-center cell-border">
@@ -127,11 +122,11 @@
                                 <!--Formulario para deletar um cliente do banco. -->
                                 <form action="../control/controle_cliente.php?op=del" method="POST">
                                     <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
-                                        <i class="bi bi-pencil-fill"></i>
+                                        <i class="fas fa-user-edit"></i>
                                     </button>
                                     <input type="hidden" name="id_cliente" value="<?php echo $row['id_cliente']; ?>">
                                     <button type="submit" class="btn btn-outline-danger" value="Deletar" title="Deletar">
-                                        <i class="bi bi-trash-fill"></i>
+                                        <i class="fas fa-backspace"></i>
                                     </button>                          
                                 </form>
                                 <!------------------------------------------------->
