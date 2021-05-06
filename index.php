@@ -10,11 +10,6 @@
         <title>Matrix</title>
         <!-- Logo da página. -->
         <link rel="shorcut icon" href="tools/img/computador-pessoal.png">
-        <!--CSS da página. -->
-        <link rel="stylesheet" href="tools/css/styleIndex.css">
-        <!--Bootstrap.-->
-        <script src="tools/lib/bootstrap-5.0.0-beta3-dist/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="tools/lib/bootstrap-5.0.0-beta3-dist/css/bootstrap.min.css">
         <!--JQuery.-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
         <!--Script dos alertas.-->
@@ -24,6 +19,8 @@
         <!-- Fonte da CDN do Google -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+        <!--CSS da página. -->
+        <link rel="stylesheet" href="tools/css/styleIndex.css">
     </head>
     <body class="fundo">
         <form class="box_form" method="post" action="control/controle_usuario.php?op=log">

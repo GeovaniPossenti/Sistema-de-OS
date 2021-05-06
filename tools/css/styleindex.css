@@ -8,7 +8,9 @@
 	src: url("../fonts/Open_Sans/OpenSans-light.ttf");
 	font-size: 1em;
 }
-
+body{
+  font-family: 'Roboto', sans-serif;
+}
 .fundo{
   background: #4B79A1;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #283E51, #4B79A1);  /* Chrome 10-25, Safari 5.1-6 */
