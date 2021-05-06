@@ -21,6 +21,9 @@
         <link rel="stylesheet" href="tools/lib/alertifyjs/css/alertify.min.css">
         <link rel="stylesheet" href="tools/lib/alertifyjs/css/themes/default.min.css">
         <script src="tools/lib/alertifyjs/alertify.min.js"></script>
+        <!-- Fonte da CDN do Google -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     </head>
     <body class="fundo">
         <form class="box_form" method="post" action="control/controle_usuario.php?op=log">
