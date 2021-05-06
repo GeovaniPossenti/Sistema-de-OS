@@ -5,7 +5,13 @@ Este projeto foi desenvolvido no 1° semestre do curso de Bacharelado em Sistema
 O objetivo central deste projeto, é criar um sistema web de ordem de serviço, que consiga atender uma empresa que atua na assistência técnica de computadores e celulares. 
 Para este projeto, foi utilizado uma empresa real como paramêtro para a concepção da ideia, ela concordou em fazer parte deste desenvolvimento acadêmico.
 
+Sistema começou a ser desenvolvido no dia: 08/04/2021
 
 Sistema desenvolvido por: Geovani Possenti
+
+# Screenshots do sistema
+
+Tela inicial.  
+![Screenshot_1](https://user-images.githubusercontent.com/79884348/117333941-d7cbe980-ae6f-11eb-85f7-17da854bccf5.png)
 
 
