@@ -248,18 +248,15 @@
         </div>
         </section>
 
-        <!--<footer class="bd-footer bg-dark p-3 p-md-3 mt-5 bg-light text-center text-sm-start">
-            <div class="container">
-                <ul class="bd-footer-links ps-0 mb-3">
-                    <li class="d-inline-block"><a href="https://github.com/twbs"></a></li>
-                    <li class="d-inline-block ms-3"><a href="https://twitter.com/getbootstrap"></a></li>
-                    <li class="d-inline-block ms-3"><a href="/docs/5.0/examples/"></a></li>
-                    <li class="d-inline-block ms-3"><a href="/docs/5.0/about/overview/"></a></li>
-                </ul>
-                <p class="mb-0"><a href="/docs/5.0/about/team/"></a><a href="https://github.com/twbs/bootstrap/graphs/contributors"></a></p>
-                <p class="mb-0"><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener"></a><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"></a></p>
+        <footer class="text-muted py-3 footer">
+            <div class="container text-white">
+                <p class="float-end">
+                    <a href="#" class="removerLink">Voltar ao topo!</a>
+                </p>
+                <p class="mb-1">Projeto desenvolvido por: Geovani Possenti & Matheus de Jesus. </p>
+                <p class="mb-0">Repositório no GitHub: <a href="https://github.com/GeovaniPossenti/Sistema-de-OS" class="removerLink"><i class="fab fa-github"></i> Geovani Possenti</a>.</p>
             </div>
-        </footer>-->
+        </footer>
 
         <!-- Arquivo JS onde ficam os scrips dessa página. -->
         <script src="../tools/js/clientes.js"></script>
