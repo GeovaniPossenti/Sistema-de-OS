@@ -259,16 +259,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                        </svg>Cancelar
-                                    </button>
-                                    <button type="submit" class="btn btn-primary" title="Salvar">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
-                                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                                        </svg>Salvar
-                                    </button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar"><i class="fas fa-times"></i> Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" title="Salvar"><i class="fas fa-check"></i> Salvar</button>
                                 </div>
                             </form>
                             <!--------------------------->
@@ -349,16 +341,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                        </svg>Cancelar
-                                    </button>
-                                    <button type="submit" class="btn btn-primary" title="Salvar">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
-                                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-                                        </svg>Salvar alterações
-                                    </button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar"><i class="fas fa-times"></i> Cancelar</button>
+                                    <button type="submit" class="btn btn-primary" title="Salvar"><i class="fas fa-check"></i> Salvar alterações</button>
                                 </div>
                             </form>
                             <!--------------------------->
@@ -378,6 +362,18 @@
                             <div class="modal-body">
                                 <div class="container">
                                     <div class="row g-3 gy-3">  
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="id_os_pendenteDet" readonly>
+                                                <label for="">Código da OS:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="nome_clienteDet" readonly>
+                                                <label for="">Nome do Cliente:</label>
+                                            </div>
+                                        </div>
                                         <div class="col-md-12">
                                             <label for="">Descrição do defeito:</label>
                                             <textarea class="form-control" id="descricao_defeitoDet" rows="6" cols="64" placeholder="Não há dados..." readonly></textarea>        
@@ -400,11 +396,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Fechar">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                    </svg>Fechar
-                                </button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Fechar"><i class="fas fa-times"></i> Fechar</button>
                             </div>
                         </div>
                     </div>
