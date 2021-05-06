@@ -47,6 +47,10 @@
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
         <!--CSS da página. -->
         <link rel="stylesheet" href="../tools/css/styleClientes.css">
+        <!-- Fonte da CDN do Google -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+        
         <script>
             $(document).ready( function () {
                 $('#table_clientes').DataTable({

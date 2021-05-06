@@ -8,19 +8,7 @@
 	src: url("../fonts/Open_Sans/OpenSans-light.ttf");
 	font-size: 1em;
 }
-@font-face {
-	font-family: 'Arciform';
-	src: url("../fonts/Arciform/Arciform.otf");
-	font-size: 1em;
-}
-@font-face {
-	font-family: 'Franca';
-	src: url("../fonts/Franca/bold.otf");
-	font-size: 1em;
-}
-
 section {
-	font-family: OpenSans;
 	font-size: 12pt;
 	color: black;
 }
@@ -28,52 +16,14 @@ section {
 .hide{
 	display: none;
 }
-
-.modalfade {
-    animation: fadeIn 0.4s;
-    -moz-animation: fadeIn 0.4s; /* Firefox */
-    -webkit-animation: fadeIn 0.4s; /* Safari and Chrome */
-    -o-animation: fadeIn 0.4s; /* Opera */
-}
-@keyframes fadeIn {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-moz-keyframes fadeIn { /* Firefox */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-webkit-keyframes fadeIn { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-o-keyframes fadeIn { /* Opera */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 .header{
     background-color: rgba(0,0,0,0.6);
+    font-family: 'Roboto', sans-serif;
 }
 .fundo{
     margin: 0;
     padding: 0;
-    font-family: OpenSansLight;
+    font-family: 'Roboto', sans-serif;
     
     /* Aquele azul que eu tinha deixado por um tempo
     background: #4B79A1; 
@@ -86,6 +36,8 @@ section {
     background: linear-gradient(to right, #4e4376, #2b5876);
   }
 .quadrado{
+    font-family: 'Roboto', sans-serif;
+    
     margin-top: 1%;
     margin-left: 10%;
     margin-right: 10%;
@@ -93,7 +45,6 @@ section {
     background-color: rgba(0,0,0,0.6);
     text-align: center;
     border-radius: 20px;
-    font-family: OpenSansLight;
     font-size: 12pt;
     box-shadow: 9px 7px 10px rgba(50, 50, 50, 0.5);
 }
@@ -155,6 +106,45 @@ table#table_clientes.dataTable tbody tr:hover > .sorting_1 {
 }
 */
 
+/*Aqui eu crio o efeito personalizado do modal */
+.modalfade {
+    animation: fadeIn 0.4s;
+    -moz-animation: fadeIn 0.4s; /* Firefox */
+    -webkit-animation: fadeIn 0.4s; /* Safari and Chrome */
+    -o-animation: fadeIn 0.4s; /* Opera */
+}
+@keyframes fadeIn {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadeIn { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadeIn { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadeIn { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 
 	

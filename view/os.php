@@ -57,6 +57,9 @@
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <!--CSS da página. -->
         <link rel="stylesheet" href="../tools/css/styleOs.css">
+        <!-- Fonte da CDN do Google -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
         <script>
             $(document).ready( function () {
                 $('#table_os').DataTable({
@@ -388,7 +391,7 @@
                                         </div>
                                         <div class="col-md-6 text-center">
                                             <label for="">Contatar cliente via:</label>
-                                            <button type="button" class="btn" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);" title="Whatsapp" style="background-color: #25d366;">
+                                            <button type="button" class="btn" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);" title="Whatsapp" style="background-color: #25d366; padding: 7px 30px;">
                                                 <i class="bi bi-whatsapp"></i> Whatsapp 
                                             </button>
                                         </div>
@@ -404,6 +407,20 @@
                 <!-----------------------------------------------> 
             </div>
         </section>
+        
+        <!--<footer class="bd-footer bg-dark p-3 p-md-3 mt-5 bg-light text-center text-sm-start">
+            <div class="container">
+                <ul class="bd-footer-links ps-0 mb-3">
+                    <li class="d-inline-block"><a href="https://github.com/twbs"></a></li>
+                    <li class="d-inline-block ms-3"><a href="https://twitter.com/getbootstrap"></a></li>
+                    <li class="d-inline-block ms-3"><a href="/docs/5.0/examples/"></a></li>
+                    <li class="d-inline-block ms-3"><a href="/docs/5.0/about/overview/"></a></li>
+                </ul>
+                <p class="mb-0"><a href="/docs/5.0/about/team/"></a><a href="https://github.com/twbs/bootstrap/graphs/contributors"></a></p>
+                <p class="mb-0"><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank" rel="license noopener"></a><a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener"></a></p>
+            </div>
+        </footer>-->
+        
         <!-- Arquivo JS onde ficam os scrips dessa página. -->
         <script src="../tools/js/os.js"></script>
     </body>
