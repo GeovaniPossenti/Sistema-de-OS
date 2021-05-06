@@ -6,6 +6,7 @@ O objetivo central deste projeto, é criar um sistema web de ordem de serviço, 
 Para este projeto, foi utilizado uma empresa real como paramêtro para a concepção da ideia, ela concordou em fazer parte deste desenvolvimento acadêmico.
 
 Sistema começou a ser desenvolvido no dia: 08/04/2021
+
 Sistema desenvolvido por: Geovani Possenti
 
 
