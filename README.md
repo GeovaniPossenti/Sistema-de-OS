@@ -12,6 +12,6 @@ Sistema desenvolvido por: Geovani Possenti
 # Screenshots do sistema
 
 Tela inicial.  
-![Screenshot_1](https://user-images.githubusercontent.com/79884348/117333941-d7cbe980-ae6f-11eb-85f7-17da854bccf5.png)
+
 
 
