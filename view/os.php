@@ -153,17 +153,17 @@
                                 }                        
                             ?>
                             <tr>  
-                                <td class="btnDetailsOs" title="Ver detalhes"><?php echo $row['id_os_pendente']; ?></td>
+                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $row['id_os_pendente']; ?></td>
                                 <!--Aqui eu mostro o nome do cliente ao inves do id, usando um inner join no topo da página-->
-                                <td class="btnDetailsOs" title="Ver detalhes"><?php echo $row['nome_cliente']; ?></td>
+                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $row['nome_cliente']; ?></td>
                                 <!--------------------------------------------------------->
-                                <td class="btnDetailsOs" title="Ver detalhes"><?php echo $row['nome_equipamento']; ?></td>
+                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $row['nome_equipamento']; ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['descricao_defeito']; ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['descricao_reparo']; ?></td>
-                                <td class="btnDetailsOs" style="color: <?php echo $color; ?>" title="Ver detalhes"><?php echo $row['status']; ?></td>
-                                <td class="btnDetailsOs" title="Ver detalhes"><?php echo inverteData($row['data_recebimento']); ?></td>
+                                <td class="btnDetailsOs" style="color: <?php echo $color; ?>" title="Ver todos os detalhes"><?php echo $row['status']; ?></td>
+                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo inverteData($row['data_recebimento']); ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['data_entrega_cliente']; ?></td>
-                                <td class="btnDetailsOs" title="Ver detalhes"><?php echo str_replace('.', ',', $row['valor_reparo']); ?></td>
+                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo str_replace('.', ',', $row['valor_reparo']); ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['link_webZap']; ?></td>
                                 <td class="text-center">
                                     <!--Formulario para deletar uma linha no na tabela de os_pendente. -->
@@ -377,22 +377,51 @@
                                                 <label for="">Nome do Cliente:</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <label for="">Descrição do defeito:</label>
-                                            <textarea class="form-control" id="descricao_defeitoDet" rows="6" cols="64" placeholder="Não há dados..." readonly></textarea>        
+                                        <div class="col-md-8">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="nome_equipamentoDet" readonly>
+                                                <label for="">Nome do Equipamento:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="statusDet" readonly>
+                                                <label for="">Processo:</label>
+                                            </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <label for="">Descrição do reparo:</label>
-                                            <textarea class="form-control" id="descricao_reparoDet" rows="6" cols="64" placeholder="Não há dados..." readonly></textarea>
+                                            <div class="form-floating">
+                                                <textarea class="form-control" id="descricao_defeitoDet" style="height: 150px" readonly></textarea>        
+                                                <label for="">Descrição do defeito:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" id="descricao_reparoDet" style="height: 150px" readonly></textarea>
+                                                <label for="">Descrição do reparo:</label>
+                                            </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="">Data de entrega ao cliente:</label>
-                                            <input type="date" class="form-control" name="" id="data_entrega_clienteDet" readonly>
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="data_recebimentoDet" readonly>
+                                                <label for="">Data de recebimento:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="date" class="form-control" name="" id="data_entrega_clienteDet" readonly>
+                                                <label for="">Data de entrega ao cliente:</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="valor_reparoDet" readonly>
+                                                <label for="">Valor do cobrado:</label>
+                                            </div>
                                         </div>
                                         <div class="col-md-6 text-center">
-                                            <label for="">Contatar cliente via:</label>
-                                            <button type="button" class="btn text-white" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);" title="Whatsapp" style="background-color: #25d366; padding: 7px 30px;">
-                                                <i class="bi bi-whatsapp"></i> Whatsapp 
+                                            <button type="button" class="btn text-white btnZap" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);" title="Chamar cliente via WhatsApp">
+                                                <i class="fab fa-whatsapp" style="font-size: 20px; margin-top: 5px;"></i> WhatsApp 
                                             </button>
                                         </div>
                                     </div>

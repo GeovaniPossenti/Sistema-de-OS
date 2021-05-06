@@ -66,6 +66,10 @@ footer {
     color: inherit;
     text-decoration:none; 
 }
+.btnZap{
+    margin-top: 8px;
+    background-color: #25d366;
+}
 /*Style dos textos do datatables*/
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
     color: white;
