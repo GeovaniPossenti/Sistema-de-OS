@@ -11,7 +11,6 @@ Sistema desenvolvido por: Geovani Possenti
 
 # Screenshots do sistema
 
-Tela inicial.  
 
 
 
