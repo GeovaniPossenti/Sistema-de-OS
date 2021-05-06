@@ -9,8 +9,5 @@ Sistema começou a ser desenvolvido no dia: 08/04/2021
 
 Sistema desenvolvido por: Geovani Possenti
 
-# Screenshots do sistema
-
-
 
 
