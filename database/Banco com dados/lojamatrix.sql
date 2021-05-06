@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Maio-2021 às 00:21
+-- Tempo de geração: 06-Maio-2021 às 05:09
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -91,7 +91,7 @@ CREATE TABLE `os_pendente` (
   `data_recebimento` date NOT NULL,
   `data_entrega_cliente` date DEFAULT NULL,
   `valor_reparo` decimal(10,2) DEFAULT NULL,
-  `link_webZap` varchar(255) NOT NULL
+  `link_webZap` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -99,27 +99,27 @@ CREATE TABLE `os_pendente` (
 --
 
 INSERT INTO `os_pendente` (`id_os_pendente`, `id_cliente`, `nome_equipamento`, `descricao_defeito`, `descricao_reparo`, `status`, `data_recebimento`, `data_entrega_cliente`, `valor_reparo`, `link_webZap`) VALUES
-(1, 6, 'Notebook Dell', '', 'Troca HD', 'Entregue', '2021-05-03', '2021-05-21', '250.00', 'https://api.whatsapp.com/send?phone=+5541991553930'),
-(2, 30, 'Tablet', '', 'Atualização OS', 'Aguardando', '2021-05-04', '0000-00-00', '0.00', 'https://api.whatsapp.com/send?phone=+5541997871190'),
-(3, 2, 'Computador de mesa', '', 'Limpeza e formatação', 'Aguardando', '2021-05-04', '0000-00-00', '0.00', 'https://api.whatsapp.com/send?phone=+5541993170169'),
-(4, 14, 'Celular Samsung ', '', 'Troca de tela defeituosa', 'Processando', '2021-05-04', '2021-05-08', '150.00', 'https://api.whatsapp.com/send?phone=+5541986107277'),
-(5, 21, 'Celular Iphone', 'Troca da bateria', '', 'Finalizado', '2021-05-04', '2021-05-12', '500.00', 'https://api.whatsapp.com/send?phone=+5541993707997'),
-(6, 16, 'Notebook Positivo', 'Substituição do teclado ', '', 'Finalizado', '2021-05-04', '0000-00-00', '600.00', 'https://api.whatsapp.com/send?phone=+5541999581366'),
-(7, 17, 'Computador de mesa', 'Upgrade de peças, instalação de OS e montagem. ', '', 'Finalizado', '2021-05-04', '0000-00-00', '200.00', 'https://api.whatsapp.com/send?phone=+5541995707697'),
-(8, 9, 'Computador de mesa', 'Instalação de ssd', '', 'Finalizado', '2021-05-04', '0000-00-00', '100.00', 'https://api.whatsapp.com/send?phone=+5541981911947'),
-(9, 24, 'Notebook ', 'Troca de pasta térmica ', '', 'Aguardando', '2021-05-04', '0000-00-00', '50.00', 'https://api.whatsapp.com/send?phone=+5541985451285'),
-(10, 19, 'Celular Motorola', 'Troca de tela', '', 'Aguardando', '2021-05-04', '0000-00-00', '150.00', 'https://api.whatsapp.com/send?phone=+5541991288791'),
-(11, 19, 'Notebook HP', 'Manutenção', '', 'Processando', '2021-05-04', '0000-00-00', '180.00', 'https://api.whatsapp.com/send?phone=+5541991288791'),
-(12, 28, 'Notebook Avell', 'Manutenção, troca de pasta térmica e troca de teclado. ', '', 'Aguardando', '2021-05-04', '0000-00-00', '1000.00', 'https://api.whatsapp.com/send?phone=+5541992187910'),
-(13, 15, 'Celular Asus', 'Troca de tela, troca de auto-falante e troca de conector de carga ', '', 'Aguardando', '2021-05-04', '0000-00-00', '400.00', 'https://api.whatsapp.com/send?phone=+5541996425837'),
-(14, 8, 'Computador de mesa', '', 'Limpeza e formatação', 'Finalizado', '2021-05-04', '0000-00-00', '150.00', 'https://api.whatsapp.com/send?phone=+5541993582868'),
-(15, 4, 'Computador de mesa', 'Troca de placa de vídeo', '', 'Aguardando', '2021-05-04', '0000-00-00', '120.00', 'https://api.whatsapp.com/send?phone=+5541997883894'),
-(16, 23, 'Placa mãe', 'Curto circuito no processador \r\n', '', 'Orçamento', '2021-05-04', '0000-00-00', '400.00', 'https://api.whatsapp.com/send?phone=+5541984311525'),
-(17, 25, 'Placa de vídeo', '', 'Precisa fazer reballing ', 'Aguardando', '2021-05-04', '0000-00-00', '400.00', 'https://api.whatsapp.com/send?phone=+5541981620592'),
-(18, 10, 'Notebook Acer', 'Não liga e não da vídeo ', '', 'Orçamento', '2021-05-04', '0000-00-00', '0.00', 'https://api.whatsapp.com/send?phone=+5541982872520'),
-(19, 28, 'Computador de mesa', '', 'Manutenção', 'Entregue', '2021-05-04', '2021-05-26', '100.00', 'https://api.whatsapp.com/send?phone=+5541992187910'),
-(20, 12, 'Notebook', 'Não da vídeo', 'Limpeza e formatação ', 'Entregue', '2021-05-04', '2021-05-12', '150.00', 'https://api.whatsapp.com/send?phone=+5541985288941'),
-(21, 11, 'Celular Xiaomi', '', 'Troca de tela', 'Entregue', '2021-05-04', '2021-05-31', '250.00', 'https://api.whatsapp.com/send?phone=+5541981912023');
+(1, 6, 'Notebook Dell', '', 'Troca HD', 'Entregue', '2021-05-03', '2021-05-21', '250.00', 'https://api.whatsapp.com/send?phone=+5541991553930&text=Ol%C3%A1%20Stefany%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(2, 30, 'Tablet', '', 'Atualização OS', 'Aguardando', '2021-05-04', '0000-00-00', '0.00', 'https://api.whatsapp.com/send?phone=+5541997871190&text=Ol%C3%A1%20Alexandre%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(3, 2, 'Computador de mesa', '', 'Limpeza e formatação', 'Aguardando', '2021-05-04', '0000-00-00', '0.00', 'https://api.whatsapp.com/send?phone=+5541993170169&text=Ol%C3%A1%20Alice%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(4, 14, 'Celular Samsung ', '', 'Troca de tela defeituosa', 'Processando', '2021-05-04', '2021-05-08', '150.00', 'https://api.whatsapp.com/send?phone=+5541986107277&text=Ol%C3%A1%20Ana%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(5, 21, 'Celular Iphone', 'Troca da bateria', '', 'Finalizado', '2021-05-04', '2021-05-12', '500.00', 'https://api.whatsapp.com/send?phone=+5541993707997&text=Ol%C3%A1%20Ana%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(6, 16, 'Notebook Positivo', 'Substituição do teclado ', '', 'Finalizado', '2021-05-04', '0000-00-00', '600.00', 'https://api.whatsapp.com/send?phone=+5541999581366&text=Ol%C3%A1%20Antonella%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(7, 17, 'Computador de mesa', 'Upgrade de peças, instalação de OS e montagem. ', '', 'Finalizado', '2021-05-04', '0000-00-00', '200.00', 'https://api.whatsapp.com/send?phone=+5541995707697&text=Ol%C3%A1%20Betina%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(8, 9, 'Computador de mesa', 'Instalação de ssd', '', 'Finalizado', '2021-05-04', '0000-00-00', '100.00', 'https://api.whatsapp.com/send?phone=+5541981911947&text=Ol%C3%A1%20Cauê%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(9, 24, 'Notebook ', 'Troca de pasta térmica ', '', 'Aguardando', '2021-05-04', '0000-00-00', '50.00', 'https://api.whatsapp.com/send?phone=+5541985451285&text=Ol%C3%A1%20Diego%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(10, 19, 'Celular Motorola', 'Troca de tela', '', 'Aguardando', '2021-05-04', '0000-00-00', '150.00', 'https://api.whatsapp.com/send?phone=+5541991288791&text=Ol%C3%A1%20Edson%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(11, 19, 'Notebook HP', 'Manutenção', '', 'Processando', '2021-05-04', '0000-00-00', '180.00', 'https://api.whatsapp.com/send?phone=+5541991288791&text=Ol%C3%A1%20Edson%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(12, 28, 'Notebook Avell', 'Manutenção, troca de pasta térmica e troca de teclado. ', '', 'Aguardando', '2021-05-04', '0000-00-00', '1000.00', 'https://api.whatsapp.com/send?phone=+5541992187910&text=Ol%C3%A1%20Sebastião%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(13, 15, 'Celular Asus', 'Troca de tela, troca de auto-falante e troca de conector de carga ', '', 'Aguardando', '2021-05-04', '0000-00-00', '400.00', 'https://api.whatsapp.com/send?phone=+5541996425837&text=Ol%C3%A1%20Elaine%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(14, 8, 'Computador de mesa', '', 'Limpeza e formatação', 'Finalizado', '2021-05-04', '0000-00-00', '150.00', 'https://api.whatsapp.com/send?phone=+5541993582868&text=Ol%C3%A1%20Francisca%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(15, 4, 'Computador de mesa', 'Troca de placa de vídeo', '', 'Aguardando', '2021-05-04', '0000-00-00', '120.00', 'https://api.whatsapp.com/send?phone=+5541997883894&text=Ol%C3%A1%20Gael%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(16, 23, 'Placa mãe', 'Curto circuito no processador \r\n', '', 'Orçamento', '2021-05-04', '0000-00-00', '400.00', 'https://api.whatsapp.com/send?phone=+5541984311525&text=Ol%C3%A1%20Guilherme%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(17, 25, 'Placa de vídeo', '', 'Precisa fazer reballing ', 'Aguardando', '2021-05-04', '0000-00-00', '400.00', 'https://api.whatsapp.com/send?phone=+5541981620592&text=Ol%C3%A1%20Helena%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(18, 10, 'Notebook Acer', 'Não liga e não da vídeo ', '', 'Orçamento', '2021-05-04', '0000-00-00', '0.00', 'https://api.whatsapp.com/send?phone=+5541982872520&text=Ol%C3%A1%20Hugo%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(19, 28, 'Computador de mesa', '', 'Manutenção', 'Entregue', '2021-05-04', '2021-05-26', '100.00', 'https://api.whatsapp.com/send?phone=+5541992187910&text=Ol%C3%A1%20Sebastião%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(20, 12, 'Notebook', 'Não da vídeo', 'Limpeza e formatação ', 'Entregue', '2021-05-04', '2021-05-12', '150.00', 'https://api.whatsapp.com/send?phone=+5541985288941&text=Ol%C3%A1%20Malu%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84'),
+(21, 11, 'Celular Xiaomi', '', 'Troca de tela', 'Entregue', '2021-05-04', '2021-05-31', '250.00', 'https://api.whatsapp.com/send?phone=+5541981912023&text=Ol%C3%A1%20José%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84');
 
 -- --------------------------------------------------------
 

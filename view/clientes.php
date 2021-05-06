@@ -83,8 +83,8 @@
                         <img src="../tools/img/computador-pessoal.png" alt="" width="40px" height="40px">
                     </a>
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 20px;">
-                        <li><a href="os.php" class="nav-link px-2 text-secondary"><i class="fas fa-clipboard"></i> Ordens de Serviço</a></li>
-                        <li><a href="clientes.php" class="nav-link px-2 text-white"><i class="fas fa-user-friends"></i> Lista de Clientes</a></li>
+                    <li><a href="os.php" class="nav-link px-2 text-secondary" title="Página com a lista de Ordens de Serviços"><i class="fas fa-clipboard"></i> Ordens de Serviço</a></li>
+                        <li><a href="clientes.php" class="nav-link px-2 text-white" title="Página com a lista de Clientes"><i class="fas fa-user-friends"></i> Lista de Clientes</a></li>
                         <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
                     </ul>
                     <div class="text-end">

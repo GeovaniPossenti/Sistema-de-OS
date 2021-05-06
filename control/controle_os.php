@@ -34,18 +34,23 @@
         $valorReparoAltFormatado = str_replace(',', '.', $valorSemVirgula);
 
         //Aqui eu faço um Select na tabela de clientes, para pegar o telefone do cliente cadastrado no serviço.
-        $sqlSelectCliente = "SELECT `celular_cliente` FROM `clientes` WHERE `id_cliente` = '$idClienteCad'";
+        $sqlSelectCliente = "SELECT `nome_cliente`, `celular_cliente` FROM `clientes` WHERE `id_cliente` = '$idClienteCad'";
         $stmt = $con->prepare($sqlSelectCliente);
         $stmt->execute();
         $ArraySelect = $stmt->fetch();
+        $nome_cliente = $ArraySelect['nome_cliente'];
         $celular_cliente = $ArraySelect['celular_cliente'];
+
+        //Aqui eu filtro a váriavel de nome só pra pegar o primeiro nome da pessoa!
+        $explodePrimeiroName = explode(" ", $nome_cliente);
+        $primeiroNomeCliente = $explodePrimeiroName[0];
 
         //Aqui eu filtro o celular vindo do banco, já que eu preciso dele sem () e - . 
         $filtros = array("(",")","-"," ");
         $celular_cliente_filtrado = str_replace($filtros, "", $celular_cliente);
 
         //E aqui eu junto esse telefone no link do WhatsApp.
-        $linkZapCad = "https://api.whatsapp.com/send?phone=+55$celular_cliente_filtrado";
+        $linkZapCad = "https://api.whatsapp.com/send?phone=+55$celular_cliente_filtrado&text=Ol%C3%A1%20$primeiroNomeCliente%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84";
 
         $sqlInsertOS = "INSERT INTO `os_pendente`(`id_cliente`, `nome_equipamento`, `descricao_defeito`, `descricao_reparo`, `status`, `data_recebimento`, `data_entrega_cliente`, `valor_reparo`, `link_webZap`) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $con->prepare($sqlInsertOS);
@@ -83,25 +88,25 @@
         $valorReparoAltFormatado = str_replace(',', '.', $valorSemVirgula);
 
         //Aqui eu dou um select pra pegar o id do cliente, já que no input eu sou obrigado a passar somente o nome dele. 
-        $sqlSelectIdCliente = "SELECT `id_cliente` FROM `clientes` WHERE `nome_cliente` = '$nomeClienteAlt'";
+        //Aqui eu faço um Select na tabela de clientes, para pegar o telefone do cliente cadastrado no serviço.
+        $sqlSelectIdCliente = "SELECT `id_cliente`, `nome_cliente`, `celular_cliente` FROM `clientes` WHERE `nome_cliente` = '$nomeClienteAlt'";
         $stmt = $con->prepare($sqlSelectIdCliente);
         $stmt->execute();
         $ArraySelect = $stmt->fetch();
         $id_cliente_update = $ArraySelect['id_cliente'];
+        $nome_cliente = $ArraySelect['nome_cliente'];
+        $celular_cliente = $ArraySelect['celular_cliente'];
 
-        //Aqui eu faço um Select na tabela de clientes, para pegar somente o telefone cadastrado no momento. 
-        $sqlSelectClienteCelular = "SELECT `celular_cliente` FROM `clientes` WHERE `id_cliente` = '$id_cliente_update'";
-        $stmt = $con->prepare($sqlSelectClienteCelular);
-        $stmt->execute();
-        $ArraySelectCelular = $stmt->fetch();
-        $celular_cliente = $ArraySelectCelular['celular_cliente'];
+        //Aqui eu filtro a váriavel de nome só pra pegar o primeiro nome da pessoa!
+        $explodePrimeiroName = explode(" ", $nome_cliente);
+        $primeiroNomeCliente = $explodePrimeiroName[0];
 
         //Aqui eu filtro o celular vindo do banco, já que eu preciso dele sem () e - . 
         $filtros = array("(",")","-"," ");
         $celular_cliente_filtrado = str_replace($filtros, "", $celular_cliente);
         
         //E aqui eu junto esse telefone no link do WhatsApp.
-        $linkZapCad = "https://api.whatsapp.com/send?phone=+55$celular_cliente_filtrado";
+        $linkZapCad = "https://api.whatsapp.com/send?phone=+55$celular_cliente_filtrado&text=Ol%C3%A1%20$primeiroNomeCliente%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84";
         
         //Aqui eu seto o update já colocando um novo cliente caso o usuario tenha mudado.
         $sqlUpdateOs = "UPDATE `os_pendente` SET `id_cliente`=?,`nome_equipamento`= ?,`descricao_defeito`= ?,`descricao_reparo`= ?,`status`= ?,`data_entrega_cliente`= ?,`valor_reparo`= ?,`link_webZap`= ? WHERE `id_os_pendente` = '$idOsPendenteAlt'";
