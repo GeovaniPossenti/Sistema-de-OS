@@ -1,3 +1,5 @@
 # Sobre
 
-Este projeto foi desenvolvido para cumprir uma proposta de Jornada de Aprendizagem, realizada no 1° Semestre do curso de Bacharelado em Sistemas de Informação.
+Este projeto foi desenvolvido no 1° semestre do curso de Bacharelado em Sistemas de Informação. Para a conclusão de uma proposta de projeto dada pela matéria de Jornada de Aprendizagem – Startup, Inovação e Tecnologia. 
+
+
