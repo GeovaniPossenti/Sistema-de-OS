@@ -11,4 +11,9 @@ Sistema desenvolvido por: Geovani Possenti
 
 # Interface
 
+O projeto ainda está em desenvolvimento, porém vou deixar aqui algumas screenshots das principais telas do sistema. 
+
+![tela_os](https://user-images.githubusercontent.com/79884348/117519112-c6223900-af78-11eb-99bd-28d639227cd0.png)
+
+
 
