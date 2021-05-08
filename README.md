@@ -11,5 +11,4 @@ Sistema desenvolvido por: Geovani Possenti
 
 # Interface
 
-<img src="tools/img/Screenshots/tela_os.png" />
 
