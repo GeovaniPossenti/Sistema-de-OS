@@ -34,5 +34,3 @@ Figura 4 - Footer da página principal.
 ![footer_os](https://user-images.githubusercontent.com/79884348/117519181-0386c680-af79-11eb-9040-f6dad0971a78.png)
 
 
-
-
