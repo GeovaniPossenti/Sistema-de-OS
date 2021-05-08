@@ -17,31 +17,31 @@ Existe a probabilidade das imagens ficarem com menos resolução que o comum, pa
 
 # Página de ordens de serviço
 
-![tela_os](https://user-images.githubusercontent.com/79884348/117519112-c6223900-af78-11eb-99bd-28d639227cd0.png)
-
 Figura 1 - Tela principal do sistema.
 
-![tela_cadastro_os](https://user-images.githubusercontent.com/79884348/117519163-f4a01400-af78-11eb-86ce-0057ee4316c4.png)
+![tela_os](https://user-images.githubusercontent.com/79884348/117519112-c6223900-af78-11eb-99bd-28d639227cd0.png)
 
 Figura 2 - Tela de cadastro.
 
-![detalhes_os](https://user-images.githubusercontent.com/79884348/117519172-fb2e8b80-af78-11eb-9480-85803973fe25.png)
+![tela_cadastro_os](https://user-images.githubusercontent.com/79884348/117519163-f4a01400-af78-11eb-86ce-0057ee4316c4.png)
 
 Figura 3 - Tela de detalhes.
 
-![footer_os](https://user-images.githubusercontent.com/79884348/117519181-0386c680-af79-11eb-9040-f6dad0971a78.png)
+![detalhes_os](https://user-images.githubusercontent.com/79884348/117519172-fb2e8b80-af78-11eb-9480-85803973fe25.png)
 
 Figura 4 - Footer da página principal.
 
-# Página de clientes
+![footer_os](https://user-images.githubusercontent.com/79884348/117519181-0386c680-af79-11eb-9040-f6dad0971a78.png)
 
-![tela_clientes](https://user-images.githubusercontent.com/79884348/117519304-6bd5a800-af79-11eb-8943-f954b330fb89.png)
+# Página de clientes
 
 Figura 5 - Tela principal de clientes.
 
-![cadastro_clientes](https://user-images.githubusercontent.com/79884348/117519311-709a5c00-af79-11eb-9c11-9d0a5bc22a36.png)
+![tela_clientes](https://user-images.githubusercontent.com/79884348/117519304-6bd5a800-af79-11eb-8943-f954b330fb89.png)
 
 Figura 6 - Tela de cadastro.
+
+![cadastro_clientes](https://user-images.githubusercontent.com/79884348/117519311-709a5c00-af79-11eb-9c11-9d0a5bc22a36.png)
 
 
 
