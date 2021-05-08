@@ -33,15 +33,6 @@ Figura 4 - Footer da página principal.
 
 ![footer_os](https://user-images.githubusercontent.com/79884348/117519181-0386c680-af79-11eb-9040-f6dad0971a78.png)
 
-# Página de clientes
-
-Figura 5 - Tela principal de clientes.
-
-![tela_clientes](https://user-images.githubusercontent.com/79884348/117519304-6bd5a800-af79-11eb-8943-f954b330fb89.png)
-
-Figura 6 - Tela de cadastro.
-
-![cadastro_clientes](https://user-images.githubusercontent.com/79884348/117519311-709a5c00-af79-11eb-9c11-9d0a5bc22a36.png)
 
 
 
