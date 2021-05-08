@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Maio-2021 às 05:09
+-- Tempo de geração: 08-Maio-2021 às 04:19
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -72,7 +72,22 @@ INSERT INTO `clientes` (`id_cliente`, `nome_cliente`, `cpf_cliente`, `celular_cl
 (27, 'Rosângela Betina Dias', '786.226.509-28', '(41) 98232-0912', '(41) 2566-0292'),
 (28, 'Sebastião Eduardo Silveira', '456.588.689-80', '(41) 99218-7910', '(41) 3559-4592'),
 (29, 'Thales Gael Ricardo Nogueira', '488.596.399-05', '(41) 98361-1227', '(41) 3541-5416'),
-(30, 'Alexandre Mário Raimundo da Cruz', '635.906.039-68', '(41) 99787-1190', '(41) 3653-2263');
+(30, 'Alexandre Mário Raimundo da Cruz', '635.906.039-68', '(41) 99787-1190', '(41) 3653-2263'),
+(31, 'Sérgio Levi Mendes', '090.103.769-90', '(41) 98493-9251', '(41) 2721-1790'),
+(32, 'Alessandra Olivia Liz Moraes', '984.813.069-16', '(41) 98560-3393', '(41) 2582-0885'),
+(33, 'Stella Ayla Carolina Corte Real', '148.718.049-76', '(41) 99521-4301', '(41) 3876-5285'),
+(34, 'Jorge Juan Figueiredo', '358.870.209-11', '(41) 99855-1392', '(41) 2734-8974'),
+(35, 'Levi Bryan Benjamin da Mata', '157.903.149-88', '(41) 99516-1191', '(41) 3854-8693'),
+(36, 'Benedito Diego Sales', '459.621.719-00', '(41) 99678-1965', '(41) 3704-8354'),
+(37, 'Thiago Thomas Nogueira', '843.511.619-06', '(41) 99592-5846', '(41) 3834-5937'),
+(38, 'Enzo Lorenzo Ian Pinto', '634.659.409-54', '(41) 99893-0305', '(41) 3602-2643'),
+(39, 'Tiago Geraldo Galvão', '868.798.009-47', '(41) 98261-4829', '(41) 2786-1656'),
+(40, 'Bárbara Luiza Evelyn Peixoto', '665.826.309-46', '(41) 98563-4021', '(41) 2760-3353'),
+(41, 'Kaique Lucca Teixeira', '876.410.549-00', '(41) 98198-5120', '(41) 2879-9482'),
+(42, 'Sara Fernanda Aparício', '082.968.199-02', '(41) 99699-0662', '(41) 2829-0111'),
+(43, 'Emanuel Luiz Danilo Fogaça', '557.246.209-87', '(41) 98499-0438', '(41) 3702-2148'),
+(44, 'José Arthur Gonçalves', '174.174.519-50', '(41) 98247-7737', '(41) 3915-8784'),
+(45, 'Filipe Manoel Viana', '731.989.659-18', '(41) 98266-1082', '(41) 3741-9508');
 
 -- --------------------------------------------------------
 
@@ -172,7 +187,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de tabela `os_pendente`
