@@ -437,15 +437,7 @@
             </div>
         </section>
         
-        <footer class="text-muted py-3 footer">
-            <div class="container text-white">
-                <p class="float-end">
-                    <a href="#" class="removerLink" title="Clique para voltar ao topo da página!">Voltar ao topo <i class="fas fa-arrow-up"></i></a>
-                </p>
-                <p class="mb-1" title="Pessoas responsáveis pelo projeto!">Projeto desenvolvido por: Geovani Possenti</p>
-                <p class="mb-0" title="">Repositório no GitHub: <a href="https://github.com/GeovaniPossenti/Sistema-de-OS" class="removerLink" title="Acessar repositório no GitHub!" target="_blank"><i class="fab fa-github"></i> Geovani Possenti</a></p>
-            </div>
-        </footer>
+        <?php include_once('footer.html'); ?>
         
         <!-- Arquivo JS onde ficam os scrips dessa página. -->
         <script src="../tools/js/os.js"></script>

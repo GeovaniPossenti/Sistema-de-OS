@@ -1,6 +1,3 @@
-<?php 
-    session_start();
-?> 
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -32,6 +29,7 @@
     </body>
 </html>
 <?php
+    session_start();
     //Include da .php onde ficam as funcões de alertas, precisa ser incluido no final da página. 
     include_once ('view/alerts.php');
 
