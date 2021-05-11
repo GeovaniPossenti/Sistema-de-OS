@@ -16,7 +16,7 @@
     $conn = new Conexao;
     $con = $conn->conectar();
 
-    $id_os = $_GET['id'];
+    $id_os = $_POST['idOsPendenteRelatorio'];
 
     //Select que pega os dados pra preencher a tabela de OS.
     $SelectRelatorio = "SELECT `p`.`id_os_pendente`, `p`.`nome_equipamento`, `p`.`descricao_defeito`, `p`.`descricao_reparo`,`p`.`data_recebimento`, `p`.`data_entrega_cliente`, `p`.`valor_reparo`, `u`.`nome_cliente` FROM `os_pendente` `P` join `clientes` `U` on (`P`.`id_cliente` = `U`.`id_cliente`) WHERE `id_os_pendente` = '$id_os'";

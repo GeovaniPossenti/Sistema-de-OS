@@ -180,7 +180,10 @@
                                 </td>                                    
                                 <td class="text-center">
                                     <?php if($row['status'] == 'Entregue'){ ?>           
-                                        <a href="relatorio.php?id=<?php echo $row['id_os_pendente']; ?>"><button type="button" class="btn btn-outline-warning" title="Gerar Relatório">
+                                        <form action="relatorio.php" method="POST">
+                                            <input type="hidden" value="<?php echo $row['id_os_pendente']; ?>" name="idOsPendenteRelatorio">
+                                            <button type="submit" class="btn btn-outline-warning" title="Gerar Relatório">
+                                        </form>
                                             <i class="fas fa-file-pdf"></i>
                                         </button></a>
                                     <?php } ?>
