@@ -180,7 +180,7 @@
                                 </td>                                    
                                 <td class="text-center">
                                     <?php if($row['status'] == 'Entregue'){ ?>           
-                                        <form action="relatorio.php" method="POST">
+                                        <form action="relatorio.php" method="POST" target="_blank">
                                             <input type="hidden" value="<?php echo $row['id_os_pendente']; ?>" name="idOsPendenteRelatorio">
                                             <button type="submit" class="btn btn-outline-warning" title="Gerar Relatório">
                                         </form>

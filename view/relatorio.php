@@ -1,5 +1,4 @@
 <?php 
-    header('charset=ISO-8859-1');
     date_default_timezone_set('America/Sao_Paulo');
     //Starto a sessão e pego o SESSION da váriavel que diz se eu estou logado ou não.
     session_start();
@@ -36,6 +35,7 @@
 			ob_start();
 			require_once("../tools/lib/fpdf/fpdf.php");
 			$pdf = new FPDF("P","mm","A5");
+            $pdf->SetTitle("Relatório OS N° $id_os", true);
                      
             $pdf->AddPage();
             
