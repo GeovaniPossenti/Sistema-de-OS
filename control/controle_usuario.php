@@ -15,7 +15,7 @@
         $password = isset($_POST['passwordLogin']) ? $_POST['passwordLogin'] : '';
 
         //Aqui eu uso uma função pra criar a versão md5 da senha digitada.
-        $passwordMd5 = make_hash($password);
+        $passwordMd5 = md5($password);
 
         $sql = "SELECT `id_usuario`, `login_usuario`, `senha_usuario` FROM `usuarios` WHERE BINARY login_usuario = ? AND BINARY senha_usuario = ?";
         $stmt = $con->prepare($sql);

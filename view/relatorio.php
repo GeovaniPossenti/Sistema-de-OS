@@ -16,6 +16,7 @@
     $conn = new Conexao;
     $con = $conn->conectar();
 
+    //Aqui eu pego o POST do id_os_pendente.
     $id_os = $_POST['idOsPendenteRelatorio'];
 
     //Select que pega os dados pra preencher a tabela de OS.
