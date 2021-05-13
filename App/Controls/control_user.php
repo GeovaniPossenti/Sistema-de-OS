@@ -1,50 +1,35 @@
-<?php 
-    @session_start();
+<?php
 
-    include_once '../model/conexao.php';
-    $conn = new Conexao;
-    $con = $conn->conectar();
+session_start();
 
-    //Sempre quando eu venho pra control, eu passo uma váriavel pela url dizendo qual função que o úsuario quer. 
-    //op = 'cad'astro / op = 'alt'erar / op = 'del'etar
-    @$op = $_GET['op'];
+include '../Models/Mysql.php';
+include '../Models/User.php';
 
-    //Login de usuario.
-    if ($op == 'log'){
-        $username = isset($_POST['usernameLogin']) ? $_POST['usernameLogin'] : '';
-        $password = isset($_POST['passwordLogin']) ? $_POST['passwordLogin'] : '';
+//Sempre quando eu venho pra control, eu passo uma váriavel pela url dizendo qual função que o úsuario quer.
+//op = 'cad'astro / op = 'alt'erar / op = 'del'etar
+$op = $_GET['op'];
 
-        //Aqui eu uso uma função pra criar a versão md5 da senha digitada.
-        $passwordMd5 = md5($password);
+if ($op == 'log'){
+    $loginUsuario = isset($_POST['usernameLogin']) ? $_POST['usernameLogin'] : '';
+    $senhaUsuario = isset($_POST['passwordLogin']) ? $_POST['passwordLogin'] : '';
+    $senhaUsuarioMD5 = md5($senhaUsuario);
 
-        $sql = "SELECT `id_usuario`, `login_usuario`, `senha_usuario` FROM `usuarios` WHERE BINARY login_usuario = ? AND BINARY senha_usuario = ?";
-        $stmt = $con->prepare($sql);
-        $stmt->bindParam(1, $username);
-        $stmt->bindParam(2, $passwordMd5);
-        $stmt->execute();
-        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $con = Mysql::getInstance();
+    $dbInstance = new User($con);
+    $dados = $dbInstance->verificaUsuario($loginUsuario, $senhaUsuarioMD5);
 
-        //Faz a contagem pra ver se aquele login existe no banco.
-        if (count($users) <= 0){
-            //Se ele não existir
-            //Seto o alerta, e volto pra página de login.
-            
-            $_SESSION['alerts'] = 'logFail';
-            
-            header("location: ../index.php");
-            
-        }elseif(count($users) > 0){
-            //Se ele existir
-            //Pega o primeiro usuário do array.
-            $user = $users[0];
+    //Aqui eu vejo se o que retornou do banco foi true or false.
+    if (!$dados){
+        //Se ele não existir
+        //Set do alerta, e volto pra página de login.
+        $_SESSION['alerts'] = 'logFail';
+        header("location: ../../index.php");
+    }else{
+        //Se ele existir
+        //Session com os dados e variaveis necessárias.
+        $_SESSION['logged_in'] = true;
+        $_SESSION['alerts'] = 'logOk';
 
-            //Session com os dados e variaveis necessárias.
-            $_SESSION['logged_in'] = true;
-            $_SESSION['user_id'] = $user['id_usuario'];
-            $_SESSION['alerts'] = 'logOk';
-            
-            header("location: ../view/os.php");
-
-        }
+        header("location: ../../view/os.php");
     }
-?>
+}

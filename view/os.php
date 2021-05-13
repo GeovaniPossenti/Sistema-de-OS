@@ -14,6 +14,13 @@
         header('Location: ../index.php');
     }
 
+//    include '../App/Models/Mysql.php';
+//    include '../App/Models/OrderService.php';
+//
+//    $teste = Mysql::getInstance();
+//    $dbInstance = new OrderService($teste);
+//    $arrayBancoOs = $dbInstance->listaOS();
+
     //Select que pega os dados pra preencher a tabela de OS.
     $selectOSPendente = "SELECT `p`.`id_os_pendente`, `p`.`nome_equipamento`, `p`.`descricao_defeito`, `p`.`descricao_reparo`, `p`.`status` ,`p`.`data_recebimento`, `p`.`data_entrega_cliente`, `p`.`valor_reparo`, `p`.`link_webZap`, `u`.`nome_cliente` FROM `os_pendente` `P` join `clientes` `U` on (`P`.`id_cliente` = `U`.`id_cliente`)";
 	$stmt = $con->prepare($selectOSPendente);
@@ -98,7 +105,7 @@
                         <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
                     </ul>
                     <div class="text-end">
-                        <a href="../control/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="fas fa-sign-out-alt"></i> Sair</button></a>
+                        <a href="../App/Controls/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="fas fa-sign-out-alt"></i> Sair</button></a>
                     </div>
                 </div>
             </div>

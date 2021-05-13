@@ -4,5 +4,5 @@
     $_SESSION['logged_in'] = false;
     $_SESSION['alerts'] = 'logout';
     // retorna para a index.php
-    header('Location: ../index.php');
+    header('Location: ../../index.php');
 ?>

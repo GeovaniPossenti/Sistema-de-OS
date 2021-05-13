@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="tools/css/styleIndex.css">
     </head>
     <body class="fundo">
-        <form class="box_form" method="post" action="control/controle_usuario.php?op=log">
+        <form class="box_form" method="post" action="App/Controls/control_user.php?op=log">
             <h1>Login</h1>
             <input type="text" id="" name="usernameLogin" size="" value="" placeholder="Usuário" required autofocus>
             <input type="password" id="" name="passwordLogin" class="" placeholder="Senha" required>
@@ -37,11 +37,11 @@
     if(@$_SESSION['alerts'] == 'forcedEntry'){
        echo '<script> alertify.error("Acesso negado!") </script>';
         $_SESSION['alerts'] == ' ';
-        @session_destroy();
+        session_destroy();
     }
     
    //Aqui eu verifico se a SESSION alert = logout, se sim eu destruo a sessão assim que for redirecionado para está página. 
     if(@$alert == 'logout'){
-        @session_destroy();
+        session_destroy();
     }
 ?>
