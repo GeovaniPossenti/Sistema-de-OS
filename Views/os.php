@@ -120,7 +120,6 @@
                                 <th title="Filtrar por:">Data de Recebimento</th>
                                 <th class="hide">data_entrega_cliente</th>
                                 <th title="Filtrar por:">Valor do Reparo R$</th>
-                                <th class="hide">link_webZap</th>
                                 <th title="Filtrar por:">Funções</th>
                                 <th title="Filtrar por:"></th>
                             </tr>
@@ -160,7 +159,6 @@
                                 <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $mysql->inverteData($row['data_recebimento']); ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['data_entrega_cliente']; ?></td>
                                 <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo str_replace('.', ',', $row['valor_reparo']); ?></td>
-                                <td class="btnDetailsOs hide"><?php echo $row['link_webZap']; ?></td>
                                 <td class="text-center">
                                     <!--Formulario para deletar uma linha no na tabela de os_pendente. -->
                                     <form action="../App/Controls/control_os.php?op=del" method="POST">
@@ -419,9 +417,16 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 text-center">
-                                            <button type="button" class="btn text-white btnZap" id="link_webZapDet" onclick="window.open(document.getElementById('link_webZapDet').value);" title="Chamar cliente via WhatsApp">
-                                                <i class="fab fa-whatsapp" style="font-size: 20px; margin-top: 5px;"></i> WhatsApp 
-                                            </button>
+<!--                                            <button type="button" class="btn text-white btnZap" id="link_webZapDet" onclick="window.open(document.getElementById('link_webZapDet').value);" title="Chamar cliente via WhatsApp">-->
+<!--                                                <i class="fab fa-whatsapp" style="font-size: 20px; margin-top: 5px;"></i> WhatsApp -->
+<!--                                            </button>-->
+                                            <form action="../App/Controls/link_whatsapp.php" method="POST" target="_blank">
+                                                <input type="hidden" name="idOsPendenteDet" id="hiddenInputIdOs">
+                                                <input type="hidden" name="nomeClienteDet" id="hiddenInputNomeCliente">
+                                                <button type="submit" class="btn text-white btnZap" id="link_webZapDet" title="Chamar cliente via WhatsApp">
+                                                    <i class="fab fa-whatsapp" style="font-size: 20px; margin-top: 5px;"></i> WhatsApp
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

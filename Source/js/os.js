@@ -26,7 +26,6 @@
         $('#data_recebimento').val(data[6]);
         $('#data_entrega_cliente').val(data[7]);
         $('#valor_reparo').val(data[8]);
-        $('#link_webZap').val(data[9]);
 
         //Aqui eu passo o nome do cliente para o primeiro valor do select2.
         //Porque sem isso, ele pega o value normal, porém só quando abrimos o select. 
@@ -53,7 +52,10 @@
         $('#data_recebimentoDet').val(data[6]);
         $('#data_entrega_clienteDet').val(data[7]);
         $('#valor_reparoDet').val(data[8]);
-        $('#link_webZapDet').val(data[9]);
+
+        //Aqui eu passo os valores para os inputs hidden que ficam no form do botão que cria o link do whatsapp.
+        $('#hiddenInputIdOs').val(data[0]);
+        $('#hiddenInputNomeCliente').val(data[1]);
     });
     $('.btnCadastro').on('click', function(){
         $('#modalCadastroOs').modal('show');

@@ -26,27 +26,8 @@
         //Depois mudo a virgulo por ponto, assim ficando no foramto 00000.00.
         $valorReparoAltFormatado = str_replace(',', '.', $valorSemVirgula);
 
-        //Pegar o nome/telefone daquele cliente.
-        $dbInstance = new Customer($con);
-        $ArraySelect = $dbInstance->selectTelefoneClienteById($idClienteCad);
-        foreach ($ArraySelect as $row){
-            $nome_cliente = $row['nome_cliente'];
-            $celular_cliente = $row['celular_cliente'];
-        }
-
-        //Aqui eu filtro a variável de nome só pra pegar o primeiro nome da pessoa!
-        $explodePrimeiroName = explode(" ", $nome_cliente);
-        $primeiroNomeCliente = $explodePrimeiroName[0];
-
-        //Aqui eu filtro o celular vindo do banco, já que eu preciso dele sem () e - .
-        $filtros = array("(", ")", "-", " ");
-        $celular_cliente_filtrado = str_replace($filtros, "", $celular_cliente);
-
-        //E aqui eu junto esse telefone no link do WhatsApp.
-        $linkZapCad = "https://api.whatsapp.com/send?phone=+55$celular_cliente_filtrado&text=Ol%C3%A1%20$primeiroNomeCliente%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84";
-
         $dbInstance = new OrderService($con);
-        $dados = $dbInstance->insertOs($idClienteCad, $nomeEquipamentoCad, $descDefeitoCad, $descReparoCad, $statusCad, $dataRecebimentoCad, $dataEntregaCad, $valorReparoAltFormatado, $linkZapCad);
+        $dados = $dbInstance->insertOs($idClienteCad, $nomeEquipamentoCad, $descDefeitoCad, $descReparoCad, $statusCad, $dataRecebimentoCad, $dataEntregaCad, $valorReparoAltFormatado);
 
         //Se o método for != true, ele exibe um erro. Senão, ele exibe mensagem de ok.
         if(!$dados){
@@ -81,20 +62,7 @@
 
         foreach ($ArraySelect as $row){
             $id_cliente_update = $row['id_cliente'];
-            $nome_cliente = $row['nome_cliente'];
-            $celular_cliente = $row['celular_cliente'];
         }
-
-        //Aqui eu filtro a variável de nome só pra pegar o primeiro nome da pessoa!
-        $explodePrimeiroName = explode(" ", $nome_cliente);
-        $primeiroNomeCliente = $explodePrimeiroName[0];
-
-        //Aqui eu filtro o celular vindo do banco, já que eu preciso dele sem () e - .
-        $filtros = array("(",")","-"," ");
-        $celular_cliente_filtrado = str_replace($filtros, "", $celular_cliente);
-
-        //E aqui eu junto esse telefone no link do WhatsApp.
-        $linkZapCad = "https://api.whatsapp.com/send?phone=+55$celular_cliente_filtrado&text=Ol%C3%A1%20$primeiroNomeCliente%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20Matrix%20Inform%C3%A1tica%2C%20e%20viemos%20avisar%20que%20seu%20o%20seu%20equipamento%20j%C3%A1%20foi%20reparado%2C%20voc%C3%AA%20j%C3%A1%20pode%20vir%20busca-lo!%20%F0%9F%98%84";
 
         //Aqui eu chamo a classe/método pra dar update na tabela.
         $dbInstance = new OrderService($con);
