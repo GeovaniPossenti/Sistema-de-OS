@@ -37,6 +37,12 @@ class Customer{
         return $sql;
     }
 
+    public function verificaOsCliente($id_cliente){
+        $query = "SELECT id_cliente FROM `os_pendente` WHERE `id_cliente` = '".$id_cliente."'";
+        $sql = $this->con->readQuery($query);
+        return $sql;
+    }
+
     public function insertCliente($nomeClienteCad, $CpfClienteCad, $CelularClienteCad, $TelefoneClienteCad){
         $query = "INSERT INTO `clientes`(`nome_cliente`, `cpf_cliente`, `celular_cliente`, `telefone_cliente`) VALUES ('".$nomeClienteCad."', '".$CpfClienteCad."', '".$CelularClienteCad."', '".$TelefoneClienteCad."')";
         $sql = $this->con->insertQuery($query);
@@ -49,8 +55,8 @@ class Customer{
         return $sql;
     }
 
-    public function deleteCliente(){
-        $query = "";
+    public function deleteCliente($id_cliente){
+        $query = "DELETE FROM `clientes` WHERE `id_cliente` = '".$id_cliente."'";
         $sql = $this->con->deleteQuery($query);
         return $sql;
     }

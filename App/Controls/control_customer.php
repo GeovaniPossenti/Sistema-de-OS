@@ -10,6 +10,8 @@
     include '../Models/OrderService.php';
 
     $con = Mysql::getInstance();
+    $dbInstanceCustomers = new Customer($con);
+    $dbInstanceOrderService = new OrderService($con);
 
     //Sempre quando eu venho pra control, eu passo uma variável pela url dizendo qual função que o usuário quer.
     //op = 'cad'astro / op = 'alt'erar / op = 'del'etar
@@ -20,11 +22,10 @@
         $CelularClienteCad = isset($_POST['CelularClienteCad']) ? $_POST['CelularClienteCad'] : '';
         $TelefoneClienteCad = isset($_POST['TelefoneClienteCad']) ? $_POST['TelefoneClienteCad'] : '';
 
-        $dbInstance = new Customer($con);
-        $dados = $dbInstance->verificaCpfBanco($CpfClienteCad);
+        $dados = $dbInstanceCustomers->verificaCpfBanco($CpfClienteCad);
 
         if (count($dados) <= 0) {
-            $insertClientes = $dbInstance->insertCliente($nomeClienteCad, $CpfClienteCad, $CelularClienteCad, $TelefoneClienteCad);
+            $insertClientes = $dbInstanceCustomers->insertCliente($nomeClienteCad, $CpfClienteCad, $CelularClienteCad, $TelefoneClienteCad);
             if (!$insertClientes){
                 $_SESSION['alerts'] = 'crudFail';
                 header("location: ../../Views/clientes.php");
@@ -204,34 +205,24 @@
 //            }
 //        }
 //
-//    }elseif(@$op == 'del'){
-//
-//        $id_cliente = isset($_POST['id_cliente']) ? $_POST['id_cliente'] : '';
-//
-//        //Aqui eu primeiro verifico se aquele cliente possue algum serviço vinculado.
-//        $sql = ("SELECT id_cliente FROM `os_pendente` WHERE `id_cliente` = '$id_cliente'");
-//		$stmt = $con->prepare($sql);
-//		$stmt->execute();
-//        $arrayId_usuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//
-//        //Se não possuem eu executo o delete do cliente, se ele possuem algum serviço vinculado, eu exibo mensagem de erro e retorno para a página de clientes.
-//        if (count($arrayId_usuario) <= 0){
-//
-//            $sql = ("DELETE FROM `clientes` WHERE `id_cliente` = '$id_cliente'");
-//            $stmt = $con->prepare($sql);
-//            $stmt->execute();
-//
-//            //Session com os dados e variaveis necessárias.
-//            $_SESSION['alerts'] = 'delOk';
-//
-//            header("location: ../../Views/clientes.php");
-//
-//        }elseif(count($arrayId_usuario) > 0){
-//
-//            $_SESSION['alerts'] = 'deleteClienteFail';
-//
-//            header("location: ../../Views/clientes.php");
-//
-//
-//        }
 //    }
+    elseif(@$op == 'del'){
+        $id_cliente = isset($_POST['id_cliente']) ? $_POST['id_cliente'] : '';
+
+        $arrayId_usuario = $dbInstanceCustomers->verificaOsCliente($id_cliente);
+
+        if (count($arrayId_usuario) <= 0){
+            $dados = $dbInstanceCustomers->deleteCliente($id_cliente);
+
+            if(!$dados){
+                $_SESSION['alerts'] = 'crudFail';
+                header("location: ../../Views/clientes.php");
+            }else {
+                $_SESSION['alerts'] = 'delOk';
+                header("location: ../../Views/clientes.php");
+            }
+        }elseif(count($arrayId_usuario) > 0){
+            $_SESSION['alerts'] = 'deleteClienteFail';
+            header("location: ../../Views/clientes.php");
+        }
+    }
