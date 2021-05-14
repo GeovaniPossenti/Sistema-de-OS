@@ -127,7 +127,7 @@
                         </thead>
                         <tbody>
                             <!-- A mesma coisa acontece aqui, eu preciso colocar a mesma qtd de colunas pra tabela funcionar, 
-                            porém preciso usar uma classe no css pra deixar essas colunas não visiveis.-->
+                            porém preciso usar uma classe no css pra deixar essas colunas não visíveis.-->
                             <?php foreach($arrayBancoOs as $row){ 
                                 //Aqui eu faço um switch pra decidir qual cor eu exibo o texto no campo de status. (Apenas uma função pra melhorar a leitura)
                                 switch($row['status']){
