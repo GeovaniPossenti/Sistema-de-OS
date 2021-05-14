@@ -8,14 +8,12 @@
         header('Location: ../index.php');
     }
 
-    //Somente estou usando a função de inverter data.
-    include_once '../model/conexao.php';
-
     include '../App/Models/Mysql.php';
     include '../App/Models/OrderService.php';
     include '../App/Models/Customer.php';
 
     //Listagem de Ordens de Serviço
+    $mysql = new Mysql;
     $con = Mysql::getInstance();
     $dbModelOs = new OrderService($con);
     $arrayBancoOs = $dbModelOs->listaOS();
@@ -159,7 +157,7 @@
                                 <td class="btnDetailsOs hide"><?php echo $row['descricao_defeito']; ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['descricao_reparo']; ?></td>
                                 <td class="btnDetailsOs" style="color: <?php echo $color; ?>" title="Ver todos os detalhes"><?php echo $row['status']; ?></td>
-                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo inverteData($row['data_recebimento']); ?></td>
+                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $mysql->inverteData($row['data_recebimento']); ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['data_entrega_cliente']; ?></td>
                                 <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo str_replace('.', ',', $row['valor_reparo']); ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['link_webZap']; ?></td>
