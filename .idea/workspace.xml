@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0abf3a9-6211-402c-b834-8fb059ac3341" name="Default Changelist" comment="">
+    <list default="true" id="c0abf3a9-6211-402c-b834-8fb059ac3341" name="Default Changelist" comment="Update os.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/clientes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/os.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/os.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +24,10 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Views/clientes.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Views/os.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3" />
   <component name="ProjectId" id="1sUs1WdSkLUXwyHl81WKdCyIuKi" />
@@ -65,8 +71,16 @@
       <workItem from="1620969146439" duration="478000" />
       <workItem from="1620970812293" duration="355000" />
       <workItem from="1620991562869" duration="176000" />
-      <workItem from="1620992739950" duration="40000" />
+      <workItem from="1620992739950" duration="919000" />
     </task>
+    <task id="LOCAL-00001" summary="Update os.php">
+      <created>1620992902130</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620992902130</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,5 +97,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update os.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update os.php" />
   </component>
 </project>

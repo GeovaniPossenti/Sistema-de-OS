@@ -204,13 +204,13 @@
                                         <div class="form-floating">
                                             <input type="hidden" name="id_cliente" id="id_cliente">
                                             <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" placeholder="" maxlength="250" required autofocus>
-                                            <label for="nomeClienteCad">Nome:</label>
+                                            <label for="nome_cliente">Nome:</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">                                      
                                             <input type="text" name="cpfClienteAlt" class="inputCPF form-control" id="cpf_cliente" onkeyup="TestaCPF2(this)" onfocus="TestaCPF2(this)" onblur="limparCPF2()" required> <!--onkeyup="TestaCPF(this)"-->
-                                            <label for="inputCPF">CPF:</label>                                        
+                                            <label for="cpf_cliente">CPF:</label>
                                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                                 Digite um CPF válido!
                                             </div>
@@ -219,13 +219,13 @@
                                     <div class="col-md-6">   
                                         <div class="form-floating">                                        
                                             <input type="text" name="celularClienteAlt" class="inputCelular form-control" id="celular_cliente" minlength="15" required>
-                                            <label for="inputCelular">Celular:</label>
+                                            <label for="celular_cliente">Celular:</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">         
                                         <div class="form-floating">                                      
                                             <input type="text" name="telefoneClienteAlt" class="inputTelefone form-control" id="telefone_cliente" minlength="14">
-                                            <label for="inputTelefone">Telefone:</label> 
+                                            <label for="telefone_cliente">Telefone:</label>
                                         </div>
                                     </div>         
                                 </div>

@@ -179,9 +179,9 @@
                                         <form action="relatorio.php" method="POST" target="_blank">
                                             <input type="hidden" value="<?php echo $row['id_os_pendente']; ?>" name="idOsPendenteRelatorio">
                                             <button type="submit" class="btn btn-outline-warning" title="Gerar Relatório">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </button>
                                         </form>
-                                            <i class="fas fa-file-pdf"></i>
-                                        </button></a>
                                     <?php } ?>
                                 </td>   
                             </tr>
@@ -205,7 +205,7 @@
                                         <div class="row g-3 gy-3">  
                                             <div class="col-md-6">    
                                                 <div style="margin-top: -5px;">
-                                                    <label for="" class="">Selecione um Cliente:</label>
+                                                    <label for="NomeClienteModalCad" class="">Selecione um Cliente:</label>
                                                     <select name="idClienteCad" class="form-select" id="NomeClienteModalCad" required>
                                                         <option value="" selected>Selecione</option>
                                                         <?php foreach($arrayClientes as $rowCliente){ ?>
@@ -216,45 +216,45 @@
                                             </div>
                                             <div class="col-md-6"> 
                                                 <div class="form-floating">
-                                                    <input type="text" name="nomeEquipamentoCad" class="form-control" id="nomeEquipamentoCad">
-                                                    <label for="">Nome do Equipamento:</label>
+                                                    <input type="text" name="nomeEquipamentoCad" class="form-control" id="nomeEquipamentoCad" maxlength="255">
+                                                    <label for="nomeEquipamentoCad">Nome do Equipamento:</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-12"> 
                                                 <div class="form-floating">
-                                                    <textarea class="form-control" name="descDefeitoCad" style="height: 150px" maxlength="255"></textarea> 
-                                                    <label for="">Descrição do Defeito:</label>
+                                                    <textarea class="form-control" name="descDefeitoCad" id="descDefeitoCad" style="height: 150px" maxlength="255"></textarea>
+                                                    <label for="descDefeitoCad">Descrição do Defeito:</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-12"> 
                                                 <div class="form-floating">
-                                                    <textarea class="form-control" name="descReparoCad" style="height: 150px" maxlength="255"></textarea> 
-                                                    <label for="">Descrição do Reparo:</label>
+                                                    <textarea class="form-control" name="descReparoCad" id="descReparoCad" style="height: 150px" maxlength="255"></textarea>
+                                                    <label for="descReparoCad">Descrição do Reparo:</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-5"> 
                                                 <div class="form-floating">
-                                                    <select name="statusCad" class="form-select" name="" id="" required>
+                                                    <select name="statusCad" class="form-select" id="statusCad" required>
                                                         <option value="Orçamento" style="color: #DAA520">Orçamento</option>
                                                         <option value="Aguardando" style="color: #DC143C">Aguardando</option>
                                                         <option value="Processando" style="color: #A020F0">Processando</option>
                                                         <option value="Finalizado" style="color: #4169E1">Finalizado</option>
                                                         <option value="Entregue" style="color: #008000">Entregue</option>
                                                     </select>
-                                                    <label for="">Processo:</label>
+                                                    <label for="statusCad">Processo:</label>
                                                 </div>
                                             </div> 
                                             <div class="col-md-7"> 
                                                 <div class="form-floating">
-                                                    <input type="date" name="dataEntregaCad" class="form-control">
-                                                    <label for="">Data de Entrega ao Cliente:</label>
+                                                    <input type="date" name="dataEntregaCad" id="dataEntregaCad" class="form-control">
+                                                    <label for="dataEntregaCad">Data de Entrega ao Cliente:</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 input-group"> 
                                                 <span class="input-group-text" id="basic-addon1">R$</span>
                                                 <div class="form-floating">
-                                                    <input type="text" name="valorCad" class="inputDinheiro form-control">
-                                                    <label for="">Valor do serviço:</label>
+                                                    <input type="text" name="valorCad" id="valorCad" class="inputDinheiro form-control">
+                                                    <label for="valorCad">Valor do serviço:</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -287,7 +287,7 @@
                                             <div class="col-md-6">
                                                 <input type="hidden" name="idOsPendenteAlt" id="id_os_pendente" required>         
                                                 <div style="margin-top: -5px;">
-                                                    <label for="">Selecione um Cliente:</label>
+                                                    <label for="nome_cliente">Selecione um Cliente:</label>
                                                     <select name="nomeClienteAlt" class="form-control selectEditClientes nome_cliente" id="nome_cliente" required>
                                                         <?php foreach($arrayClientes as $rowCliente){ ?>
                                                             <option value="<?php echo $rowCliente['nome_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
@@ -298,20 +298,20 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-floating">
-                                                    <input type="text" name="nomeEquipamentoAlt" class="form-control" id="nome_equipamento" autofocus>
-                                                    <label for="">Nome do Equipamento:</label>
+                                                    <input type="text" name="nomeEquipamentoAlt" class="form-control" id="nome_equipamento" maxlength="255">
+                                                    <label for="nome_equipamento">Nome do Equipamento:</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-floating">
                                                     <textarea class="form-control" name="descDefeitoAlt" id="descricao_defeito" style="height: 150px" maxlength="255"></textarea>
-                                                    <label for="">Descrição do Defeito:</label>
+                                                    <label for="descricao_defeito">Descrição do Defeito:</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-floating">
                                                     <textarea class="form-control" name="descReparoAlt" id="descricao_reparo" style="height: 150px" maxlength="255"></textarea>
-                                                    <label for="">Descrição do Reparo:</label>
+                                                    <label for="descricao_reparo">Descrição do Reparo:</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
@@ -323,20 +323,20 @@
                                                         <option value="Finalizado" style="color: #4169E1">Finalizado</option>
                                                         <option value="Entregue" style="color: #008000">Entregue</option>
                                                     </select>
-                                                    <label for="">Processo:</label>
+                                                    <label for="status">Processo:</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="form-floating">
                                                     <input type="date" name="dataEntregaAlt" id="data_entrega_cliente" class="form-control">
-                                                    <label for="" class="col-form-label">Data de Entrega ao Cliente:</label>
+                                                    <label for="data_entrega_cliente" class="col-form-label">Data de Entrega ao Cliente:</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 input-group"> 
                                                 <span class="input-group-text" id="basic-addon1">R$</span>
                                                 <div class="form-floating">
                                                     <input type="text" name="valorReparoAlt"  id="valor_reparo" class="inputDinheiro form-control" placeholder="Digite um valor">
-                                                    <label for="">Valor a cobrar:</label>
+                                                    <label for="valor_reparo">Valor a cobrar:</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -367,59 +367,59 @@
                                         <div class="col-md-4">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="id_os_pendenteDet" readonly>
-                                                <label for="">Código da OS:</label>
+                                                <label for="id_os_pendenteDet">Código da OS:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="nome_clienteDet" readonly>
-                                                <label for="">Nome do Cliente:</label>
+                                                <label for="nome_clienteDet">Nome do Cliente:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="nome_equipamentoDet" readonly>
-                                                <label for="">Nome do Equipamento:</label>
+                                                <label for="nome_equipamentoDet">Nome do Equipamento:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="statusDet" readonly>
-                                                <label for="">Processo:</label>
+                                                <label for="statusDet">Processo:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-floating">
                                                 <textarea class="form-control" id="descricao_defeitoDet" style="height: 150px" readonly></textarea>        
-                                                <label for="">Descrição do defeito:</label>
+                                                <label for="descricao_defeitoDet">Descrição do defeito:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-floating">
                                                 <textarea class="form-control" id="descricao_reparoDet" style="height: 150px" readonly></textarea>
-                                                <label for="">Descrição do reparo:</label>
+                                                <label for="descricao_reparoDet">Descrição do reparo:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="data_recebimentoDet" readonly>
-                                                <label for="">Data de recebimento:</label>
+                                                <label for="data_recebimentoDet">Data de recebimento:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input type="date" class="form-control" name="" id="data_entrega_clienteDet" readonly>
-                                                <label for="">Data de entrega ao cliente:</label>
+                                                <label for="data_entrega_clienteDet">Data de entrega ao cliente:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="valor_reparoDet" readonly>
-                                                <label for="">Valor do cobrado:</label>
+                                                <label for="valor_reparoDet">Valor do cobrado:</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 text-center">
-                                            <button type="button" class="btn text-white btnZap" id="link_webZapDet" readonly onclick="window.open(document.getElementById('link_webZapDet').value);" title="Chamar cliente via WhatsApp">
+                                            <button type="button" class="btn text-white btnZap" id="link_webZapDet" onclick="window.open(document.getElementById('link_webZapDet').value);" title="Chamar cliente via WhatsApp">
                                                 <i class="fab fa-whatsapp" style="font-size: 20px; margin-top: 5px;"></i> WhatsApp 
                                             </button>
                                         </div>
