@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0abf3a9-6211-402c-b834-8fb059ac3341" name="Default Changelist" comment="New file link_whatsapp.php">
+    <list default="true" id="c0abf3a9-6211-402c-b834-8fb059ac3341" name="Default Changelist" comment="Cleaning file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controls/control_customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controls/control_customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/css/styleClientes.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/css/styleClientes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/css/styleIndex.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/css/styleIndex.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/css/styleOs.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/css/styleOs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/footer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +70,8 @@
       <workItem from="1620969146439" duration="478000" />
       <workItem from="1620970812293" duration="355000" />
       <workItem from="1620991562869" duration="176000" />
-      <workItem from="1620992739950" duration="7335000" />
+      <workItem from="1620992739950" duration="8303000" />
+      <workItem from="1621002600098" duration="1199000" />
     </task>
     <task id="LOCAL-00001" summary="Update os.php">
       <created>1620992902130</created>
@@ -97,7 +94,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620998480700</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update alt clientes.php">
+      <created>1621000662643</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621000662643</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Cleaning file">
+      <created>1621000841212</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621000841212</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +130,8 @@
     <MESSAGE value="Update os.php" />
     <MESSAGE value="Input maxlength os.php" />
     <MESSAGE value="New file link_whatsapp.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="New file link_whatsapp.php" />
+    <MESSAGE value="Update alt clientes.php" />
+    <MESSAGE value="Cleaning file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaning file" />
   </component>
 </project>
