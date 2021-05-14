@@ -31,7 +31,7 @@ class Mysql{
         if ($this->con != null){
             $sql = $this->con->prepare($query);
             $sql->execute();
-            $dados = $sql->fetchAll();
+            $dados = $sql->fetchAll(PDO::FETCH_ASSOC);
         }else{
             return -1;
         }
@@ -80,7 +80,3 @@ class Mysql{
         $this->con = null;
     }
 }
-
-?>
-
-

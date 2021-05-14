@@ -51,11 +51,11 @@
         //Se o método for != true, ele exibe um erro. Senão, ele exibe mensagem de ok.
         if(!$dados){
             $_SESSION['alerts'] = 'crudFail';
-            header("location: ../../view/os.php");
+            header("location: ../../Views/os.php");
         }else {
             //Session com os dados e variáveis necessárias.
             $_SESSION['alerts'] = 'cadOk';
-            header("location: ../../view/os.php");
+            header("location: ../../Views/os.php");
         }
     }
     elseif($op == 'alt'){
@@ -103,10 +103,10 @@
         //Se o método for != true, ele exibe um erro. Senão, ele exibe mensagem de ok.
         if(!$updateOs){
             $_SESSION['alerts'] = 'crudFail';
-            header("location: ../../view/os.php");
+            header("location: ../../Views/os.php");
         }else{
             $_SESSION['alerts'] = 'altOk';
-            header("location: ../../view/os.php");
+            header("location: ../../Views/os.php");
         }
 
     }
@@ -118,10 +118,10 @@
 
 		if(!$deleteOs){
             $_SESSION['alerts'] = 'crudFail';
-            header("location: ../../view/os.php");
+            header("location: ../../Views/os.php");
         }else{
             $_SESSION['alerts'] = 'delOk';
-            header("location: ../../view/os.php");
+            header("location: ../../Views/os.php");
         }
 
     }

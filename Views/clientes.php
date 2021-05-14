@@ -24,7 +24,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <title>Matrix</title>
         <!-- Logo da página. -->
-		<link rel="shorcut icon" href="../tools/img/computador-pessoal.png">
+		<link rel="shorcut icon" href="../Tools/img/computador-pessoal.png">
         <!--Bootstrap.-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
@@ -35,14 +35,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
         <!--Script dos alertas.-->
-        <link rel="stylesheet" href="../tools/lib/alertifyjs/css/alertify.min.css">
-        <link rel="stylesheet" href="../tools/lib/alertifyjs/css/themes/default.min.css">
-        <script src="../tools/lib/alertifyjs/alertify.min.js"></script>
+        <link rel="stylesheet" href="../Tools/lib/alertifyjs/css/alertify.min.css">
+        <link rel="stylesheet" href="../Tools/lib/alertifyjs/css/themes/default.min.css">
+        <script src="../Tools/lib/alertifyjs/alertify.min.js"></script>
         <!--DataTables-->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
         <!--CSS da página. -->
-        <link rel="stylesheet" href="../tools/css/styleClientes.css">
+        <link rel="stylesheet" href="../Tools/css/styleClientes.css">
         <!-- Fonte da CDN do Google -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
@@ -79,10 +79,10 @@
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <img src="../tools/img/computador-pessoal.png" alt="" width="40px" height="40px">
+                        <img src="../Tools/img/computador-pessoal.png" alt="" width="40px" height="40px">
                     </a>
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 20px;">
-                    <li><a href="os.php" class="nav-link px-2 text-secondary" title="Página com a lista de Ordens de Serviços"><i class="fas fa-clipboard"></i> Ordens de Serviço</a></li>
+                        <li><a href="os.php" class="nav-link px-2 text-secondary" title="Página com a lista de Ordens de Serviços"><i class="fas fa-clipboard"></i> Ordens de Serviço</a></li>
                         <li><a href="clientes.php" class="nav-link px-2 text-white" title="Página com a lista de Clientes"><i class="fas fa-user-friends"></i> Lista de Clientes</a></li>
                         <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
                     </ul>
@@ -119,7 +119,7 @@
                             <td class="btnEdit" title="Alterar"><?php echo $row['telefone_cliente']; ?></td>
                             <td class="text-center">
                                 <!--Formulario para deletar um cliente do banco. -->
-                                <form action="../control/controle_cliente.php?op=del" method="POST">
+                                <form action="../App/Controls/control_customer.php?op=del" method="POST">
                                     <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
                                         <i class="fas fa-user-edit"></i>
                                     </button>
@@ -144,7 +144,7 @@
                             <h5 class="modal-title" id="exampleModalLabel">Cadastrar clientes</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="../control/controle_cliente.php?op=cad" method="POST">
+                        <form action="../App/Controls/control_customer.php?op=cad" method="POST">
                             <div class="modal-body">
                                 <div class="container">
                                     <div class="row g-3 gy-3">
@@ -196,7 +196,7 @@
                         <h5 class="modal-title" id="exampleModalLabel">Modificar dados de clientes</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="../control/controle_cliente.php?op=alt" method="POST">
+                    <form action="../App/Controls/control_customer.php?op=alt" method="POST">
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row g-3 gy-3">
@@ -246,10 +246,10 @@
         <?php include_once('footer.html');?>
 
         <!-- Arquivo JS onde ficam os scrips dessa página. -->
-        <script src="../tools/js/clientes.js"></script>
+        <script src="../Tools/js/clientes.js"></script>
     </body>
 </html>
 <?php
     //Include da .php onde ficam as funções de alertas, precisa ser incluído no final da página.
-    include_once ('../view/alerts.php');
+    include_once ('alerts.php');
 ?>

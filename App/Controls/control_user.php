@@ -29,6 +29,6 @@ if ($op == 'log'){
         $_SESSION['logged_in'] = true;
         $_SESSION['alerts'] = 'logOk';
 
-        header("location: ../../view/os.php");
+        header("location: ../../Views/os.php");
     }
 }
