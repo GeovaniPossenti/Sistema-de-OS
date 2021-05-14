@@ -417,9 +417,6 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 text-center">
-<!--                                            <button type="button" class="btn text-white btnZap" id="link_webZapDet" onclick="window.open(document.getElementById('link_webZapDet').value);" title="Chamar cliente via WhatsApp">-->
-<!--                                                <i class="fab fa-whatsapp" style="font-size: 20px; margin-top: 5px;"></i> WhatsApp -->
-<!--                                            </button>-->
                                             <form action="../App/Controls/link_whatsapp.php" method="POST" target="_blank">
                                                 <input type="hidden" name="idOsPendenteDet" id="hiddenInputIdOs">
                                                 <input type="hidden" name="nomeClienteDet" id="hiddenInputNomeCliente">
