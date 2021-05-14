@@ -150,7 +150,7 @@
                                     <div class="row g-3 gy-3">
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" placeholder="" required autofocus>
+                                                <input type="text" name="nomeClienteCad" class="form-control" id="nomeClienteCad" placeholder="" maxlength="250" required autofocus>
                                                 <label for="nomeClienteCad">Nome:</label>
                                             </div>
                                         </div>
@@ -203,7 +203,7 @@
                                     <div class="col-md-6">
                                         <div class="form-floating">
                                             <input type="hidden" name="id_cliente" id="id_cliente">
-                                            <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" placeholder="" required autofocus>
+                                            <input type="text" name="nomeClienteAlt" class="form-control" id="nome_cliente" placeholder="" maxlength="250" required autofocus>
                                             <label for="nomeClienteCad">Nome:</label>
                                         </div>
                                     </div>
