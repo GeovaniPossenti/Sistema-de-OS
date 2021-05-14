@@ -13,11 +13,6 @@ class User{
         return $sql;
     }
 
-//    public function cadastraUsers($db, $tabela, $nome, $email, $senha, $palavra, $acesso){
-//        $query = "INSERT INTO ".$db.".".$tabela." (NOME, EMAIL, SENHA, PALAVRA, ACESSO) VALUES ('".$nome."', '".$email."', '".$senha."', '".$palavra."', '".$acesso."')";
-//        $sql = $this->con->insertQuery($query);
-//        return $sql;
-//    }
 }
 
 ?>

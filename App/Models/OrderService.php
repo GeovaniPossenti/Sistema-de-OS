@@ -13,6 +13,12 @@ class OrderService{
         return $sql;
     }
 
+    public function selectOsById($idOsPendente){
+        $query = "SELECT `p`.`id_os_pendente`, `p`.`nome_equipamento`, `p`.`descricao_defeito`, `p`.`descricao_reparo`,`p`.`data_recebimento`, `p`.`data_entrega_cliente`, `p`.`valor_reparo`, `u`.`nome_cliente` FROM `os_pendente` `P` join `clientes` `U` on (`P`.`id_cliente` = `U`.`id_cliente`) WHERE `id_os_pendente` = '".$idOsPendente."'";
+        $sql = $this->con->readQuery($query);
+        return $sql;
+    }
+
     public function insertOs($idClienteCad, $nomeEquipamentoCad, $descDefeitoCad, $descReparoCad, $statusCad, $dataRecebimentoCad, $dataEntregaCad, $valorReparoAltFormatado, $linkZapCad){
         $query = "INSERT INTO `os_pendente`(`id_cliente`, `nome_equipamento`, `descricao_defeito`, `descricao_reparo`, `status`, `data_recebimento`, `data_entrega_cliente`, `valor_reparo`, `link_webZap`) VALUES ('".$idClienteCad."','".$nomeEquipamentoCad."','".$descDefeitoCad."','".$descReparoCad."','".$statusCad."','".$dataRecebimentoCad."','".$dataEntregaCad."','".$valorReparoAltFormatado."','".$linkZapCad."')";
         $sql = $this->con->insertQuery($query);

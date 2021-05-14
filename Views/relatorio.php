@@ -1,6 +1,4 @@
-<?php 
-    date_default_timezone_set('America/Sao_Paulo');
-    //Starto a sessão e pego o SESSION da váriavel que diz se eu estou logado ou não.
+<?php
     session_start();
     $login = $_SESSION['logged_in'];   
     
@@ -9,20 +7,29 @@
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
     }
-    
-    //Include da conexão com o banco.
-    // include_once '../model/conexao.php';
-    // $conn = new Conexao;
-    // $con = $conn->conectar();
+
+    date_default_timezone_set('America/Sao_Paulo');
+
+    include '../App/Models/Mysql.php';
+    include '../App/Models/OrderService.php';
 
     //Aqui eu pego o POST do id_os_pendente.
     $id_os = $_POST['idOsPendenteRelatorio'];
 
-    // //Select que pega os dados pra preencher a tabela de OS.
-    // $SelectRelatorio = "SELECT `p`.`id_os_pendente`, `p`.`nome_equipamento`, `p`.`descricao_defeito`, `p`.`descricao_reparo`,`p`.`data_recebimento`, `p`.`data_entrega_cliente`, `p`.`valor_reparo`, `u`.`nome_cliente` FROM `os_pendente` `P` join `clientes` `U` on (`P`.`id_cliente` = `U`.`id_cliente`) WHERE `id_os_pendente` = '$id_os'";
-    // $stmt = $con->prepare($SelectRelatorio);
-    // $stmt->execute();
-    // $arraySelectOS = $stmt->fetch();
+    $con = Mysql::getInstance();
+    $mysql = new Mysql;
+    $dbInstance = new OrderService($con);
+    $arraySelectOS = $dbInstance->selectOsById($id_os);
+
+    foreach ($arraySelectOS as $dados) {
+        $nome_cliente = $dados['nome_cliente'];
+        $nome_equipamento = $dados['nome_equipamento'];
+        $data_recebimento = $mysql->inverteData($dados['data_recebimento']);
+        $data_entrega_cliente = $mysql->inverteData($dados['data_entrega_cliente']);
+        $valor_reparo = "R$ ".str_replace('.', ',', ($dados['valor_reparo']));
+        $descricao_defeito = $dados['descricao_defeito'];
+        $descricao_reparo = $dados['descricao_reparo'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -86,45 +93,45 @@
             $pdf->SetDrawColor(220,220,220); //Color da borda dos cells.
             $pdf->Cell(50,10, utf8_decode('Nome do cliente:'),'B',0,"R",true);
             $pdf->SetFillColor(245,245,245);
-            $pdf->Cell(90,10, utf8_decode($arraySelectOS['nome_cliente']),'B',0,"L",true);
+            $pdf->Cell(90,10, utf8_decode($nome_cliente),'B',0,"L",true);
 
             $pdf->SetY(58.1); $pdf->SetX(5);
             $pdf->SetFillColor(240,248,255);
             $pdf->Cell(50,10, utf8_decode('Nome do equipamento:'),'B',0,"R",true);
             $pdf->SetFillColor(245,245,245);
-            $pdf->Cell(90,10, utf8_decode($arraySelectOS['nome_equipamento']),'B',0,"L",true);
+            $pdf->Cell(90,10, utf8_decode($nome_equipamento),'B',0,"L",true);
 
             $pdf->SetY(68.2); $pdf->SetX(5);
             $pdf->SetFillColor(240,248,255);
             $pdf->Cell(50,10, utf8_decode('Data de recebimento:'),'B',0,"R",true);
             $pdf->SetFillColor(245,245,245);
-            $pdf->Cell(90,10, utf8_decode(inverteData($arraySelectOS['data_recebimento'])),'B',0,"L",true);
+            $pdf->Cell(90,10, utf8_decode($data_recebimento),'B',0,"L",true);
 
             $pdf->SetY(78.4); $pdf->SetX(5);
             $pdf->SetFillColor(240,248,255);
             $pdf->Cell(50,10, utf8_decode('Data de devolução:'),'B',0,"R",true);
             $pdf->SetFillColor(245,245,245);
-            $pdf->Cell(90,10, utf8_decode(inverteData($arraySelectOS['data_entrega_cliente'])),'B',0,"L",true);
+            $pdf->Cell(90,10, utf8_decode($data_entrega_cliente),'B',0,"L",true);
 
             $pdf->SetY(88.5); $pdf->SetX(5);
             $pdf->SetFillColor(240,248,255);
             $pdf->Cell(50,10, utf8_decode('Valor cobrado:'),'B',0,"R",true);
             $pdf->SetFillColor(245,245,245);
-            $pdf->Cell(90,10, utf8_decode("R$ ".str_replace('.', ',', ($arraySelectOS['valor_reparo']))),'B',0,"L",true);
+            $pdf->Cell(90,10, utf8_decode($valor_reparo),'B',0,"L",true);
 
             //Descrições das Ordens de serviço.
             $pdf->SetY(98.6); $pdf->SetX(5);
             $pdf->SetFillColor(240,248,255);
             $pdf->Cell(50,35, utf8_decode('Descrição do defeito:'),'B',0,"R","true");
             $pdf->SetFillColor(245,245,245);
-            $pdf->MultiCell(90, 5, utf8_decode($arraySelectOS['descricao_defeito']),'B','J',true);
+            $pdf->MultiCell(90, 5.83, utf8_decode($descricao_defeito),'B','J',true);
 
             //Descrições das Ordens de serviço.
             $pdf->SetY(133.8); $pdf->SetX(5);
             $pdf->SetFillColor(240,248,255);
             $pdf->Cell(50,35, utf8_decode('Descrição do reparo:'),'B',0,"R","true");
             $pdf->SetFillColor(245,245,245);
-            $pdf->MultiCell(90, 5, utf8_decode($arraySelectOS['descricao_reparo']), 'B','J',true);
+            $pdf->MultiCell(90, 5.83, utf8_decode($descricao_reparo), 'B','J',true);
 
             //Aqui eu exibo a data e hora atual.
             $pdf->SetFont('OpenSansLight','',8);

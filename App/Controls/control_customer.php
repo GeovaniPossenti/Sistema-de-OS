@@ -1,10 +1,6 @@
 <?php 
     session_start();
 
-//    include_once '../../model/conexao.php';
-//    $conn = new Conexao;
-//    $con = $conn->conectar();
-
     include '../Models/Mysql.php';
     include '../Models/Customer.php';
     include '../Models/OrderService.php';
@@ -13,8 +9,6 @@
     $dbInstanceCustomers = new Customer($con);
     $dbInstanceOrderService = new OrderService($con);
 
-    //Sempre quando eu venho pra control, eu passo uma variável pela url dizendo qual função que o usuário quer.
-    //op = 'cad'astro / op = 'alt'erar / op = 'del'etar
     $op = $_GET['op'];
     if($op == 'cad'){
         $nomeClienteCad = isset($_POST['nomeClienteCad']) ? $_POST['nomeClienteCad'] : '';
@@ -38,7 +32,7 @@
             header("location: ../../Views/clientes.php");
         }
     }
-//  elseif(@$op == 'alt'){
+//  elseif($op == 'alt'){
 //
 //        $id_cliente = isset($_POST['id_cliente']) ? $_POST['id_cliente'] : '';
 //        $nomeClienteAlt = isset($_POST['nomeClienteAlt']) ? $_POST['nomeClienteAlt'] : '';
@@ -206,7 +200,7 @@
 //        }
 //
 //    }
-    elseif(@$op == 'del'){
+    elseif($op == 'del'){
         $id_cliente = isset($_POST['id_cliente']) ? $_POST['id_cliente'] : '';
 
         $arrayId_usuario = $dbInstanceCustomers->verificaOsCliente($id_cliente);
