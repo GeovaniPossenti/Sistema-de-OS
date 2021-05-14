@@ -1,24 +1,20 @@
-<?php 
-    //Starto a sessão e pego o SESSION da váriavel que diz se eu estou logado ou não.
+<?php
     session_start();
     $login = $_SESSION['logged_in'];
-
-    //Include da conexão com o banco.
-    include_once '../model/conexao.php';
-    $conn = new Conexao;
-    $con = $conn->conectar();
 
     //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in != de vazio.
     if($login != true){
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
     }
-    
-    //Select que pega os dados pra preencher a tabela de Clientes.
-    $selectCliente = "SELECT `id_cliente`, `nome_cliente`, `cpf_cliente`, `celular_cliente`, `telefone_cliente` FROM `clientes`";
-	$stmt = $con->prepare($selectCliente);
-	$stmt->execute();
-	$clientes = $stmt->fetchAll();
+
+    include '../App/Models/Mysql.php';
+    include '../App/Models/Customer.php';
+
+    //Listagem de clientes nos selects.
+    $con = Mysql::getInstance();
+    $dbModelCustomer = new Customer($con);
+    $arrayClientes = $dbModelCustomer->listarClientes();
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -114,7 +110,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($clientes as $row){ ?>
+                        <?php foreach($arrayClientes as $row){ ?>
                         <tr>
                             <td class="btnEdit" title="Alterar"><?php echo $row['id_cliente']; ?></td>
                             <td class="btnEdit" title="Alterar"><?php echo $row['nome_cliente']; ?></td>
@@ -254,6 +250,6 @@
     </body>
 </html>
 <?php
-    //Include da .php onde ficam as funcões de alertas, precisa ser incluido no final da página. 
+    //Include da .php onde ficam as funções de alertas, precisa ser incluído no final da página.
     include_once ('../view/alerts.php');
 ?>

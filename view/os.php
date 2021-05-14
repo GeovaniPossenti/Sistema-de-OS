@@ -1,12 +1,6 @@
-<?php 
-    //Starto a sessão e pego o SESSION da váriavel que diz se eu estou logado ou não.
+<?php
     session_start();
     $login = $_SESSION['logged_in'];
-
-    //Include da conexão com o banco.
-    include_once '../model/conexao.php';
-    $conn = new Conexao;
-    $con = $conn->conectar();
 
     //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in != de vazio.
     if($login != true){
@@ -14,24 +8,21 @@
         header('Location: ../index.php');
     }
 
-//    include '../App/Models/Mysql.php';
-//    include '../App/Models/OrderService.php';
-//
-//    $teste = Mysql::getInstance();
-//    $dbInstance = new OrderService($teste);
-//    $arrayBancoOs = $dbInstance->listaOS();
+    //Somente estou usando a função de inverter data.
+    include_once '../model/conexao.php';
 
-    //Select que pega os dados pra preencher a tabela de OS.
-    $selectOSPendente = "SELECT `p`.`id_os_pendente`, `p`.`nome_equipamento`, `p`.`descricao_defeito`, `p`.`descricao_reparo`, `p`.`status` ,`p`.`data_recebimento`, `p`.`data_entrega_cliente`, `p`.`valor_reparo`, `p`.`link_webZap`, `u`.`nome_cliente` FROM `os_pendente` `P` join `clientes` `U` on (`P`.`id_cliente` = `U`.`id_cliente`)";
-	$stmt = $con->prepare($selectOSPendente);
-	$stmt->execute();
-	$arrayBancoOs = $stmt->fetchAll();
+    include '../App/Models/Mysql.php';
+    include '../App/Models/OrderService.php';
+    include '../App/Models/Customer.php';
 
-    //Select que pega os dados do cliente, eu uso pra exibir no select de clientes, e também pra passar o id dele quando a OS sofrer alteração.
-    $selectClientes = "SELECT `id_cliente`, `nome_cliente`, `celular_cliente` FROM `clientes` ORDER BY `nome_cliente` asc";
-    $stmt = $con->prepare($selectClientes);
-    $stmt->execute();
-    $arrayClientes = $stmt->fetchAll();
+    //Listagem de Ordens de Serviço
+    $con = Mysql::getInstance();
+    $dbModelOs = new OrderService($con);
+    $arrayBancoOs = $dbModelOs->listaOS();
+
+    //Listagem de clientes nos selects.
+    $dbModelCustomer = new Customer($con);
+    $arrayClientes = $dbModelCustomer->listarClientesOrderBy();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

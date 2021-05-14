@@ -5,7 +5,7 @@ session_start();
 include '../Models/Mysql.php';
 include '../Models/User.php';
 
-//Sempre quando eu venho pra control, eu passo uma váriavel pela url dizendo qual função que o úsuario quer.
+//Sempre quando eu venho pra control, eu passo uma variável pela url dizendo qual função que o usuário quer.
 //op = 'cad'astro / op = 'alt'erar / op = 'del'etar
 $op = $_GET['op'];
 
@@ -18,7 +18,6 @@ if ($op == 'log'){
     $dbInstance = new User($con);
     $dados = $dbInstance->verificaUsuario($loginUsuario, $senhaUsuarioMD5);
 
-    //Aqui eu vejo se o que retornou do banco foi true or false.
     if (!$dados){
         //Se ele não existir
         //Set do alerta, e volto pra página de login.
@@ -26,7 +25,7 @@ if ($op == 'log'){
         header("location: ../../index.php");
     }else{
         //Se ele existir
-        //Session com os dados e variaveis necessárias.
+        //Session com os dados e variáveis necessárias.
         $_SESSION['logged_in'] = true;
         $_SESSION['alerts'] = 'logOk';
 
