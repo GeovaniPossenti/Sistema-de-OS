@@ -1,12 +1,5 @@
-@font-face {
-	font-family: 'OpenSans';
-	src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
-	font-size: 1em;
-}
-@font-face {
-	font-family: 'OpenSansLight';
-	src: url("../fonts/Open_Sans/OpenSans-light.ttf");
-	font-size: 1em;
+*{
+    font-family: 'Roboto', sans-serif;
 }
 html {
     height: 100%;
@@ -22,7 +15,6 @@ section {
 	color: black;
 }
 footer {
-    font-family: 'Roboto', sans-serif;
     background-color: rgba(0,0,0,0.6);
     margin-top: auto;
 }
@@ -31,26 +23,21 @@ footer {
 }
 .header{
     background-color: rgba(0,0,0,0.6);
-    font-family: 'Roboto', sans-serif;
 }
 .fundo{
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    
     /* Aquele azul que eu tinha deixado por um tempo
     background: #4B79A1; 
     background: -webkit-linear-gradient(to right, #283E51, #4B79A1); 
     background: linear-gradient(to right, #283E51, #4B79A1); 
     */
-
     background: #2b5876; 
     background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
     background: linear-gradient(to right, #4e4376, #2b5876);
   }
 .quadrado{
     font-family: 'Roboto', sans-serif;
-    
     margin-top: 1%;
     margin-left: 10%;
     margin-right: 10%;

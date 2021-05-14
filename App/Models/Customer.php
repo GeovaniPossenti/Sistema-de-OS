@@ -37,6 +37,12 @@ class Customer{
         return $sql;
     }
 
+    public function verificaCpfBancoById($idCpfCliente){
+        $query = "SELECT `cpf_cliente` FROM `clientes` WHERE `id_cliente` = '".$idCpfCliente."'";
+        $sql = $this->con->readQuery($query);
+        return $sql;
+    }
+
     public function verificaOsCliente($id_cliente){
         $query = "SELECT id_cliente FROM `os_pendente` WHERE `id_cliente` = '".$id_cliente."'";
         $sql = $this->con->readQuery($query);
@@ -49,8 +55,8 @@ class Customer{
         return $sql;
     }
 
-    public function updateCliente(){
-        $query = "";
+    public function updateCliente($id_cliente, $nomeClienteAlt, $cpfClienteAlt, $celularClienteAlt, $telefoneClienteAlt){
+        $query = "UPDATE `clientes` SET `nome_cliente`= '".$nomeClienteAlt."',`cpf_cliente`= '".$cpfClienteAlt."',`celular_cliente`= '".$celularClienteAlt."',`telefone_cliente`= '".$telefoneClienteAlt."' WHERE `id_cliente` = '".$id_cliente."'";
         $sql = $this->con->alterQuery($query);
         return $sql;
     }

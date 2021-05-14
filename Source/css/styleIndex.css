@@ -1,14 +1,4 @@
-@font-face {
-	font-family: 'OpenSans';
-	src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
-	font-size: 1em;
-}
-@font-face {
-	font-family: 'OpenSansLight';
-	src: url("../fonts/Open_Sans/OpenSans-light.ttf");
-	font-size: 1em;
-}
-body{
+*{
   font-family: 'Roboto', sans-serif;
 }
 .fundo{
@@ -27,11 +17,8 @@ body{
   opacity: 100%;
   text-align: center;
   border-radius: 40px;
-
-  font-family: 'Roboto', sans-serif;
-	font-size: 12pt;
-	color: black;
-
+  font-size: 12pt;
+  color: black;
   box-shadow: 0 0 30px black;
 }
 .box_form h1{
