@@ -27,6 +27,9 @@
     function alert8(){
         alertify.error('CPF já foi cadastrado!');
     }
+    function alert9(){
+        alertify.error('Ocorreu um erro ao executar está operação!');
+    }
 </script>
 <?php
 
@@ -52,10 +55,13 @@
         case 'altOk': echo '<script> alert6(); </script>'; 
         $_SESSION['alerts'] = ' ';
         break;
-        case 'deleteClienteFail': echo '<script> alert7(); </script>'; 
+        case 'deleteClienteFail': echo '<script> alert7(); </script>';
         $_SESSION['alerts'] = ' ';
         break;
         case 'cpfExiste': echo '<script> alert8(); </script>'; 
+        $_SESSION['alerts'] = ' ';
+        break;
+        case 'crudFail': echo '<script> alert9(); </script>';
         $_SESSION['alerts'] = ' ';
         break;
     }

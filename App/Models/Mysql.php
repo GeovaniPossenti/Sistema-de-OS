@@ -38,6 +38,36 @@ class Mysql{
         return $dados;
     }
 
+    public function insertQuery($query){
+        if ($this->con != null) {
+            $sql = $this->con->prepare($query);
+            $sql->execute();
+        } else {
+            return -1;
+        }
+        return $sql;
+    }
+
+    public function alterQuery($query){
+        if ($this->con != null) {
+            $sql = $this->con->prepare($query);
+            $sql->execute();
+        } else {
+            return -1;
+        }
+        return $sql;
+    }
+
+    public function deleteQuery($query){
+        if ($this->con != null) {
+            $sql = $this->con->prepare($query);
+            $sql->execute();
+        } else {
+            return -1;
+        }
+        return $sql;
+    }
+
     public function __destruct(){
         $this->con = null;
     }

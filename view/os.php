@@ -165,7 +165,7 @@
                                 <td class="btnDetailsOs hide"><?php echo $row['link_webZap']; ?></td>
                                 <td class="text-center">
                                     <!--Formulario para deletar uma linha no na tabela de os_pendente. -->
-                                    <form action="../control/controle_os.php?op=del" method="POST">
+                                    <form action="../App/Controls/control_os.php?op=del" method="POST">
                                         <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
                                             <i class="far fa-edit"></i>
                                         </button>
@@ -201,7 +201,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <!-- Formulario de cadastro de OS. -->
-                            <form action="../control/controle_os.php?op=cad" method="POST">
+                            <form action="../App/Controls/control_os.php?op=cad" method="POST">
                                 <div class="modal-body">
                                     <div class="container">                   
                                         <div class="row g-3 gy-3">  
@@ -282,7 +282,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <!-- Formulario de alteração de OS. -->
-                            <form action="../control/controle_os.php?op=alt" method="POST">
+                            <form action="../App/Controls/control_os.php?op=alt" method="POST">
                                 <div class="modal-body">
                                     <div class="container">
                                         <div class="row g-3 gy-3">  
