@@ -11,18 +11,18 @@
     }
     
     //Include da conexão com o banco.
-    include_once '../model/conexao.php';
-    $conn = new Conexao;
-    $con = $conn->conectar();
+    // include_once '../model/conexao.php';
+    // $conn = new Conexao;
+    // $con = $conn->conectar();
 
     //Aqui eu pego o POST do id_os_pendente.
     $id_os = $_POST['idOsPendenteRelatorio'];
 
-    //Select que pega os dados pra preencher a tabela de OS.
-    $SelectRelatorio = "SELECT `p`.`id_os_pendente`, `p`.`nome_equipamento`, `p`.`descricao_defeito`, `p`.`descricao_reparo`,`p`.`data_recebimento`, `p`.`data_entrega_cliente`, `p`.`valor_reparo`, `u`.`nome_cliente` FROM `os_pendente` `P` join `clientes` `U` on (`P`.`id_cliente` = `U`.`id_cliente`) WHERE `id_os_pendente` = '$id_os'";
-    $stmt = $con->prepare($SelectRelatorio);
-    $stmt->execute();
-    $arraySelectOS = $stmt->fetch();
+    // //Select que pega os dados pra preencher a tabela de OS.
+    // $SelectRelatorio = "SELECT `p`.`id_os_pendente`, `p`.`nome_equipamento`, `p`.`descricao_defeito`, `p`.`descricao_reparo`,`p`.`data_recebimento`, `p`.`data_entrega_cliente`, `p`.`valor_reparo`, `u`.`nome_cliente` FROM `os_pendente` `P` join `clientes` `U` on (`P`.`id_cliente` = `U`.`id_cliente`) WHERE `id_os_pendente` = '$id_os'";
+    // $stmt = $con->prepare($SelectRelatorio);
+    // $stmt->execute();
+    // $arraySelectOS = $stmt->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -54,7 +54,7 @@
             $pdf->Cell(18,8, utf8_decode("Ordem de serviço N° $id_os"),0,0,"C","false");
 
             //Logo da página.
-            $pdf->Image("../tools/img/computador-pessoal.png",123,5,20,0);
+            $pdf->Image("../Tools/img/computador-pessoal.png",123,5,20,0);
 
             //Titulo.
             $pdf->SetFont('OpenSansLight','', 23);
