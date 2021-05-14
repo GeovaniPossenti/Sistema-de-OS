@@ -24,7 +24,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <title>Matrix</title>
         <!-- Logo da página. -->
-		<link rel="shorcut icon" href="../Tools/img/computador-pessoal.png">
+		<link rel="shorcut icon" href="../Source/img/computador-pessoal.png">
         <!--Bootstrap.-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
@@ -35,14 +35,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
         <!--Script dos alertas.-->
-        <link rel="stylesheet" href="../Tools/lib/alertifyjs/css/alertify.min.css">
-        <link rel="stylesheet" href="../Tools/lib/alertifyjs/css/themes/default.min.css">
-        <script src="../Tools/lib/alertifyjs/alertify.min.js"></script>
+        <link rel="stylesheet" href="../Source/lib/alertifyjs/css/alertify.min.css">
+        <link rel="stylesheet" href="../Source/lib/alertifyjs/css/themes/default.min.css">
+        <script src="../Source/lib/alertifyjs/alertify.min.js"></script>
         <!--DataTables-->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
         <!--CSS da página. -->
-        <link rel="stylesheet" href="../Tools/css/styleClientes.css">
+        <link rel="stylesheet" href="../Source/css/styleClientes.css">
         <!-- Fonte da CDN do Google -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
@@ -79,7 +79,7 @@
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <img src="../Tools/img/computador-pessoal.png" alt="" width="40px" height="40px">
+                        <img src="../Source/img/computador-pessoal.png" alt="" width="40px" height="40px">
                     </a>
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 20px;">
                         <li><a href="os.php" class="nav-link px-2 text-secondary" title="Página com a lista de Ordens de Serviços"><i class="fas fa-clipboard"></i> Ordens de Serviço</a></li>
@@ -246,7 +246,7 @@
         <?php include_once('footer.html');?>
 
         <!-- Arquivo JS onde ficam os scrips dessa página. -->
-        <script src="../Tools/js/clientes.js"></script>
+        <script src="../Source/js/clientes.js"></script>
     </body>
 </html>
 <?php

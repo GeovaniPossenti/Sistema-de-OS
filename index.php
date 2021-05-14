@@ -6,18 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Matrix</title>
         <!-- Logo da página. -->
-        <link rel="shorcut icon" href="Tools/img/computador-pessoal.png">
+        <link rel="shorcut icon" href="Source/img/computador-pessoal.png">
         <!--JQuery.-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
         <!--Script dos alertas.-->
-        <link rel="stylesheet" href="Tools/lib/alertifyjs/css/alertify.min.css">
-        <link rel="stylesheet" href="Tools/lib/alertifyjs/css/themes/default.min.css">
-        <script src="Tools/lib/alertifyjs/alertify.min.js"></script>
+        <link rel="stylesheet" href="Source/lib/alertifyjs/css/alertify.min.css">
+        <link rel="stylesheet" href="Source/lib/alertifyjs/css/themes/default.min.css">
+        <script src="Source/lib/alertifyjs/alertify.min.js"></script>
         <!-- Fonte da CDN do Google -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
         <!--CSS da página. -->
-        <link rel="stylesheet" href="Tools/css/styleIndex.css">
+        <link rel="stylesheet" href="Source/css/styleIndex.css">
     </head>
     <body class="fundo">
         <form class="box_form" method="post" action="App/Controls/control_user.php?op=log">

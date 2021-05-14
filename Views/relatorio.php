@@ -40,7 +40,7 @@
     <body>
         <?php 
 			ob_start();
-			require_once("../tools/lib/fpdf/fpdf.php");
+			require_once("../Source/lib/fpdf/fpdf.php");
 			$pdf = new FPDF("P","mm","A5");
             $pdf->SetTitle("Relatório OS N° $id_os", true);
                      
@@ -61,7 +61,7 @@
             $pdf->Cell(18,8, utf8_decode("Ordem de serviço N° $id_os"),0,0,"C","false");
 
             //Logo da página.
-            $pdf->Image("../Tools/img/computador-pessoal.png",123,5,20,0);
+            $pdf->Image("../Source/img/computador-pessoal.png",123,5,20,0);
 
             //Titulo.
             $pdf->SetFont('OpenSansLight','', 23);

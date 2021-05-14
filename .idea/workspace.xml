@@ -3,10 +3,153 @@
   <component name="ChangeListManager">
     <list default="true" id="c0abf3a9-6211-402c-b834-8fb059ac3341" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controls/control_customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controls/control_customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/OrderService.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/OrderService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/css/select2-bootstrap5.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/css/select2-bootstrap5.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/css/styleClientes.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/css/styleClientes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/css/styleIndex.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/css/styleIndex.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/css/styleOs.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/css/styleOs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/img/computador-pessoal.png" beforeDir="false" afterPath="$PROJECT_DIR$/Source/img/computador-pessoal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/js/clientes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Source/js/clientes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/js/os.js" beforeDir="false" afterPath="$PROJECT_DIR$/Source/js/os.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/alertify.js" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/alertify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/alertify.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/alertify.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/alertify.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/alertify.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/alertify.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/alertify.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/alertify.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/alertify.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/alertify.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/alertify.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/bootstrap.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/bootstrap.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/default.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/default.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/default.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/default.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/default.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/default.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/semantic.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/semantic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/semantic.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/semantic.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/semantic.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/semantic.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/alertifyjs/css/themes/semantic.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/alertifyjs/css/themes/semantic.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/FAQ.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/FAQ.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/changelog.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/changelog.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/__construct.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/__construct.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/acceptpagebreak.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/acceptpagebreak.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/addfont.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/addfont.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/addlink.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/addlink.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/addpage.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/addpage.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/aliasnbpages.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/aliasnbpages.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/cell.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/cell.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/close.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/close.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/error.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/error.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/footer.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/footer.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/getpageheight.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/getpageheight.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/getpagewidth.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/getpagewidth.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/getstringwidth.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/getstringwidth.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/getx.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/getx.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/gety.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/gety.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/header.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/header.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/image.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/image.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/index.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/line.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/line.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/link.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/link.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/ln.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/ln.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/multicell.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/multicell.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/output.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/output.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/pageno.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/pageno.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/rect.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/rect.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setauthor.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setauthor.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setautopagebreak.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setautopagebreak.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setcompression.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setcompression.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setcreator.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setcreator.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setdisplaymode.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setdisplaymode.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setdrawcolor.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setdrawcolor.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setfillcolor.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setfillcolor.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setfont.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setfont.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setfontsize.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setfontsize.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setkeywords.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setkeywords.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setleftmargin.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setleftmargin.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setlinewidth.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setlinewidth.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setlink.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setlink.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setmargins.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setmargins.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setrightmargin.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setrightmargin.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setsubject.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setsubject.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/settextcolor.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/settextcolor.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/settitle.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/settitle.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/settopmargin.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/settopmargin.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setx.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setx.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/setxy.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/setxy.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/sety.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/sety.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/text.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/text.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/doc/write.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/doc/write.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/OpenSans-Light.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/OpenSans-Light.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/OpenSans-Light.z" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/OpenSans-Light.z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/OpenSans-Regular.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/OpenSans-Regular.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/OpenSans-Regular.z" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/OpenSans-Regular.z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/courier.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/courier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/courierb.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/courierb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/courierbi.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/courierbi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/courieri.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/courieri.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/helvetica.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/helvetica.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/helveticab.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/helveticab.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/helveticabi.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/helveticabi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/helveticai.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/helveticai.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/symbol.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/symbol.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/times.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/times.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/timesb.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/timesb.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/timesbi.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/timesbi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/timesi.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/timesi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/font/zapfdingbats.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/font/zapfdingbats.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/fpdf.css" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/fpdf.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/fpdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/fpdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/install.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/install.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/license.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/license.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/cp1250.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/cp1250.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/cp1251.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/cp1251.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/cp1252.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/cp1252.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/cp1253.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/cp1253.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/cp1254.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/cp1254.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/cp1255.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/cp1255.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/cp1257.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/cp1257.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/cp1258.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/cp1258.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/cp874.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/cp874.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/iso-8859-1.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/iso-8859-1.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/iso-8859-11.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/iso-8859-11.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/iso-8859-15.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/iso-8859-15.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/iso-8859-16.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/iso-8859-16.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/iso-8859-2.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/iso-8859-2.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/iso-8859-4.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/iso-8859-4.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/iso-8859-5.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/iso-8859-5.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/iso-8859-7.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/iso-8859-7.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/iso-8859-9.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/iso-8859-9.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/koi8-r.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/koi8-r.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/koi8-u.map" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/koi8-u.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/makefont.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/makefont.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/makefont/ttfparser.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/makefont/ttfparser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/20k_c1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/20k_c1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/20k_c2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/20k_c2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/calligra.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/calligra.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/calligra.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/calligra.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/calligra.z" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/calligra.z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/countries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/countries.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/index.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/makefont.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/makefont.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto1.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto1.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto2.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto2.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto3.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto3.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto3.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto4.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto4.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto4.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto5.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto5.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto5.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto6.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto6.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto6.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto6.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto7.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto7.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tools/lib/fpdf/tutorial/tuto7.php" beforeDir="false" afterPath="$PROJECT_DIR$/Source/lib/fpdf/tutorial/tuto7.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/clientes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/os.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/os.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/relatorio.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/relatorio.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +208,8 @@
       <workItem from="1620949733958" duration="20000" />
       <workItem from="1620949756306" duration="335000" />
       <workItem from="1620950107343" duration="72000" />
-      <workItem from="1620953458872" duration="14089000" />
+      <workItem from="1620953458872" duration="14875000" />
+      <workItem from="1620969146439" duration="478000" />
     </task>
     <servers />
   </component>
