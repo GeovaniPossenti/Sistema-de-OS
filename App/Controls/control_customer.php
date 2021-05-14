@@ -1,14 +1,14 @@
 <?php 
-    @session_start();
-    include_once '../model/conexao.php';
+    session_start();
+    include_once '../../model/conexao.php';
     $conn = new Conexao;
     $con = $conn->conectar();
 
-    //Sempre quando eu venho pra control, eu passo uma váriavel pela url dizendo qual função que o úsuario quer. 
+    //Sempre quando eu venho pra control, eu passo uma variável pela url dizendo qual função que o usuário quer.
     //op = 'cad'astro / op = 'alt'erar / op = 'del'etar
-    @$op = $_GET['op'];
+    $op = $_GET['op'];
 
-    if(@$op == 'cad'){
+    if($op == 'cad'){
         $nomeClienteCad = isset($_POST['nomeClienteCad']) ? $_POST['nomeClienteCad'] : '';
         $CpfClienteCad = isset($_POST['CpfClienteCad']) ? $_POST['CpfClienteCad'] : '';
         $CelularClienteCad = isset($_POST['CelularClienteCad']) ? $_POST['CelularClienteCad'] : '';
@@ -33,13 +33,13 @@
             //Session com os dados e variaveis necessárias.
             $_SESSION['alerts'] = 'cadOk';
 
-            header("location: ../view/clientes.php");
+            header("location: ../../Views/clientes.php");
         }else{
 
             //Session com os dados e variaveis necessárias.
             $_SESSION['alerts'] = 'cpfExiste';
 
-            header("location: ../view/clientes.php");
+            header("location: ../../Views/clientes.php");
         }
         
     }elseif(@$op == 'alt'){
@@ -72,7 +72,7 @@
                 //Session com os dados e variaveis necessárias.
                 $_SESSION['alerts'] = 'cpfExiste';
 
-                header("location: ../view/clientes.php");
+                header("location: ../../Views/clientes.php");
 
             }else{
                 //Se ele não existir, faz a alteração conforme o plano. 
@@ -124,7 +124,7 @@
                     //Session com os dados e variaveis necessárias.
                     $_SESSION['alerts'] = 'altOk';
             
-                    header("location: ../view/clientes.php");
+                    header("location: ../../Views/clientes.php");
                 }else{
 
                     $sql = "UPDATE `clientes` SET `nome_cliente`= ?,`cpf_cliente`= ?,`celular_cliente`= ?,`telefone_cliente`= ? WHERE `id_cliente` = '$id_cliente'";
@@ -138,7 +138,7 @@
                     //Session com os dados e variaveis necessárias.
                     $_SESSION['alerts'] = 'altOk';
             
-                    header("location: ../view/clientes.php");
+                    header("location: ../../Views/clientes.php");
                 }
             }
         }elseif($cpf_cliente == $cpfClienteAlt){
@@ -191,7 +191,7 @@
                 //Session com os dados e variaveis necessárias.
                 $_SESSION['alerts'] = 'altOk';
         
-                header("location: ../view/clientes.php");
+                header("location: ../../Views/clientes.php");
             }else{
 
                 $sql = "UPDATE `clientes` SET `nome_cliente`= ?,`cpf_cliente`= ?,`celular_cliente`= ?,`telefone_cliente`= ? WHERE `id_cliente` = '$id_cliente'";
@@ -205,7 +205,7 @@
                 //Session com os dados e variaveis necessárias.
                 $_SESSION['alerts'] = 'altOk';
         
-                header("location: ../view/clientes.php");
+                header("location: ../../Views/clientes.php");
             }
         }
 
@@ -229,13 +229,13 @@
             //Session com os dados e variaveis necessárias.
             $_SESSION['alerts'] = 'delOk';
     
-            header("location: ../view/clientes.php");
+            header("location: ../../Views/clientes.php");
 
         }elseif(count($arrayId_usuario) > 0){
 
             $_SESSION['alerts'] = 'deleteClienteFail';
             
-            header("location: ../view/clientes.php");
+            header("location: ../../Views/clientes.php");
             
         
         }
