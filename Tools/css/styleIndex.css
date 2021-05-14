@@ -1,0 +1,76 @@
+@font-face {
+	font-family: 'OpenSans';
+	src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+	font-size: 1em;
+}
+@font-face {
+	font-family: 'OpenSansLight';
+	src: url("../fonts/Open_Sans/OpenSans-light.ttf");
+	font-size: 1em;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.fundo{
+  background: #4B79A1;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #283E51, #4B79A1);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #283E51, #4B79A1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box_form{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #191919;
+  opacity: 100%;
+  text-align: center;
+  border-radius: 40px;
+
+  font-family: 'Roboto', sans-serif;
+	font-size: 12pt;
+	color: black;
+
+  box-shadow: 0 0 30px black;
+}
+.box_form h1{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box_form input[type = "text"],.box_form input[type = "password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box_form input[type = "text"]:focus,.box_form input[type = "password"]:focus{
+  width: 280px;
+  border-color: #2ecc97;
+}
+.box_form input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc97;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box_form input[type = "submit"]:hover{
+  background: #2ecc97;
+}
