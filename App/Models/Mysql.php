@@ -68,14 +68,6 @@ class Mysql{
         return $sql;
     }
 
-    public function inverteData($data){
-        if(count(explode("/",$data)) > 1){
-            return implode("-",array_reverse(explode("/",$data)));
-        }elseif(count(explode("-",$data)) > 1){
-            return implode("/",array_reverse(explode("-",$data)));
-        }
-    }
-
     public function __destruct(){
         $this->con = null;
     }

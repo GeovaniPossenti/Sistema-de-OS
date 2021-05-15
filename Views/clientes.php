@@ -2,7 +2,7 @@
     session_start();
     $login = $_SESSION['logged_in'];
 
-    //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in != de vazio.
+    //Controle de acesso.
     if($login != true){
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
@@ -41,11 +41,11 @@
         <!--DataTables-->
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
-        <!--CSS da página. -->
-        <link rel="stylesheet" href="../Source/css/styleClientes.css">
         <!-- Fonte da CDN do Google -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+        <!--CSS da página. -->
+        <link rel="stylesheet" href="../Source/css/styleClientes.css">
         <script>
             $(document).ready( function () {
                 $('#table_clientes').DataTable({
@@ -67,9 +67,6 @@
                             "previous": "Anterior"
                         },
                     },
-                    buttons: [
-                        'copy', 'excel', 'pdf'
-                    ],
                 });
             } );
         </script>
@@ -118,7 +115,7 @@
                             <td class="btnEdit" title="Alterar"><?php echo $row['celular_cliente']; ?></td>
                             <td class="btnEdit" title="Alterar"><?php echo $row['telefone_cliente']; ?></td>
                             <td class="text-center">
-                                <!--Formulario para deletar um cliente do banco. -->
+                                <!--Formulário para alterar/excluir um cliente do banco. -->
                                 <form action="../App/Controls/control_customer.php?op=del" method="POST">
                                     <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
                                         <i class="fas fa-user-edit"></i>
@@ -128,7 +125,6 @@
                                         <i class="fas fa-backspace"></i>
                                     </button>                          
                                 </form>
-                                <!------------------------------------------------->
                             </td>
                         </tr>
                         <?php } ?>
@@ -186,7 +182,6 @@
                     </div>
                 </div>
             </div>
-            <!----------------------------------------------->  
 
             <!--Modal de edição de Clientes--> 
             <div class="modal fade modalfade" id="modalEditClientes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -239,7 +234,6 @@
                     </div>
                 </div>
             </div>
-            <!-----------------------------------------------> 
         </div>
         </section>
 
@@ -250,6 +244,6 @@
     </body>
 </html>
 <?php
-    //Include da .php onde ficam as funções de alertas, precisa ser incluído no final da página.
+    //Include dos alertas.
     include_once ('alerts.php');
 ?>

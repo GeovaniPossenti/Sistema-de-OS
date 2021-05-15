@@ -2,7 +2,7 @@
     session_start();
     $login = $_SESSION['logged_in'];
 
-    //Controle de acesso, só é possível acessar os.php/clientes.php com a session de logged_in != de vazio.
+    //Controle de acesso
     if($login != true){
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
@@ -51,11 +51,11 @@
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="../Source/css/select2-bootstrap5.min.css">
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-        <!--CSS da página. -->
-        <link rel="stylesheet" href="../Source/css/styleOs.css">
         <!-- Fonte da CDN do Google -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+        <!--CSS da página. -->
+        <link rel="stylesheet" href="../Source/css/styleOs.css">
         <script>
             $(document).ready( function () {
                 $('#table_os').DataTable({
@@ -107,8 +107,8 @@
                 <div>
                     <table id="table_os" class="display text-center cell-border">
                         <thead style="color: white;">
-                            <!--Aqui eu uso uma classe no css, pra não exibir algumas colunas, 
-                            porque lá em baixo quando eu pego os valores de cada linha com o JQUERY, 
+                            <!--Aqui eu uso uma classe no css, pra não exibir algumas colunas,
+                            porque lá em baixo quando eu pego os valores de cada linha com o JQUERY,
                             eu preciso de todos as colunas para assim ter todos os dados. -->
                             <tr>
                                 <th title="Filtrar por:">ID OS</th>
@@ -128,7 +128,7 @@
                             <!-- A mesma coisa acontece aqui, eu preciso colocar a mesma qtd de colunas pra tabela funcionar, 
                             porém preciso usar uma classe no css pra deixar essas colunas não visíveis.-->
                             <?php foreach($arrayBancoOs as $row){ 
-                                //Aqui eu faço um switch pra decidir qual cor eu exibo o texto no campo de status. (Apenas uma função pra melhorar a leitura)
+                                //Aqui eu faço um switch pra decidir qual cor eu exibo o texto no campo de status (Apenas uma função pra melhorar a leitura).
                                 switch($row['status']){
                                     case 'Orçamento': 
                                         $color = "#DAA520";
@@ -149,18 +149,17 @@
                             ?>
                             <tr>  
                                 <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $row['id_os_pendente']; ?></td>
-                                <!--Aqui eu mostro o nome do cliente ao inves do id, usando um inner join no topo da página-->
+                                <!--Aqui eu mostro o nome do cliente ao invés do id, usando um inner join no topo da página.-->
                                 <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $row['nome_cliente']; ?></td>
-                                <!--------------------------------------------------------->
                                 <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $row['nome_equipamento']; ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['descricao_defeito']; ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['descricao_reparo']; ?></td>
                                 <td class="btnDetailsOs" style="color: <?php echo $color; ?>" title="Ver todos os detalhes"><?php echo $row['status']; ?></td>
-                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $mysql->inverteData($row['data_recebimento']); ?></td>
+                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $dbModelOs->inverteData($row['data_recebimento']); ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['data_entrega_cliente']; ?></td>
                                 <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo str_replace('.', ',', $row['valor_reparo']); ?></td>
                                 <td class="text-center">
-                                    <!--Formulario para deletar uma linha no na tabela de os_pendente. -->
+                                    <!--Formulário para alterar/excluir uma linha.-->
                                     <form action="../App/Controls/control_os.php?op=del" method="POST">
                                         <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
                                             <i class="far fa-edit"></i>
@@ -170,7 +169,6 @@
                                             <i class="fas fa-backspace"></i>
                                         </button>
                                     </form>
-                                    <!------------------------------------------------------------------->
                                 </td>                                    
                                 <td class="text-center">
                                     <?php if($row['status'] == 'Entregue'){ ?>           
@@ -196,7 +194,7 @@
                                 <h5 class="modal-title" id="exampleModalLabel">Cadastrar ordens de serviços</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <!-- Formulario de cadastro de OS. -->
+                            <!-- Formulário de cadastro de OS. -->
                             <form action="../App/Controls/control_os.php?op=cad" method="POST">
                                 <div class="modal-body">
                                     <div class="container">                   
@@ -263,11 +261,9 @@
                                     <button type="submit" class="btn btn-primary" title="Salvar"><i class="fas fa-check"></i> Salvar</button>
                                 </div>
                             </form>
-                            <!--------------------------->
                         </div>
                     </div>
                 </div>
-                <!-----------------------------------------------> 
 
                 <!--Modal de edição de OS--> 
                 <div class="modal fade modalfade text-start" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -277,7 +273,7 @@
                                 <h5 class="modal-title" id="exampleModalLabel">Modificar ordens de serviços</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <!-- Formulario de alteração de OS. -->
+                            <!-- Formulário de alteração de OS. -->
                             <form action="../App/Controls/control_os.php?op=alt" method="POST">
                                 <div class="modal-body">
                                     <div class="container">
@@ -345,11 +341,9 @@
                                     <button type="submit" class="btn btn-primary" title="Salvar"><i class="fas fa-check"></i> Salvar alterações</button>
                                 </div>
                             </form>
-                            <!--------------------------->
                         </div>
                     </div>
                 </div>
-                <!----------------------------------------------->  
 
                 <!--Modal de detalhes de OS--> 
                 <div class="modal fade modalfade text-start" id="modalDetailsOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -434,7 +428,6 @@
                         </div>
                     </div>
                 </div>
-                <!-----------------------------------------------> 
             </div>
         </section>
         
@@ -445,6 +438,6 @@
     </body>
 </html>
 <?php
-    //Include da .php onde ficam as funções de alertas, precisa ser incluído no final da página.
+    //Include dos alertas.
     include_once ('alerts.php');
 ?>

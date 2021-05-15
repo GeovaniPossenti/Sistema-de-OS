@@ -2,7 +2,7 @@
     session_start();
     $login = $_SESSION['logged_in'];   
     
-    //Controle de acesso, só é possível acessar os.php/clientes.php/relatorio.php com a session de logged_in != de vazio.
+    //Controle de acesso.
     if($login != true){
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
@@ -17,15 +17,14 @@
     $id_os = $_POST['idOsPendenteRelatorio'];
 
     $con = Mysql::getInstance();
-    $mysql = new Mysql;
     $dbInstance = new OrderService($con);
     $arraySelectOS = $dbInstance->selectOsById($id_os);
 
     foreach ($arraySelectOS as $dados) {
         $nome_cliente = $dados['nome_cliente'];
         $nome_equipamento = $dados['nome_equipamento'];
-        $data_recebimento = $mysql->inverteData($dados['data_recebimento']);
-        $data_entrega_cliente = $mysql->inverteData($dados['data_entrega_cliente']);
+        $data_recebimento = $dbInstance->inverteData($dados['data_recebimento']);
+        $data_entrega_cliente = $dbInstance->inverteData($dados['data_entrega_cliente']);
         $valor_reparo = "R$ ".str_replace('.', ',', ($dados['valor_reparo']));
         $descricao_defeito = $dados['descricao_defeito'];
         $descricao_reparo = $dados['descricao_reparo'];
@@ -141,7 +140,7 @@
             $pdf->Cell(55,0, utf8_decode("Documento gerado em: $data_atual"),0,0,"C","false");
 
 
-            //Aqui eu escolho o tipo de arquivo, e o name dele.
+            //Aqui eu escolho o tipo de arquivo, e o nome dele.
             $pdf->Output("relatorio_os_id_".$id_os.".pdf","I");
         ?>
     </body>

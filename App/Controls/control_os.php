@@ -34,7 +34,6 @@
             $_SESSION['alerts'] = 'crudFail';
             header("location: ../../Views/os.php");
         }else {
-            //Session com os dados e variáveis necessárias.
             $_SESSION['alerts'] = 'cadOk';
             header("location: ../../Views/os.php");
         }
@@ -56,7 +55,6 @@
         $valorReparoAltFormatado = str_replace(',', '.', $valorSemVirgula);
 
         //Aqui eu dou um select pra pegar o id do cliente, já que no input eu sou obrigado a passar somente o nome dele.
-        //Aqui eu faço um Select na tabela de clientes, para pegar o telefone do cliente cadastrado no serviço.
         $dbInstance = new Customer($con);
         $ArraySelect = $dbInstance->selectNomeClienteByName($nomeClienteAlt);
 
@@ -64,7 +62,6 @@
             $id_cliente_update = $row['id_cliente'];
         }
 
-        //Aqui eu chamo a classe/método pra dar update na tabela.
         $dbInstance = new OrderService($con);
         $updateOs = $dbInstance->updateOs($idOsPendenteAlt, $id_cliente_update, $nomeEquipamentoAlt, $descDefeitoAlt, $descReparoAlt, $statusCadAlt, $dataEntregaAlt, $valorReparoAltFormatado, $linkZapCad);
 
