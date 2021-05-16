@@ -105,7 +105,7 @@
                     <button type="button" class="btn btn-primary text-white btnCadastro" value="" title="Cadastro de OS"><i class="fas fa-plus"></i> Cadastrar Ordem de Serviço</button>
                 </div>
                 <div>
-                    <table id="table_os" class="display text-center cell-border">
+                    <table id="table_os" class="display text-center cell-border compact">
                         <thead style="color: white;">
                             <!--Aqui eu uso uma classe no css, pra não exibir algumas colunas,
                             porque lá em baixo quando eu pego os valores de cada linha com o JQUERY,
@@ -148,7 +148,7 @@
                                     break;
                                 }
                                 $nomeCliente = explode(' ', $row['nome_cliente']);
-                                $doisNomes = $nomeCliente[0].' '.$nomeCliente[1];
+                                $doisNomes = $nomeCliente[0].' '.@$nomeCliente[1];
                             ?>
                             <tr>  
                                 <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $row['id_os_pendente']; ?></td>

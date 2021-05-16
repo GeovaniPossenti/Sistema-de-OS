@@ -95,7 +95,7 @@
                 <button type="button" class="btn btn-primary btnCadastro text-white" value="" title="Cadastro de Clientes"><i class="fas fa-user-plus"></i> Cadastrar Clientes</button>
             </div>
             <div class="text-start">
-                <table id="table_clientes" class="display text-center cell-border">
+                <table id="table_clientes" class="display text-center cell-border compact">
                     <thead style="color: white;">
                         <tr>
                             <th title="Filtrar por:">Id Cliente</th>
