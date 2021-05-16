@@ -4,8 +4,8 @@
         reverse: true
     });
 
-    //Aqui é onde ficam todos os comandos pra abrir os modais, manipular dados dentros dos modais.
-    //Aqui ficam as opçoes da tela de os.php
+    //Aqui é onde ficam todos os comandos pra abrir os modais, e manipular os dados dos modais.
+    //Aqui ficam as opções da tela de os.php
     $('.btnEdit').on('click', function(){
         $('#modalEditOs').modal('show');
 
@@ -14,18 +14,19 @@
         var data = $tr.children("td").map(function(){
             return $(this).text();
         }).get();
-        
-        //console.log(data);
 
         $('#id_os_pendente').val(data[0]);
-        $('#nome_cliente').val(data[1]);
-        $('#nome_equipamento').val(data[2]);
-        $('#descricao_defeito').val(data[3]);
-        $('#descricao_reparo').val(data[4]);
-        $('#status').val(data[5]);
-        $('#data_recebimento').val(data[6]);
-        $('#data_entrega_cliente').val(data[7]);
-        $('#valor_reparo').val(data[8]);
+        //Aqui eu passo o valor do campo hide, porque ele contém o nome completo do cliente.
+        //O campo que eu não atribuo data[2], contém os dois primeiros nomes do cliente.
+        //Sendo assim, o select não se auto complementa com o nome, já que o no banco, é o nome completo que consta.
+        $('#nomeCompletoCliente').val(data[1]);
+        $('#nome_equipamento').val(data[3]);
+        $('#descricao_defeito').val(data[4]);
+        $('#descricao_reparo').val(data[5]);
+        $('#status').val(data[6]);
+        $('#data_recebimento').val(data[7]);
+        $('#data_entrega_cliente').val(data[8]);
+        $('#valor_reparo').val(data[9]);
 
         //Aqui eu passo o nome do cliente para o primeiro valor do select2.
         //Porque sem isso, ele pega o value normal, porém só quando abrimos o select. 
@@ -40,18 +41,19 @@
         var data = $tr.children("td").map(function(){
             return $(this).text();
         }).get();
-        
-        console.log(data);
 
         $('#id_os_pendenteDet').val(data[0]);
+        //Aqui eu passo o valor do campo hide, porque ele contém o nome completo do cliente.
+        //O campo que eu não atribuo data[2], contém somente os dois primeiros nomes do cliente.
+        //Sendo assim, o select não se auto complementa com o nome, já que o no banco, é o nome completo que consta.
         $('#nome_clienteDet').val(data[1]);
-        $('#nome_equipamentoDet').val(data[2]);
-        $('#descricao_defeitoDet').val(data[3]);
-        $('#descricao_reparoDet').val(data[4]);
-        $('#statusDet').val(data[5]);
-        $('#data_recebimentoDet').val(data[6]);
-        $('#data_entrega_clienteDet').val(data[7]);
-        $('#valor_reparoDet').val(data[8]);
+        $('#nome_equipamentoDet').val(data[3]);
+        $('#descricao_defeitoDet').val(data[4]);
+        $('#descricao_reparoDet').val(data[5]);
+        $('#statusDet').val(data[6]);
+        $('#data_recebimentoDet').val(data[7]);
+        $('#data_entrega_clienteDet').val(data[8]);
+        $('#valor_reparoDet').val(data[9]);
 
         //Aqui eu passo os valores para os inputs hidden que ficam no form do botão que cria o link do whatsapp.
         $('#hiddenInputIdOs').val(data[0]);
@@ -61,7 +63,7 @@
         $('#modalCadastroOs').modal('show');
     });
     
-    //Campo dinamica de busca nos selects de clientes. 
+    //Campo dinâmica de busca nos selects de clientes.
     //Select de cadastro de OS.
     $('#NomeClienteModalCad').select2({
         dropdownParent: $('#modalCadastroOs'),

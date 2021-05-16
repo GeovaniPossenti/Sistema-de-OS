@@ -94,7 +94,7 @@
                         <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
                     </ul>
                     <div class="text-end">
-                        <a href="../App/Controls/logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="fas fa-sign-out-alt"></i> Sair</button></a>
+                        <a href="../App/Controls/control_logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="fas fa-sign-out-alt"></i> Sair</button></a>
                     </div>
                 </div>
             </div>
@@ -122,6 +122,7 @@
                                 <th title="Filtrar por:">Valor do Reparo R$</th>
                                 <th title="Filtrar por:">Funções</th>
                                 <th title="Filtrar por:"></th>
+                                <th class="hide">Nome Completo Cliente:</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -145,12 +146,15 @@
                                     case 'Entregue': 
                                         $color = "#008000";
                                     break;
-                                }                        
+                                }
+                                $nomeCliente = explode(' ', $row['nome_cliente']);
+                                $doisNomes = $nomeCliente[0].' '.$nomeCliente[1];
                             ?>
                             <tr>  
                                 <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $row['id_os_pendente']; ?></td>
                                 <!--Aqui eu mostro o nome do cliente ao invés do id, usando um inner join no topo da página.-->
-                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $row['nome_cliente']; ?></td>
+                                <td class="hide"><?php echo $row['nome_cliente']; ?></td>
+                                <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $doisNomes; ?></td>
                                 <td class="btnDetailsOs" title="Ver todos os detalhes"><?php echo $row['nome_equipamento']; ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['descricao_defeito']; ?></td>
                                 <td class="btnDetailsOs hide"><?php echo $row['descricao_reparo']; ?></td>
@@ -179,14 +183,14 @@
                                             </button>
                                         </form>
                                     <?php } ?>
-                                </td>   
+                                </td>
                             </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                 </div>
 
-                <!--Modal de cadastro de OS--> 
+                <!--Modal de cadastro de OS-->
                 <div class="modal fade modalfade text-start" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -197,9 +201,9 @@
                             <!-- Formulário de cadastro de OS. -->
                             <form action="../App/Controls/control_os.php?op=cad" method="POST">
                                 <div class="modal-body">
-                                    <div class="container">                   
-                                        <div class="row g-3 gy-3">  
-                                            <div class="col-md-6">    
+                                    <div class="container">
+                                        <div class="row g-3 gy-3">
+                                            <div class="col-md-6">
                                                 <div style="margin-top: -5px;">
                                                     <label for="NomeClienteModalCad" class="">Selecione um Cliente:</label>
                                                     <select name="idClienteCad" class="form-select" id="NomeClienteModalCad" required>
@@ -210,25 +214,25 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6"> 
+                                            <div class="col-md-6">
                                                 <div class="form-floating">
                                                     <input type="text" name="nomeEquipamentoCad" class="form-control" id="nomeEquipamentoCad" maxlength="255">
                                                     <label for="nomeEquipamentoCad">Nome do Equipamento:</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12"> 
+                                            <div class="col-md-12">
                                                 <div class="form-floating">
                                                     <textarea class="form-control" name="descDefeitoCad" id="descDefeitoCad" style="height: 150px" maxlength="255"></textarea>
                                                     <label for="descDefeitoCad">Descrição do Defeito:</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12"> 
+                                            <div class="col-md-12">
                                                 <div class="form-floating">
                                                     <textarea class="form-control" name="descReparoCad" id="descReparoCad" style="height: 150px" maxlength="255"></textarea>
                                                     <label for="descReparoCad">Descrição do Reparo:</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-5"> 
+                                            <div class="col-md-5">
                                                 <div class="form-floating">
                                                     <select name="statusCad" class="form-select" id="statusCad" required>
                                                         <option value="Orçamento" style="color: #DAA520">Orçamento</option>
@@ -239,14 +243,14 @@
                                                     </select>
                                                     <label for="statusCad">Processo:</label>
                                                 </div>
-                                            </div> 
-                                            <div class="col-md-7"> 
+                                            </div>
+                                            <div class="col-md-7">
                                                 <div class="form-floating">
                                                     <input type="date" name="dataEntregaCad" id="dataEntregaCad" class="form-control">
                                                     <label for="dataEntregaCad">Data de Entrega ao Cliente:</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 input-group"> 
+                                            <div class="col-md-6 input-group">
                                                 <span class="input-group-text" id="basic-addon1">R$</span>
                                                 <div class="form-floating">
                                                     <input type="text" name="valorCad" id="valorCad" class="inputDinheiro form-control">
@@ -265,7 +269,7 @@
                     </div>
                 </div>
 
-                <!--Modal de edição de OS--> 
+                <!--Modal de edição de OS-->
                 <div class="modal fade modalfade text-start" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -277,17 +281,17 @@
                             <form action="../App/Controls/control_os.php?op=alt" method="POST">
                                 <div class="modal-body">
                                     <div class="container">
-                                        <div class="row g-3 gy-3">  
+                                        <div class="row g-3 gy-3">
                                             <div class="col-md-6">
-                                                <input type="hidden" name="idOsPendenteAlt" id="id_os_pendente" required>         
+                                                <input type="hidden" name="idOsPendenteAlt" id="id_os_pendente" required>
                                                 <div style="margin-top: -5px;">
                                                     <label for="nome_cliente">Selecione um Cliente:</label>
-                                                    <select name="nomeClienteAlt" class="form-control selectEditClientes nome_cliente" id="nome_cliente" required>
+                                                    <select name="nomeClienteAlt" class="form-control selectEditClientes nome_cliente" id="nomeCompletoCliente" required>
                                                         <?php foreach($arrayClientes as $rowCliente){ ?>
                                                             <option value="<?php echo $rowCliente['nome_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
                                                         <?php } ?>
                                                     </select>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -326,7 +330,7 @@
                                                     <label for="data_entrega_cliente" class="col-form-label">Data de Entrega ao Cliente:</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 input-group"> 
+                                            <div class="col-md-6 input-group">
                                                 <span class="input-group-text" id="basic-addon1">R$</span>
                                                 <div class="form-floating">
                                                     <input type="text" name="valorReparoAlt"  id="valor_reparo" class="inputDinheiro form-control" placeholder="Digite um valor">
@@ -345,7 +349,7 @@
                     </div>
                 </div>
 
-                <!--Modal de detalhes de OS--> 
+                <!--Modal de detalhes de OS-->
                 <div class="modal fade modalfade text-start" id="modalDetailsOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -355,7 +359,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container">
-                                    <div class="row g-3 gy-3">  
+                                    <div class="row g-3 gy-3">
                                         <div class="col-md-4">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="id_os_pendenteDet" readonly>
@@ -382,7 +386,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control" id="descricao_defeitoDet" style="height: 150px" readonly></textarea>        
+                                                <textarea class="form-control" id="descricao_defeitoDet" style="height: 150px" readonly></textarea>
                                                 <label for="descricao_defeitoDet">Descrição do defeito:</label>
                                             </div>
                                         </div>
@@ -411,7 +415,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 text-center">
-                                            <form action="../App/Controls/link_whatsapp.php" method="POST" target="_blank">
+                                            <form action="../App/Controls/control_whatsapp.php" method="POST" target="_blank">
                                                 <input type="hidden" name="idOsPendenteDet" id="hiddenInputIdOs">
                                                 <input type="hidden" name="nomeClienteDet" id="hiddenInputNomeCliente">
                                                 <button type="submit" class="btn text-white btnZap" id="link_webZapDet" title="Chamar cliente via WhatsApp">
@@ -437,7 +441,4 @@
         <script src="../Source/js/os.js"></script>
     </body>
 </html>
-<?php
-    //Include dos alertas.
-    include_once ('alerts.php');
-?>
+<?php include_once ('alerts.php'); ?>
