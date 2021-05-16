@@ -165,20 +165,20 @@
                                 <td class="text-center">
                                     <!--Formulário para alterar/excluir uma linha.-->
                                     <form action="../App/Controls/control_os.php?op=del" method="POST">
-                                        <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
+                                        <button type="button" class="btn btn-outline-primary btnEdit btn-sm" value="Alterar" title="Alterar">
                                             <i class="far fa-edit"></i>
                                         </button>
                                         <input type="hidden" name="id_os_pendente" value="<?php echo $row['id_os_pendente']; ?>">
-                                        <button type="submit" class="btn btn-outline-danger" value="Deletar" title="Deletar">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" value="Deletar" title="Deletar">
                                             <i class="fas fa-backspace"></i>
                                         </button>
                                     </form>
-                                </td>                                    
+                                </td>
                                 <td class="text-center">
                                     <?php if($row['status'] == 'Entregue'){ ?>           
                                         <form action="relatorio.php" method="POST" target="_blank">
                                             <input type="hidden" value="<?php echo $row['id_os_pendente']; ?>" name="idOsPendenteRelatorio">
-                                            <button type="submit" class="btn btn-outline-warning" title="Gerar Relatório">
+                                            <button type="submit" class="btn btn-outline-warning btn-sm" title="Gerar Relatório">
                                                 <i class="fas fa-file-pdf"></i>
                                             </button>
                                         </form>

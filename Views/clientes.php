@@ -117,11 +117,11 @@
                             <td class="text-center">
                                 <!--Formulário para alterar/excluir um cliente do banco. -->
                                 <form action="../App/Controls/control_customer.php?op=del" method="POST">
-                                    <button type="button" class="btn btn-outline-primary btnEdit" value="Alterar" title="Alterar">
+                                    <button type="button" class="btn btn-outline-primary btnEdit btn-sm" value="Alterar" title="Alterar">
                                         <i class="fas fa-user-edit"></i>
                                     </button>
                                     <input type="hidden" name="id_cliente" value="<?php echo $row['id_cliente']; ?>">
-                                    <button type="submit" class="btn btn-outline-danger" value="Deletar" title="Deletar">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm" value="Deletar" title="Deletar">
                                         <i class="fas fa-backspace"></i>
                                     </button>                          
                                 </form>
