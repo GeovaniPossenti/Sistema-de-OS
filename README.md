@@ -11,7 +11,7 @@ Sistema desenvolvido por: Geovani Possenti
 
 # Interface
 
-O projeto ainda está em desenvolvimento, porém vou deixar aqui algumas screenshots das principais telas do sistema. 
+O projeto ainda está em desenvolvimento, porém vou deixar aqui algumas screenshots das principais telas do sistema. Lembrando que os dados mostrados pelas tabelas nas screenshots, são apenas para a visualização da tabela em funcionamento, sendo eles fictícios e usados apenas para testar a aplicação.
 
 Existe a probabilidade das imagens ficarem com menos resolução que o comum, para uma melhor visualização, recomendo clicar sobre a imagem para exibi-la em outra página.
 
