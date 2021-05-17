@@ -15,22 +15,12 @@ O projeto ainda está em desenvolvimento, porém vou deixar aqui algumas screens
 
 Existe a probabilidade das imagens ficarem com menos resolução que o comum, para uma melhor visualização, recomendo clicar sobre a imagem para exibi-la em outra página.
 
-# Página de ordens de serviço
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+| ![Screenshot_1](https://user-images.githubusercontent.com/79884348/118429650-8b22b280-b6a8-11eb-9933-cd05a3ff13b8.png) | ![Screenshot_2](https://user-images.githubusercontent.com/79884348/118429654-8cec7600-b6a8-11eb-9741-24efba5f77f4.png) | ![Screenshot_3](https://user-images.githubusercontent.com/79884348/118429657-8e1da300-b6a8-11eb-8bdc-5ade6f838e25.png)
+| ![Screenshot_4](https://user-images.githubusercontent.com/79884348/118429663-8fe76680-b6a8-11eb-914e-2e2dd32c1478.png) | ![Screenshot_5](https://user-images.githubusercontent.com/79884348/118429666-91b12a00-b6a8-11eb-885f-afb78264a714.png) | ![Screenshot_6](https://user-images.githubusercontent.com/79884348/118429670-937aed80-b6a8-11eb-9fb5-ac085b16ef06.png)
 
-Figura 1 - Tela principal do sistema.
 
-![tela_os](https://user-images.githubusercontent.com/79884348/117519112-c6223900-af78-11eb-99bd-28d639227cd0.png)
 
-Figura 2 - Tela de cadastro.
-
-![tela_cadastro_os](https://user-images.githubusercontent.com/79884348/117519163-f4a01400-af78-11eb-86ce-0057ee4316c4.png)
-
-Figura 3 - Tela de detalhes.
-
-![detalhes_os](https://user-images.githubusercontent.com/79884348/117519172-fb2e8b80-af78-11eb-9480-85803973fe25.png)
-
-Figura 4 - Footer da página principal.
-
-![footer_os](https://user-images.githubusercontent.com/79884348/117519181-0386c680-af79-11eb-9040-f6dad0971a78.png)
 
 
