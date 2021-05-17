@@ -112,6 +112,7 @@
                             eu preciso de todos as colunas para assim ter todos os dados. -->
                             <tr>
                                 <th title="Filtrar por:">ID OS</th>
+                                <th class="hide">Nome Completo Cliente:</th>
                                 <th title="Filtrar por:">Nome do Cliente</th>
                                 <th title="Filtrar por:">Nome do Equipamento</th>
                                 <th class="hide">descricao_defeito</th>
@@ -122,7 +123,6 @@
                                 <th title="Filtrar por:">Valor do Reparo R$</th>
                                 <th title="Filtrar por:">Funções</th>
                                 <th title="Filtrar por:"></th>
-                                <th class="hide">Nome Completo Cliente:</th>
                             </tr>
                         </thead>
                         <tbody>
