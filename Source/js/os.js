@@ -56,8 +56,9 @@
         $('#valor_reparoDet').val(data[9]);
 
         //Aqui eu passo os valores para os inputs hidden que ficam no form do botão que cria o link do whatsapp.
-        $('#hiddenInputIdOs').val(data[0]);
         $('#hiddenInputNomeCliente').val(data[1]);
+        $('#hiddenInputStatus').val(data[6]);
+        $('#hiddenInputValor').val(data[9]);
     });
     $('.btnCadastro').on('click', function(){
         $('#modalCadastroOs').modal('show');

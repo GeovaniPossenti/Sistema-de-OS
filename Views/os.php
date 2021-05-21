@@ -382,8 +382,9 @@
                                         </div>
                                         <div class="col-md-6 text-center">
                                             <form action="../App/Controls/control_whatsapp.php" method="POST" target="_blank">
-                                                <input type="hidden" name="idOsPendenteDet" id="hiddenInputIdOs">
+                                                <input type="hidden" name="statusOSDet" id="hiddenInputStatus">
                                                 <input type="hidden" name="nomeClienteDet" id="hiddenInputNomeCliente">
+                                                <input type="hidden" name="valorOsDet" id="hiddenInputValor">
                                                 <button type="submit" class="btn text-white btnZap" id="link_webZapDet" title="Chamar cliente via WhatsApp">
                                                     <i class="fab fa-whatsapp" style="font-size: 20px; margin-top: 5px;"></i> WhatsApp
                                                 </button>
