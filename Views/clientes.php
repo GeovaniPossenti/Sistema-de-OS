@@ -15,6 +15,10 @@
     $con = Mysql::getInstance();
     $dbModelCustomer = new Customer($con);
     $arrayClientes = $dbModelCustomer->listarClientes();
+
+    //Cor do título no include do header.
+    $corTituloOS = 'text-secondary';
+    $corTituloClientes = 'text-white';
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -46,56 +50,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
         <!--CSS da página. -->
         <link rel="stylesheet" href="../Source/css/styleClientes.css">
-        <script>
-            $(document).ready( function () {
-                $('#table_clientes').DataTable({
-                    lengthMenu: [25, 50, 75, 100],
-                    language: {
-                        "lengthMenu": "Exibir _MENU_ linhas por página",
-                        "zeroRecords": "Nada encontrado!",
-                        "info": "Mostrando página _PAGE_ de _PAGES_",
-                        "infoEmpty": "Nenhum registro disponível",
-                        "infoFiltered": "(filtrado de _MAX_ registros totais)",
-                        "emptyTable": "Não há dados para exibir!",
-                        "loadingRecords": "Carregando...",
-                        "processing": "Em processamento...",
-                        "search": "Procurar:",
-                        "paginate": {
-                            "first": "Primeiro",
-                            "last": "Último",
-                            "next": "Próximo",
-                            "previous": "Anterior"
-                        },
-                    },
-                });
-            } );
-        </script>
+        <!-- Referência da tabela do DataTables. -->
+        <script type="text/javascript" charset="utf8" src="../Source/js/table.js"></script>
     </head>
     <body class="fundo">
-        <header class="p-3 text-white header">
-            <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <img src="../Source/img/computador-pessoal.png" alt="" width="40px" height="40px">
-                    </a>
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 20px;">
-                        <li><a href="os.php" class="nav-link px-2 text-secondary" title="Página com a lista de Ordens de Serviços"><i class="fas fa-clipboard"></i> Ordens de Serviço</a></li>
-                        <li><a href="clientes.php" class="nav-link px-2 text-white" title="Página com a lista de Clientes"><i class="fas fa-user-friends"></i> Lista de Clientes</a></li>
-                        <li><a href="#" class="nav-link px-2 text-secondary"></a></li>
-                    </ul>
-                    <div class="text-end">
-                        <a href="../App/Controls/control_logout.php"><button type="button" class="btn btn-danger" title="Logout"><i class="fas fa-sign-out-alt"></i> Sair</button></a>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <?php include_once('header.php');?>
         <section>
         <div class="quadrado">
             <div class="container text-center" style="margin-bottom: 20px;">
                 <button type="button" class="btn btn-primary btnCadastro text-white" value="" title="Cadastro de Clientes"><i class="fas fa-user-plus"></i> Cadastrar Clientes</button>
             </div>
             <div class="text-start">
-                <table id="table_clientes" class="display text-center cell-border compact">
+                <table id="tabelaDados" class="display text-center cell-border compact">
                     <thead style="color: white;">
                         <tr>
                             <th title="Filtrar por:">Id Cliente</th>
