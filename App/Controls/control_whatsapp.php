@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    include '../Models/Mysql.php';
-    include '../Models/Customer.php';
+    include_once '../Models/Mysql.php';
+    include_once '../Models/Customer.php';
 
     $con = Mysql::getInstance();
 

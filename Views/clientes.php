@@ -1,15 +1,13 @@
 <?php
     session_start();
-    $login = $_SESSION['logged_in'];
-
     //Controle de acesso.
-    if($login != true){
+    if(@$_SESSION['logged_in'] != true){
         $_SESSION['alerts'] = 'forcedEntry';
         header('Location: ../index.php');
     }
 
-    include '../App/Models/Mysql.php';
-    include '../App/Models/Customer.php';
+    include_once '../App/Models/Mysql.php';
+    include_once '../App/Models/Customer.php';
 
     //Listagem de clientes nos selects.
     $con = Mysql::getInstance();

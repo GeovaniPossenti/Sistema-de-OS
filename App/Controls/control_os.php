@@ -1,9 +1,14 @@
 <?php
     session_start();
+    //Controle de acesso.
+    if(@$_SESSION['logged_in'] != true){
+        $_SESSION['alerts'] = 'forcedEntry';
+        header('Location: ../../index.php');
+    }
 
-    include '../Models/Mysql.php';
-    include '../Models/OrderService.php';
-    include '../Models/Customer.php';
+    include_once '../Models/Mysql.php';
+    include_once '../Models/OrderService.php';
+    include_once '../Models/Customer.php';
 
     $con = Mysql::getInstance();
 

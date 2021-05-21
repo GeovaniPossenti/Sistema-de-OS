@@ -10,8 +10,8 @@
 
     date_default_timezone_set('America/Sao_Paulo');
 
-    include '../App/Models/Mysql.php';
-    include '../App/Models/OrderService.php';
+    include_once '../App/Models/Mysql.php';
+    include_once '../App/Models/OrderService.php';
 
     //Aqui eu pego o POST do id_os_pendente.
     $id_os = $_POST['idOsPendenteRelatorio'];
