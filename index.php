@@ -30,18 +30,16 @@
 </html>
 <?php
     session_start();
-    //Include dos alertas.
+
     include_once ('Views/alerts.php');
 
-    //Controle de acesso.
     if(@$_SESSION['alerts'] == 'forcedEntry'){
-       echo '<script> alertify.error("Acesso negado!") </script>';
+       echo '<script> alert10(); </script>';
         $_SESSION['alerts'] = ' ';
         session_destroy();
     }
-    
-   //Session_destroy / unset das variáveis.
-    if(@$alert == 'logout'){
+
+    if(@$_SESSION['alerts'] == 'logout'){
         unset($_SESSION['logged_in']);
         unset($_SESSION['alerts']);
         session_destroy();

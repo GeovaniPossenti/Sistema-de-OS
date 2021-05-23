@@ -2,7 +2,6 @@
     alertify.set('notifier','position', 'top-right');
     //alertify.success('Current position : ' + alertify.get('notifier','position'));
 
-    //Alertas sobre os eventos.
     function alert1(){
         alertify.message('Seja bem vindo!');
     }
@@ -30,35 +29,34 @@
     function alert9(){
         alertify.error('Ocorreu um erro ao executar está operação!');
     }
+    function alert10(){
+        alertify.error("Acesso negado!");
+    }
 </script>
 <?php
-
-	@$alert = $_SESSION['alerts'];
-
-    //Todos os alertas.
-    switch (@$alert){
-        case 'logOk': echo '<script> alert1(); </script>'; 
+    switch (@$_SESSION['alerts']){
+        case 'logOk': echo '<script> alert1(); </script>';
             $_SESSION['alerts'] = ' ';
         break;
-        case 'logFail': echo '<script> alert2(); </script>'; 
+        case 'logFail': echo '<script> alert2(); </script>';
             $_SESSION['alerts'] = ' ';
         break;
-        case 'logout': echo '<script> alert3(); </script>'; 
+        case 'logout': echo '<script> alert3(); </script>';
             $_SESSION['alerts'] = ' ';
         break;
-        case 'delOk': echo '<script> alert4(); </script>'; 
+        case 'delOk': echo '<script> alert4(); </script>';
         $_SESSION['alerts'] = ' ';
         break;
-        case 'cadOk': echo '<script> alert5(); </script>'; 
+        case 'cadOk': echo '<script> alert5(); </script>';
         $_SESSION['alerts'] = ' ';
         break;
-        case 'altOk': echo '<script> alert6(); </script>'; 
+        case 'altOk': echo '<script> alert6(); </script>';
         $_SESSION['alerts'] = ' ';
         break;
         case 'deleteClienteFail': echo '<script> alert7(); </script>';
         $_SESSION['alerts'] = ' ';
         break;
-        case 'cpfExiste': echo '<script> alert8(); </script>'; 
+        case 'cpfExiste': echo '<script> alert8(); </script>';
         $_SESSION['alerts'] = ' ';
         break;
         case 'crudFail': echo '<script> alert9(); </script>';
