@@ -60,7 +60,7 @@
                     $_SESSION['alerts'] = 'crudFail';
                     header("location: ../../Views/clientes.php");
                 }else {
-                    $_SESSION['alerts'] = 'cadOk';
+                    $_SESSION['alerts'] = 'altOk';
                     header("location: ../../Views/clientes.php");
                 }
             }else{
@@ -73,7 +73,7 @@
                 $_SESSION['alerts'] = 'crudFail';
                 header("location: ../../Views/clientes.php");
             }else {
-                $_SESSION['alerts'] = 'cadOk';
+                $_SESSION['alerts'] = 'altOk';
                 header("location: ../../Views/clientes.php");
             }
         }

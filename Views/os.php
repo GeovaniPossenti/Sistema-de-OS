@@ -96,19 +96,19 @@
                             <?php foreach($arrayBancoOs as $row){ 
                                 //Aqui eu faço um switch pra decidir qual cor eu exibo o texto no campo de status (Apenas uma função pra melhorar a leitura).
                                 switch($row['status']){
-                                    case 'Orçamento': 
+                                    case 'Orçamento':
                                         $color = "#DAA520";
                                     break;                               
-                                    case 'Aguardando': 
+                                    case 'Aguardando':
                                         $color = "#DC143C";
                                     break;
-                                    case 'Processando': 
+                                    case 'Processando':
                                         $color = "#A020F0";
                                     break;
-                                    case 'Finalizado': 
+                                    case 'Finalizado':
                                         $color = "#4169E1";
                                     break;
-                                    case 'Entregue': 
+                                    case 'Entregue':
                                         $color = "#008000";
                                     break;
                                 }
@@ -156,7 +156,7 @@
                 </div>
 
                 <!--Modal de cadastro de OS-->
-                <div class="modal fade modalfade text-start" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade text-start" id="modalCadastroOs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -235,7 +235,7 @@
                 </div>
 
                 <!--Modal de edição de OS-->
-                <div class="modal fade modalfade text-start" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade text-start" id="modalEditOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -256,7 +256,6 @@
                                                             <option value="<?php echo $rowCliente['nome_cliente']; ?>"><?php echo $rowCliente['nome_cliente']; ?></option>
                                                         <?php } ?>
                                                     </select>
-
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -315,7 +314,7 @@
                 </div>
 
                 <!--Modal de detalhes de OS-->
-                <div class="modal fade modalfade text-start" id="modalDetailsOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade text-start" id="modalDetailsOs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">

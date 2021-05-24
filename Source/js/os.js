@@ -69,10 +69,9 @@
     $('#NomeClienteModalCad').select2({
         dropdownParent: $('#modalCadastroOs'),
         placeholder: 'Selecione...',
-        //width: 'resolve',
         theme: "bootstrap5",
-        //theme: "classic",
         allowClear: true,
+        selectOnClose: true,
     });
 
     //Select de edição de OS.
@@ -82,7 +81,6 @@
         theme: "bootstrap5",
         allowClear: true,
         selectOnClose: true,
-        
     });
 
     //Aqui eu arrumo o autofocus dos modais.
