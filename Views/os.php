@@ -59,6 +59,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
         <!--CSS da página. -->
         <link rel="stylesheet" href="../Source/css/styleOs.css">
+        <!-- CSS da tabela dinâmica. -->
+        <link rel="stylesheet" href="../Source/css/styleTable.css">
         <!-- Referência da tabela do DataTables. -->
         <script type="text/javascript" charset="utf8" src="../Source/js/table.js"></script>
     </head>
