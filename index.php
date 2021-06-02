@@ -19,13 +19,19 @@
         <!--CSS da página. -->
         <link rel="stylesheet" href="Source/css/styleIndex.css">
     </head>
-    <body class="fundo">
-        <form class="box_form" method="post" action="App/Controls/control_user.php?op=log">
-            <h1>Login</h1>
-            <input type="text" name="usernameLogin" placeholder="Usuário" required autofocus>
-            <input type="password" name="passwordLogin" placeholder="Senha" required>
-            <input type="submit" name="submit" value="Login">
-        </form>
+    <body>
+    <main class="login">
+        <div class="login_container">
+            <h1 class="login_title">Login</h1>
+            <form class="login_form" method="post" action="App/Controls/control_user.php?op=log">
+                <input  type="text" class="login_input" name="usernameLogin" placeholder="Usuário" required autofocus>
+                <span class="login_input-border"></span>
+                <input type="password" class="login_input" name="passwordLogin" placeholder="Senha" required>
+                <span class="login_input-border"></span>
+                <button type="submit" class="login_submit">Login</button>
+            </form>
+        </div>
+    </main>
     </body>
 </html>
 <?php

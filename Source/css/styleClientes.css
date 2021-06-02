@@ -29,9 +29,8 @@ footer {
     background: -webkit-linear-gradient(to right, #283E51, #4B79A1); 
     background: linear-gradient(to right, #283E51, #4B79A1); 
     */
-    background: #2b5876; 
-    background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
-    background: linear-gradient(to right, #4e4376, #2b5876);
+
+    background: linear-gradient(to right, #8360c3, #2ebf91);
   }
 .quadrado{
     font-family: 'Roboto', sans-serif;
