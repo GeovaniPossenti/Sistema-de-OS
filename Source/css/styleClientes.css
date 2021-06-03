@@ -24,12 +24,6 @@ footer {
 .fundo{
     margin: 0;
     padding: 0;
-    /* Aquele azul que eu tinha deixado por um tempo
-    background: #4B79A1; 
-    background: -webkit-linear-gradient(to right, #283E51, #4B79A1); 
-    background: linear-gradient(to right, #283E51, #4B79A1); 
-    */
-
     background: linear-gradient(to right, #8360c3, #2ebf91);
   }
 .quadrado{
@@ -38,7 +32,11 @@ footer {
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 1%;
-    padding: 50px;
+
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     background-color: rgba(0,0,0,0.6);
     text-align: center;
     border-radius: 20px;

@@ -89,7 +89,7 @@
                                 <th class="hide">data_entrega_cliente</th>
                                 <th title="Filtrar por:">Valor do Reparo R$</th>
                                 <th title="Filtrar por:">Funções</th>
-                                <th title="Filtrar por:"></th>
+                                <th title="Filtrar por:">PDF</th>
                             </tr>
                         </thead>
                         <tbody>
