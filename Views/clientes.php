@@ -16,7 +16,7 @@
 
     //Cor do título no include do header.
     $corTituloOS = 'text-secondary';
-    $corTituloClientes = 'text-white';
+    $corTituloClientes = 'texto-azul';
 ?> 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -62,9 +62,9 @@
             </div>
             <div class="text-start">
                 <table id="tabelaDados" class="display text-center cell-border compact">
-                    <thead style="color: white;">
+                    <thead>
                         <tr>
-                            <th title="Filtrar por:">Id Cliente</th>
+                            <th title="Filtrar por:">#</th>
                             <th title="Filtrar por:">Nome do Cliente</th>
                             <th title="Filtrar por:">CPF do Cliente</th>
                             <th title="Filtrar por:">Celular do Cliente</th>

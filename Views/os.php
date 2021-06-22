@@ -22,7 +22,7 @@
     $arrayClientes = $dbModelCustomer->listarClientesOrderBy();
 
     //Cor do título no include do header.
-    $corTituloOS = 'text-white';
+    $corTituloOS = 'texto-azul';
     $corTituloClientes = 'text-secondary';
 ?>
 <!DOCTYPE html>
@@ -73,12 +73,12 @@
                 </div>
                 <div>
                     <table id="tabelaDados" class="display text-center cell-border compact">
-                        <thead style="color: white;">
+                        <thead>
                             <!--Aqui eu uso uma classe no css, pra não exibir algumas colunas,
                             porque lá em baixo quando eu pego os valores de cada linha com o JQUERY,
                             eu preciso de todos as colunas para assim ter todos os dados. -->
                             <tr>
-                                <th title="Filtrar por:">ID OS</th>
+                                <th title="Filtrar por:">#</th>
                                 <th class="hide">Nome Completo Cliente:</th>
                                 <th title="Filtrar por:">Nome do Cliente</th>
                                 <th title="Filtrar por:">Nome do Equipamento</th>

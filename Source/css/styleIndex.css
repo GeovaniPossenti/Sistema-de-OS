@@ -1,6 +1,6 @@
 :root {
-  --input-linear: linear-gradient(120deg, #8360c3, #2ebf91);
-  --button-linear: linear-gradient(120deg, #8360c3, #2ebf91, #8360c3);
+  --input-linear: linear-gradient(to right, #c9d6ff, #e2e2e2);
+  --button-linear: linear-gradient(120deg, #be93c5, #7bc6cc);
   --white: #fff;
   --black: #303030;
   --light-gray: #cfcfcf;
@@ -31,6 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.2);
 }
 
 .login_title {
@@ -70,7 +71,7 @@ body {
   height: var(--border-height);
   width: 0;
   margin-bottom: 16px;
-  background: var(--input-linear);
+  background: var(--button-linear);
   transition: .3s ease-in-out;
 }
 

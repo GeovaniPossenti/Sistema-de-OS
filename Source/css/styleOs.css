@@ -15,38 +15,39 @@ section {
 	font-size: 12pt;
 	color: black;
 }
+header{
+    /* box-shadow: 10px 10px 15px rgba(0,0,0,0.1); */
+    /* background-color:rgb(70,130,180); */
+    background: rgba(240,240,240,0.4);
+}
 footer {
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0);
     margin-top: auto;
 }
 .hide{
 	display: none;
     visibility: collapse;
 }
-.header{
-    background-color: rgba(0,0,0,0.6);
-}
 .fundo{
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #8360c3, #2ebf91);
+    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
 }
 .quadrado{
     font-family: 'Roboto', sans-serif;
-    margin-top: 1%;
+    margin-top: 2%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 1%;
-
+    margin-bottom: 4%;
     padding-top: 50px;
     padding-bottom: 30px;
     padding-left: 30px;
     padding-right: 30px;
-    background-color: rgba(0,0,0,0.6);
+    background: white;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 12px;
     font-size: 12pt;
-    box-shadow: 9px 7px 10px rgba(50, 50, 50, 0.5);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.2);
 }
 .removerLink{
     color: inherit;
@@ -55,6 +56,14 @@ footer {
 .btnZap{
     margin-top: 8px;
     background-color: #25d366;
+}
+.texto-azul{
+    color:rgb(70,130,180);
+}
+a:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
 }
 
 
