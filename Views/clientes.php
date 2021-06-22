@@ -58,7 +58,7 @@
         <section>
         <div class="quadrado">
             <div class="container text-center" style="margin-bottom: 20px;">
-                <button type="button" class="btn btn-primary btnCadastro text-white" value="" title="Cadastro de Clientes"><i class="fas fa-user-plus"></i> Cadastrar Clientes</button>
+                <button type="button" class="btn btn-primary btnCadastro btnAzulDefault" value="" title="Cadastro de Clientes"><i class="fas fa-user-plus"></i> Cadastrar Clientes</button>
             </div>
             <div class="text-start">
                 <table id="tabelaDados" class="display text-center cell-border compact">
@@ -83,11 +83,11 @@
                             <td class="text-center">
                                 <!--Formulário para alterar/excluir um cliente do banco. -->
                                 <form action="../App/Controls/control_customer.php?op=del" method="POST">
-                                    <button type="button" class="btn btn-outline-primary btnEdit btn-sm" value="Alterar" title="Alterar">
+                                    <button type="button" class="btn btnAzulDefault text-white btnEdit btn-sm" value="Alterar" title="Alterar">
                                         <i class="fas fa-user-edit"></i>
                                     </button>
                                     <input type="hidden" name="id_cliente" value="<?php echo $row['id_cliente']; ?>">
-                                    <button type="submit" class="btn btn-outline-danger btn-sm" value="Deletar" title="Deletar">
+                                    <button type="submit" class="btn btnRedDefault text-white btn-sm" value="Deletar" title="Deletar">
                                         <i class="fas fa-backspace"></i>
                                     </button>                          
                                 </form>
@@ -142,7 +142,7 @@
                             </div>                                       
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar"><i class="fas fa-times"></i> Cancelar</button>
-                                <button type="submit" class="btn btn-primary" id="btnSalvarCadastroClientes" title="Salvar"><i class="fas fa-check"></i> Salvar</button>
+                                <button type="submit" class="btn btnAzulDefault text-white" id="btnSalvarCadastroClientes" title="Salvar"><i class="fas fa-check"></i> Salvar</button>
                             </div>
                         </form>
                     </div>
@@ -194,7 +194,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" title="Cancelar"><i class="fas fa-times"></i> Cancelar</button>
-                            <button type="submit" class="btn btn-primary" title="Salvar" id="btnEditarClientes"><i class="fas fa-check"></i> Salvar alterações</button>
+                            <button type="submit" class="btn btnAzulDefault text-white" title="Salvar" id="btnEditarClientes"><i class="fas fa-check"></i> Salvar alterações</button>
                         </div>
                     </form>
                     </div>

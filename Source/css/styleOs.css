@@ -18,7 +18,7 @@ section {
 header{
     /* box-shadow: 10px 10px 15px rgba(0,0,0,0.1); */
     /* background-color:rgb(70,130,180); */
-    background: rgba(240,240,240,0.4);
+    background: rgba(240,240,240,0.5);
 }
 footer {
     background-color: rgba(0,0,0,0);
@@ -58,14 +58,32 @@ footer {
     background-color: #25d366;
 }
 .texto-azul{
-    color:rgb(70,130,180);
+    color:#00A0C6;
 }
 a:hover {
-    color:#00A0C6; 
+    /* color:#00A0C6;  */
+    color:rgb(70,130,180);
     text-decoration:none; 
     cursor:pointer;  
 }
-
+.btnAzulDefault{
+    background-color:rgb(70,130,180);
+}
+.btnAzulDefault:hover{
+    background-color:rgb(37, 111, 172);
+}
+.btnRedDefault{
+    background-color:rgb(250, 108, 108);
+}
+.btnRedDefault:hover{
+    background-color:rgb(255, 72, 72);
+}
+.btnYellowDefault{
+    background-color:rgb(255, 67, 67);
+}
+.btnYellowDefault:hover{
+    background-color:rgb(189, 37, 37);
+}
 
 
 
